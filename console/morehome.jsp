@@ -42,6 +42,8 @@
 	href="/assets/plugins/font-awesome-4.6.2/css/font-awesome_3.css" />
 <!--END GLOBAL STYLES -->
 
+
+
 <!-- JavaScript -->
 
 
@@ -99,7 +101,7 @@
 		<!-- HEADER SECTION -->
 		<div id="top">
 
-			<nav class="navbar navbar-inverse navbar-fixed-top "
+			<nav class="navbar navbar-inverse navbar-fixed-top"
 				style="padding-top: 7px;">
 
 				<!-- LOGO SECTION -->
@@ -113,8 +115,25 @@
 				</header>
 				<!-- END LOGO SECTION -->
 
+				<ul class="nav navbar-top-links navbar-right">
 
+					<!-- LOGIN SECTION -->
 
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#"> <i class="icon-user"></i>&nbsp;
+							<i class="icon-chevron-down "></i>
+					</a>
+
+						<ul class="dropdown-menu dropdown-user">
+							<li><a href="#"><i class="icon-user"></i> User Profile </a>
+							</li>
+							<li><a href="#"><i class="icon-gear"></i> Settings </a></li>
+							<li class="divider"></li>
+							<li><a href="login.html"><i class="icon-signout"></i>
+									Logout </a></li>
+						</ul></li>
+					<!--END LOGIN SECTION -->
+				</ul>
 
 			</nav>
 		</div>
@@ -146,11 +165,10 @@
 	<!--END FOOTER -->
 
 	<!-- GLOBAL SCRIPTS -->
-	<script src="assets/plugins/jquery-2.0.3.min.js"></script>
-	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<script src="/assets/plugins/jquery-2.0.3.min.js"></script>
+	<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 	<!-- END GLOBAL SCRIPTS -->
-
-
+	
 </body>
 </html>
