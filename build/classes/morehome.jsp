@@ -22,7 +22,7 @@
     final String pageName = uri.substring(uri.lastIndexOf("/") + 1);
 %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -97,48 +97,51 @@
 	<div id="wrap">
 
 		<!-- HEADER SECTION -->
-		<div id="top"></div>
+		<div id="top">
+
+			<nav class="navbar navbar-inverse navbar-fixed-top "
+				style="padding-top: 7px;">
+
+				<!-- LOGO SECTION -->
+				<header class="navbar-header">
+					<div>
+						<a href="group_management.jsp" class="navbar-brand"> <img
+							height="55" style="padding-bottom: 7px; margin-left: 35px;"
+							src="/assets/img/more.png" alt="" />
+						</a>
+					</div>
+				</header>
+				<!-- END LOGO SECTION -->
 
 
 
 
-
-
-
-
+			</nav>
+		</div>
 		<!-- END HEADER SECTION -->
-
-
-
-
-
-
-
-
-
 	</div>
 	<!--END MAIN WRAPPER -->
 
 	<!--FOOTER -->
 	<footer class="footer">
-	<div class="link_area">
-		<dl class="link_group">
-			<dd class="link">
-				<a href="">Document</a>
-			</dd>
-		</dl>
-		<dl class="link_group">
-			<dd class="link">
-				<a href="">Privacy Policy</a>
-			</dd>
-		</dl>
-		<dl class="link_group">
-			<dd class="link">
-				<a href="">Contact Us</a>
-			</dd>
-		</dl>
-		<div class="copyright_area">Copyright ©</div>
-	</div>
+		<div class="link_area">
+			<dl class="link_group">
+				<dd class="link">
+					<a href="">Document</a>
+				</dd>
+			</dl>
+			<dl class="link_group">
+				<dd class="link">
+					<a href="">Privacy Policy</a>
+				</dd>
+			</dl>
+			<dl class="link_group">
+				<dd class="link">
+					<a href="">Contact Us</a>
+				</dd>
+			</dl>
+			<div class="copyright_area">Copyright ©</div>
+		</div>
 	</footer>
 	<!--END FOOTER -->
 
