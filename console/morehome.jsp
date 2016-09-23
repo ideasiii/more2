@@ -51,6 +51,17 @@
 
 <style>
 
+/* header dropdown */
+.dropdown .admin_section {
+	width: 55px;
+	height: 35px;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 5px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
 /* footer */
 .footer {
 	width: 100%;
@@ -115,13 +126,15 @@
 				</header>
 				<!-- END LOGO SECTION -->
 
-				<ul class="nav navbar-top-links navbar-right">
+				<ul class="nav navbar-top-links navbar-right"
+					style="padding-top: 5px;">
 
 					<!-- LOGIN SECTION -->
 
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#"> <i class="icon-user"></i>&nbsp;
-							<i class="icon-chevron-down "></i>
+					<li class="dropdown" style="color: #428bca;"><a
+						class="dropdown-toggle admin_section" data-toggle="dropdown"
+						href="#" style="color: #ffffff; background-color: #428bca;"> <i
+							class="icon-user"></i>&nbsp; <i class="icon-chevron-down"></i>
 					</a>
 
 						<ul class="dropdown-menu dropdown-user">
@@ -169,6 +182,6 @@
 	<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script src="/assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 	<!-- END GLOBAL SCRIPTS -->
-	
+
 </body>
 </html>
