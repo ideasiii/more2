@@ -43,9 +43,9 @@
 <!--END GLOBAL STYLES -->
 
  <!-- PAGE LEVEL STYLES -->
-    <link href="assets/css/layout2.css" rel="stylesheet" />
-       <link href="assets/plugins/flot/examples/examples.css" rel="stylesheet" />
-       <link rel="stylesheet" href="assets/plugins/timeline/timeline.css" />
+    <link href="/assets/css/layout2.css" rel="stylesheet" />
+       <link href="/assets/plugins/flot/examples/examples.css" rel="stylesheet" />
+       <link rel="stylesheet" href="/assets/plugins/timeline/timeline.css" />
     <!-- END PAGE LEVEL  STYLES -->
 
 <!-- JavaScript -->
@@ -339,6 +339,7 @@
 		</div>
 		<!--END PAGE CONTENT -->
 
+ 
 
 	</div>
 	<!--END MAIN WRAPPER -->
@@ -373,11 +374,11 @@
 	<!-- END GLOBAL SCRIPTS -->
 	
  <!-- PAGE LEVEL SCRIPTS -->
-    <script src="assets/plugins/flot/jquery.flot.js"></script>
-    <script src="assets/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="assets/plugins/flot/jquery.flot.time.js"></script>
-     <script  src="assets/plugins/flot/jquery.flot.stack.js"></script>
-    <script src="assets/js/for_index.js"></script>
+    <script src="/assets/plugins/flot/jquery.flot.js"></script>
+    <script src="/assets/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="/assets/plugins/flot/jquery.flot.time.js"></script>
+     <script  src="/assets/plugins/flot/jquery.flot.stack.js"></script>
+    <script src="/assets/js/for_index.js"></script>
     <!-- END PAGE LEVEL SCRIPTS -->
 
 </body>
