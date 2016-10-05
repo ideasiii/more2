@@ -224,13 +224,12 @@
 
 .gradient-blue {
 	background-color: white;
-	background-image: linear-gradient(to left, #428bca, white 80%);
+	background-image: linear-gradient(to left, #428bca, white 85%);
 }
 
 .gradient-gray {
 	background-color: transparent;
-	background-image: linear-gradient(to left, rgba(86, 99, 100, 0.89) 35%,
-		white 80%);
+	background-image: linear-gradient(to left, rgba(86, 99, 100, 0.89) 35%, white 85%);
 }
 
 /* header dropdown */
@@ -301,7 +300,7 @@
 				<header>
 					<div class="header-angle navbar-brand">
 						<a href="group_management.jsp" class="navbar-brand"> <img
-							class="logo" height="80" src="/assets/img/more.png" alt="" />
+							class="logo" height="80" src="/assets/img/more_logo_white_board_sm.png" alt="" />
 						</a>
 					</div>
 					<!-- END LOGO SECTION -->
@@ -347,7 +346,7 @@
 
 
 		<!--PAGE CONTENT -->
-		<img width="100%" height="230" src="/assets/img/bg-col.jpg" alt="" />
+		<img width="100%" src="/assets/img/bg-col-xl-shape-thin.jpg" alt="" />
 		
 		<div id="content">
 			<div class="inner" style="min-height: 700px;">
