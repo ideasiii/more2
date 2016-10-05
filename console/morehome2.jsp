@@ -60,51 +60,15 @@
 	right: 80px;
 }
 
-.header-angle- {
-	border-style: solid;
-	border-width: 0px 5px 0px 0px;
-	border-color: transparent;
-}
-
-.header-highlight-container {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	pointer-events: none;
-	overflow: hidden;
-	z-index: 2; . header-highlight { & : before {
-        content : '';
-	width: 445px;
-	height: 670px;
-	position: absolute;
-	left: -160px;
-	top: -402px;
-	transform: rotate(60deg);
-	pointer-events: none;
-	background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 1) 0%,
-		rgba(255, 255, 255, 1) 65%, rgba(255, 255, 255, 0) 100%);
-	background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 1) 0%,
-		rgba(255, 255, 255, 1) 65%, rgba(255, 255, 255, 0) 100%);
-	background: linear-gradient(120deg, rgba(255, 255, 255, 1) 0%,
-		rgba(255, 255, 255, 1) 65%, rgba(255, 255, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',
-		endColorstr='#00ffffff', GradientType=1);
-	transition: all 0.3s;
-	border-left: 374px solid$ptc-gray;
-	border-bottom: 217px solid transparent;
-}
-
-}
-}
 .logo {
 	/*margin-left: 30%;*/
 	padding: 7px;
 	position: relative;
 	z-index: 9;
 }
+/* end logo section */
 
+/* login admin section */
 .super-header {
 	/* position: relative;*/
 	z-index: 1;
@@ -142,6 +106,7 @@
 	display: inline-block;
 	font-size: 1.1em;
 	font-style: normal;
+	text-decoration: none;
 	line-height: 1.1;
 	padding: 0.4em 1.3em;
 	position: relative;
@@ -176,6 +141,9 @@
 }
 
 }
+/* end login admin section */
+
+/* menu section */
 .menu {
 	margin-bottom: 0;
 	min-height: auto;
@@ -224,24 +192,93 @@
 
 .gradient-blue {
 	background-color: white;
-	background-image: linear-gradient(to left, #428bca, white 85%);
+	background-image: linear-gradient(to left, #428bca 40%, white 85%);
 }
 
 .gradient-gray {
 	background-color: transparent;
-	background-image: linear-gradient(to left, rgba(86, 99, 100, 0.89) 35%, white 85%);
+	background-image: linear-gradient(to left, rgba(86, 99, 100, 0.89) 60%,
+		white 85%);
+}
+/* end menu section */
+
+/* menu dropdown */
+.dropdown .dropdown-menu {
+	display: block;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+	pointer-events: none;
+	border-radius: 0;
+	background-color: rgba(86, 99, 100, 0.89);
+	margin-top: -1px !important;
+	width: 100%;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	min-width: initial;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	float: left;
+	padding: 5px 0;
+	margin: 2px 0 0;
+	list-style: none;
+	font-size: 14px;
+	text-align: left;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	background-clip: padding-box;
 }
 
-/* header dropdown */
-.dropdown .admin_section {
-	width: 55px;
-	height: 35px;
-	text-align: center;
-	vertical-align: middle;
-	padding-top: 5px;
-	border: 1px solid transparent;
-	border-radius: 4px;
+.dropdown .dropdown-menu .dropdown-menu-li {
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	display: list-item;
+	text-align: -webkit-match-parent;
+	visibility: hidden;
 }
+
+.dropdown .dropdown-menu .dropdown-menu-li.dropdown {
+    display: inline-block;
+}
+
+.dropdown .dropdown-menu .dropdown-menu-li .dropdown-menu-a {
+	padding: 15px 20px;
+	text-align: center;
+	white-space: normal;
+	color: #fff;
+	clear: both;
+	font-weight: normal;
+	line-height: 1.42857;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: "texgyreadventor", sans-serif;
+	font-style: normal;
+	font-size: 1em;
+	letter-spacing: 0.05em;
+	position: relative;
+	margin-right: -1px;
+	cursor: pointer;
+	background: transparent;
+}
+
+.dropdown .dropdown-menu .dropdown-menu-li .dropdown-menu-a:hover,
+	.dropdown .dropdown-menu .dropdown-menu-li .dropdown-menu-a:focus,
+	.dropdown .dropdown-menu .dropdown-menu-li .dropdown-menu-a:active,
+	.dropdown .dropdown-menu .dropdown-menu-li .dropdown-menu-a.active {
+	background-color: rgba(86, 99, 100, 0.89);
+}
+
+.dropdown:hover .dropdown-menu .dropdown-menu-li .dropdown-menu-a{
+	display: block;
+	
+}
+
+/* end menu dropdown */
 
 /* footer */
 .footer {
@@ -300,7 +337,8 @@
 				<header>
 					<div class="header-angle navbar-brand">
 						<a href="group_management.jsp" class="navbar-brand"> <img
-							class="logo" height="80" src="/assets/img/more_logo_white_board_sm.png" alt="" />
+							class="logo" height="80"
+							src="/assets/img/more_logo_white_board_sm.png" alt="" />
 						</a>
 					</div>
 					<!-- END LOGO SECTION -->
@@ -308,10 +346,10 @@
 					<!-- LOGIN SECTION  -->
 					<div class="super-header gradient-blue">
 						<ul class="super-header-ul">
-							<li class="super-header-li"><a class="super-header-a">Login</a>
-							</li>
-							<li class="super-header-li"><a class="super-header-a">Sign
-									Up</a></li>
+							<li class="super-header-li"><a class="super-header-a"
+								href="">Login</a></li>
+							<li class="super-header-li"><a class="super-header-a"
+								href="">Sign Up</a></li>
 
 						</ul>
 					</div>
@@ -322,9 +360,19 @@
 						<div class="row">
 							<div class="col-sm-9" style="text-align: center; float: right;">
 								<ul id="menu-header" class="menu-header">
-									<li class="menu-header-li"><a href=""
+									<li class="menu-header-li dropdown"><a href=""
 										class="menu-header-a dropdown-toggle" role="button"
-										aria-haspopup="1"> PLATFORM </a></li>
+										aria-haspopup="1"> PLATFORM </a>
+										<ul class="dropdown-menu">
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+												href="">QWERYU</a></li>
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+												href="">ASFGHJMK</a></li>
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+												href="">ASFDGFHVGH</a></li>
+
+
+										</ul></li>
 									<li class="menu-header-li dropdown"><a href=""
 										class="menu-header-a dropdown-toggle" role="button"
 										aria-haspopup="1"> DASHBOARD </a></li>
@@ -347,7 +395,7 @@
 
 		<!--PAGE CONTENT -->
 		<img width="100%" src="/assets/img/bg-col-xl-shape-thin.jpg" alt="" />
-		
+
 		<div id="content">
 			<div class="inner" style="min-height: 700px;">
 				<div class="row">
