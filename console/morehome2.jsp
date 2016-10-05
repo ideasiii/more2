@@ -55,15 +55,14 @@
 
 /* logo section */
 .header-angle {
-position: relative;
+	position: relative;
 	left: 30px;
 	right: 80px;
-
 }
 
-.header-angle-{
-	border-style:solid;
-	border-width:0px 5px 0px 0px;
+.header-angle- {
+	border-style: solid;
+	border-width: 0px 5px 0px 0px;
 	border-color: transparent;
 }
 
@@ -128,6 +127,7 @@ position: relative;
 	color: #fff;
 	display: inline-block; //
 	vertical-align: middle;
+	padding-right: 10px;
 	&:
 	first-child
 	{
@@ -185,7 +185,7 @@ position: relative;
 .menu-header {
 	float: none;
 	width: 100%;
-	padding-left: 150px;
+	padding-left: 100px;
 	display: inline-block;
 	position: relative;
 	z-index: 1;
@@ -219,17 +219,18 @@ position: relative;
 .menu-header .menu-header-li .menu-header-a:hover, .menu-header .menu-header-li .menu-header-a:focus,
 	.menu-header .menu-header-li .menu-header-a:active, .menu-header .menu-header-li .menu-header-a.active
 	{
-	color: #428bca;
+	color: #46b8da;
 }
 
-.gradient-blue{
+.gradient-blue {
 	background-color: white;
-	backgroung-image:
-	linear-gradient(
-	to right,
-	white,
-	#428bca 30%
-	);
+	background-image: linear-gradient(to left, #428bca, white 80%);
+}
+
+.gradient-gray {
+	background-color: transparent;
+	background-image: linear-gradient(to left, rgba(86, 99, 100, 0.89) 35%,
+		white 80%);
 }
 
 /* header dropdown */
@@ -318,16 +319,16 @@ position: relative;
 					<!-- END LOGIN SECTION  -->
 
 					<!-- MENU SECTION  -->
-					<div class="menu">
+					<div class="menu gradient-gray">
 						<div class="row">
-							<div class="col-sm-9" style="text-align: center;">
+							<div class="col-sm-9" style="text-align: center; float: right;">
 								<ul id="menu-header" class="menu-header">
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a dropdown-toggle" role="button"
 										aria-haspopup="1"> PLATFORM </a></li>
 									<li class="menu-header-li dropdown"><a href=""
 										class="menu-header-a dropdown-toggle" role="button"
-										aria-haspopup="1"> ECOSYSTEM </a></li>
+										aria-haspopup="1"> DASHBOARD </a></li>
 									<li class="menu-header-li dropdown"><a href=""
 										class="menu-header-a dropdown-toggle" role="button"
 										aria-haspopup="1"> RESOURCES </a></li>
@@ -340,26 +341,19 @@ position: relative;
 					</div>
 					<!-- END MENU SECTION  -->
 				</header>
-
-
-
-
-
 			</nav>
 		</div>
 		<!-- END HEADER SECTION -->
 
-		<!-- MENU SECTION -->
-
-		<!--END MENU SECTION -->
 
 		<!--PAGE CONTENT -->
-
+		<img width="100%" height="230" src="/assets/img/bg-col.jpg" alt="" />
+		
 		<div id="content">
-
-			<div class="inner" style="min-height: 700px; margin-top: 30px;">
+			<div class="inner" style="min-height: 700px;">
 				<div class="row">
 					<div class="col-lg-12">
+
 						<h1>Admin Dashboard</h1>
 					</div>
 				</div>
