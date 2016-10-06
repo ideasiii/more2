@@ -160,6 +160,8 @@
 	vertical-align: baseline;
 	margin-bottom: 0;
 	margin-top: 4px;
+	height:auto;
+	line-height:2;
 }
 
 .menu-header .menu-header-li {
@@ -184,10 +186,12 @@
 	margin-right: -1px;
 }
 
-.menu-header .menu-header-li .menu-header-a:hover, .menu-header .menu-header-li .menu-header-a:focus,
-	.menu-header .menu-header-li .menu-header-a:active, .menu-header .menu-header-li .menu-header-a.active
+.menu-header .menu-header-li:hover .dropdown-menu, 
+.menu-header .menu-header-li .menu-header-a:hover
 	{
 	color: #46b8da;
+display: block;
+
 }
 
 .gradient-blue {
@@ -203,10 +207,11 @@
 /* end menu section */
 
 /* menu dropdown */
-.dropdown .dropdown-menu {
-	display: block;
-	visibility: hidden;
-	opacity: 0;
+.dropdown-menu {
+position: absolute;
+	display: none;
+/*	visibility: hidden;*/
+/*	opacity: 0;*/
 	-webkit-transition: all 0.3s ease-in;
 	transition: all 0.3s ease-in;
 	pointer-events: none;
@@ -218,11 +223,10 @@
 	border-right: none;
 	border-bottom: none;
 	min-width: initial;
-	position: absolute;
 	top: 100%;
 	left: 0;
 	z-index: 1000;
-	float: left;
+/*	float: left; */
 	padding: 5px 0;
 	margin: 2px 0 0;
 	list-style: none;
@@ -231,8 +235,7 @@
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 	background-clip: padding-box;
 }
-
-.dropdown .dropdown-menu .dropdown-menu-li {
+.dropdown-menu-li {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
@@ -240,13 +243,15 @@
 	display: list-item;
 	text-align: -webkit-match-parent;
 	visibility: hidden;
+	
+	background-color: rgba(86, 99, 100, 0.89);
 }
 
-.dropdown .dropdown-menu .dropdown-menu-li.dropdown {
+.dropdown-menu .dropdown-menu-li.dropdown {
     display: inline-block;
 }
 
-.dropdown .dropdown-menu .dropdown-menu-li .dropdown-menu-a {
+.dropdown-menu-a {
 	padding: 15px 20px;
 	text-align: center;
 	white-space: normal;
@@ -266,14 +271,15 @@
 	background: transparent;
 }
 
-.dropdown .dropdown-menu .dropdown-menu-li .dropdown-menu-a:hover,
-	.dropdown .dropdown-menu .dropdown-menu-li .dropdown-menu-a:focus,
-	.dropdown .dropdown-menu .dropdown-menu-li .dropdown-menu-a:active,
-	.dropdown .dropdown-menu .dropdown-menu-li .dropdown-menu-a.active {
-	background-color: rgba(86, 99, 100, 0.89);
+.dropdown-menu-li:hover,
+.dropdown-menu-li:focus,
+.dropdown-menu-li:active,
+.dropdown-menu-li.active {
+	background-color: rgba(86, 99, 100, 1);
+	color: #46b8da;
 }
 
-.dropdown:hover .dropdown-menu .dropdown-menu-li .dropdown-menu-a{
+.dropdown-menu-li.dropdown:hover .dropdown-menu-li .dropdown-menu-a{
 	display: block;
 	
 }
@@ -336,7 +342,7 @@
 				<!-- LOGO SECTION -->
 				<header>
 					<div class="header-angle navbar-brand">
-						<a href="group_management.jsp" class="navbar-brand"> <img
+						<a href="morehome2.jsp" class="navbar-brand"> <img
 							class="logo" height="80"
 							src="/assets/img/more_logo_white_board_sm.png" alt="" />
 						</a>
@@ -360,19 +366,19 @@
 						<div class="row">
 							<div class="col-sm-9" style="text-align: center; float: right;">
 								<ul id="menu-header" class="menu-header">
-									<li class="menu-header-li dropdown"><a href=""
-										class="menu-header-a dropdown-toggle" role="button"
-										aria-haspopup="1"> PLATFORM </a>
-										<ul class="dropdown-menu">
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">QWERYU</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">ASFGHJMK</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">ASFDGFHVGH</a></li>
+									<li class="menu-header-li"><a href=""
+										class="menu-header-a" 
+										> PLATFORM </a>
+										<div class="dropdown-menu">
+											<a class="dropdown-menu-a"
+												href="">QWERYU</a>
+											<a class="dropdown-menu-a"
+												href="">ASFGHJMK</a>
+											<a class="dropdown-menu-a"
+												href="">ASFDGFHVGH</a>
 
 
-										</ul></li>
+										</div></li>
 									<li class="menu-header-li dropdown"><a href=""
 										class="menu-header-a dropdown-toggle" role="button"
 										aria-haspopup="1"> DASHBOARD </a></li>
