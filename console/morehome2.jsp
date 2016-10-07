@@ -158,8 +158,8 @@
 	position: relative;
 	z-index: 1;
 	vertical-align: baseline;
-	margin-bottom: 0;
-	margin-top: 4px;
+	margin-bottom: -4px;
+	padding-top: 8px;
 	height:auto;
 	line-height:2;
 }
@@ -179,7 +179,6 @@
 	text-decoration: none;
 	display: inline-block;
 	font-style: normal;
-	line-height: 1.1em;
 	font-size: 1em;
 	letter-spacing: 0.05em;
 	position: relative;
@@ -206,18 +205,17 @@ display: block;
 }
 /* end menu section */
 
+
 /* menu dropdown */
 .dropdown-menu {
-position: absolute;
+	position: absolute;
 	display: none;
 /*	visibility: hidden;*/
 /*	opacity: 0;*/
-	-webkit-transition: all 0.3s ease-in;
-	transition: all 0.3s ease-in;
-	pointer-events: none;
+/*	pointer-events: none;*/
 	border-radius: 0;
 	background-color: rgba(86, 99, 100, 0.89);
-	margin-top: -1px !important;
+	margin-top: 1px !important;
 	width: 100%;
 	border-left: none;
 	border-right: none;
@@ -235,7 +233,9 @@ position: absolute;
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 	background-clip: padding-box;
 }
-.dropdown-menu-li {
+
+
+/*.dropdown-menu-li {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
@@ -245,11 +245,11 @@ position: absolute;
 	visibility: hidden;
 	
 	background-color: rgba(86, 99, 100, 0.89);
-}
+}*/
 
-.dropdown-menu .dropdown-menu-li.dropdown {
+/*.dropdown-menu .dropdown-menu-li.dropdown {
     display: inline-block;
-}
+}*/
 
 .dropdown-menu-a {
 	padding: 15px 20px;
@@ -271,16 +271,16 @@ position: absolute;
 	background: transparent;
 }
 
-.dropdown-menu-li:hover,
-.dropdown-menu-li:focus,
-.dropdown-menu-li:active,
-.dropdown-menu-li.active {
-	background-color: rgba(86, 99, 100, 1);
+.dropdown-menu:hover,
+.dropdown-menu:focus,
+.dropdown-menu:active,
+.dropdown-menu.active {
+	background-color: rgba(86, 99, 100, 0.89);
 	color: #46b8da;
 }
 
-.dropdown-menu-li.dropdown:hover .dropdown-menu-li .dropdown-menu-a{
-	display: block;
+.dropdown-menu a:hover {
+	background-color: rgba(86, 99, 100, 1);
 	
 }
 
@@ -365,7 +365,7 @@ position: absolute;
 					<div class="menu gradient-gray">
 						<div class="row">
 							<div class="col-sm-9" style="text-align: center; float: right;">
-								<ul id="menu-header" class="menu-header">
+								<ul class="menu-header">
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a" 
 										> PLATFORM </a>
@@ -376,9 +376,9 @@ position: absolute;
 												href="">ASFGHJMK</a>
 											<a class="dropdown-menu-a"
 												href="">ASFDGFHVGH</a>
-
-
 										</div></li>
+										
+										
 									<li class="menu-header-li dropdown"><a href=""
 										class="menu-header-a dropdown-toggle" role="button"
 										aria-haspopup="1"> DASHBOARD </a></li>
