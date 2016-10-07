@@ -159,7 +159,7 @@
 	z-index: 1;
 	vertical-align: baseline;
 	margin-bottom: -4px;
-	padding-top: 8px;
+/*	padding-top: 4px;*/
 	height:auto;
 	line-height:2;
 }
