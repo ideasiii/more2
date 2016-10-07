@@ -225,11 +225,11 @@ display: block;
 	left: 0;
 	z-index: 1000;
 /*	float: left; */
-	padding: 15px 0;
-	margin: 2px 0 0;
+/*	padding: 5px 0;*/
+/*	margin: 2px 0 0;*/
 	list-style: none;
 	font-size: 14px;
-	text-align: left;
+	text-align: center;
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 	background-clip: padding-box;
 }
@@ -252,7 +252,7 @@ display: block;
 }*/
 
 .dropdown-menu-a {
-	padding: 15px 20px;   /**/
+	padding: 15px 0px; //
 	text-align: center;
 	white-space: normal;
 	color: #fff;
@@ -365,14 +365,17 @@ display: block;
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a" 
 										> PLATFORM </a>
-										<div class="dropdown-menu">
+										<ul class="dropdown-menu">
+										<li class="dropdown-menu-a">
 											<a class="dropdown-menu-a"
-												href="">QWERYU</a>
+												href="">QWERYU</a></li>
+												<li class="dropdown-menu-a">
 											<a class="dropdown-menu-a"
-												href="">ASFGHJMK</a>
+												href="">ASFGHJMK</a></li>
+												<li class="dropdown-menu-a">
 											<a class="dropdown-menu-a"
-												href="">ASFDGFHVGH</a>
-										</div></li>
+												href="">ASFDGFHVGH</a></li>
+										</ul></li>
 										
 										
 									<li class="menu-header-li dropdown"><a href=""
