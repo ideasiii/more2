@@ -159,9 +159,9 @@
 	z-index: 1;
 	vertical-align: baseline;
 	margin-bottom: -4px;
-/*	padding-top: 4px;*/
-	height:auto;
-	line-height:2;
+	/*	padding-top: 4px;*/
+	height: auto;
+	line-height: 2;
 }
 
 .menu-header .menu-header-li {
@@ -183,14 +183,13 @@
 	letter-spacing: 0.05em;
 	position: relative;
 	margin-right: -1px;
+	width:100%;
 }
 
-.menu-header .menu-header-li:hover .dropdown-menu-container, 
-.menu-header .menu-header-li .menu-header-a:hover
-	{
+.menu-header .menu-header-li:hover .dropdown-menu-container,
+	.menu-header .menu-header-li .menu-header-a:hover {
 	color: #46b8da;
-display: block;
-
+	display: block;
 }
 
 .gradient-blue {
@@ -205,17 +204,16 @@ display: block;
 }
 /* end menu section */
 
-
 /* menu dropdown */
 .dropdown-menu-container {
 	position: absolute;
-	display: block;             /*test*/
-/*	visibility: hidden;*/
-/*	opacity: 0;*/
-/*	pointer-events: none;*/
+	display: none;               /*test*/
+	/*	visibility: hidden;*/
+	/*	opacity: 0;*/
+	/*	pointer-events: none;*/
 	border-radius: 0;
-	background-color: rgba(86, 99, 100, 0.89);
-	margin-top: 2px !important;
+	background-color: rgba(86, 99, 100, 0.85);
+	margin-top: -1px !important;
 	width: 100%;
 	border-left: none;
 	border-right: none;
@@ -224,7 +222,7 @@ display: block;
 	top: 100%;
 	left: 0;
 	z-index: 1000;
-/*	float: left; */
+	/*	float: left; */
 	padding: 0;
 	margin: 2px 0 0;
 	list-style: none;
@@ -234,49 +232,41 @@ display: block;
 	background-clip: padding-box;
 }
 
-
-/*.dropdown-menu-li {
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-	display: list-item;
-	text-align: -webkit-match-parent;
-	visibility: hidden;
-	
-	background-color: rgba(86, 99, 100, 0.89);
-}*/
-
-/*.dropdown-menu .dropdown-menu-li.dropdown {
-    display: inline-block;
-}*/
-
-.dropdown-menu-a {
-	padding: 20px 0px; //
+.dropdown-menu-li {
+	padding: 12px 0px; //
 	text-align: center;
 	white-space: normal;
-	color: #fff;
 	clear: both;
-	font-weight: normal;
-	line-height: 1.42857;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-family: "texgyreadventor", sans-serif;
-	font-style: normal;
-	font-size: 1em;
-	/*letter-spacing: 0.05em;*/
 	position: relative;
 	margin-right: -1px;
 	cursor: pointer;
 }
 
-.dropdown-menu-a:hover,
-.dropdown-menu-a:focus
-{
-	background-color: #c5c7c9;
-	color: #000;
+.dropdown-menu-li a {
 	text-decoration: none;
-	
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: normal;
+	line-height: 1.42857;
+	font-family: "texgyreadventor", sans-serif;
+	font-style: normal;
+	font-size: 1em;
+	/*letter-spacing: 0.05em;*/
+}
+
+.dropdown-menu-li:hover {
+	background-color: #949494;
+	background-image:
+    radial-gradient(
+     white,
+      #949494 90%
+    );
+}
+
+.dropdown-menu-li:hover a {
+	color: #428bca;
+	font-weight: bold;
+	text-decoration: none;
 }
 
 /* end menu dropdown */
@@ -362,21 +352,17 @@ display: block;
 							<div class="col-sm-9" style="text-align: center; float: right;">
 								<ul class="menu-header">
 									<li class="menu-header-li"><a href=""
-										class="menu-header-a" 
-										> PLATFORM </a>
+										class="menu-header-a"> PLATFORM </a>
 										<ul class="dropdown-menu-container">
-										<li class="dropdown-menu-a">
-											<a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
 												href="">QWERYU</a></li>
-												<li class="dropdown-menu-a">
-											<a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
 												href="">ASFGHJMK</a></li>
-												<li class="dropdown-menu-a">
-											<a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
 												href="">ASFDGFHVGH</a></li>
 										</ul></li>
-										
-										
+
+
 									<li class="menu-header-li dropdown"><a href=""
 										class="menu-header-a dropdown-toggle" role="button"
 										aria-haspopup="1"> DASHBOARD </a></li>
