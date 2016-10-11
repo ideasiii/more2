@@ -201,13 +201,13 @@
 
 .gradient-blue {
 	background-color: white;
-	background-image: linear-gradient(to left, #428bca 35%, white 85%);
+	background-image: linear-gradient(to left, #428bca 45%, white 90%);
 }
 
 .gradient-gray {
 	background-color: transparent;
 	background-image: linear-gradient(to left, rgba(86, 99, 100, 0.89) 70%,
-		white 85%);
+		white 90%);
 }
 /* end menu section */
 
@@ -271,8 +271,31 @@
 	font-weight: bold;
 	text-decoration: none;
 }
-
 /* end menu dropdown */
+
+/* background */
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.silk {
+	background-color: rgba(255, 255, 255, 0.50);
+	 background-image:
+    radial-gradient(
+      circle at top right,
+      white,
+      #546263 85%
+    );
+}
+
+.bg-grey {
+	background: #546263;
+}
+
+/* end background */
 
 /* footer */
 .footer {
@@ -373,8 +396,8 @@
 											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
 												href="">ASFDGFHVGH</a></li>
 										</ul></li>
-										
-										<li class="menu-header-li"><a href=""
+
+									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> RESOURCES </a>
 										<ul class="dropdown-menu-container">
 											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
@@ -383,21 +406,21 @@
 												href="">ASFGHJMK</a></li>
 											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
 												href="">ASFDGFHVGH</a></li>
-												<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
 												href="">QWERYU</a></li>
 											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
 												href="">ASFGHJMK</a></li>
 											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
 												href="">ASFDGFHVGH</a></li>
 										</ul></li>
-										
-										<li class="menu-header-li"><a href=""
+
+									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> DEVELOPER </a>
 										<ul class="dropdown-menu-container">
 											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
 												href="">QWERYU</a></li>
 										</ul></li>
-									
+
 								</ul>
 							</div>
 						</div>
@@ -413,20 +436,22 @@
 		<img width="100%" src="/assets/img/bg-col-xl-shape-thin.jpg" alt="" />
 
 		<div id="content">
-			<div class="inner" style="min-height: 700px;">
-				<div class="row">
-					<div class="col-lg-12">
+			<div class="inner" style="min-height: 700px; padding: 0;">
+				<div id="intro" class="bg-grey" style="padding: 50px 0px;min-height: 1000px;">
+				<div class="silk">
+				<div class="container">
+						<div class="row" style="padding-top: 6rem; padding-bottom: 6rem;">
 
-						<h1>Admin Dashboard</h1>
+
+
+
+
+						</div>
 					</div>
+				
 				</div>
-				<hr />
-
-
-
-
-
-
+		
+				</div>
 			</div>
 		</div>
 		<!--END PAGE CONTENT -->
