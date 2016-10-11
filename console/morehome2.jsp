@@ -185,7 +185,7 @@
 	margin-right: -1px;
 }
 
-.menu-header .menu-header-li:hover .dropdown-menu, 
+.menu-header .menu-header-li:hover .dropdown-menu-container, 
 .menu-header .menu-header-li .menu-header-a:hover
 	{
 	color: #46b8da;
@@ -207,15 +207,15 @@ display: block;
 
 
 /* menu dropdown */
-.dropdown-menu {
+.dropdown-menu-container {
 	position: absolute;
-	display: block;                        /*test*/
+	display: block;             /*test*/
 /*	visibility: hidden;*/
 /*	opacity: 0;*/
 /*	pointer-events: none;*/
 	border-radius: 0;
 	background-color: rgba(86, 99, 100, 0.89);
-	margin-top: 1px !important;
+	margin-top: 2px !important;
 	width: 100%;
 	border-left: none;
 	border-right: none;
@@ -225,8 +225,8 @@ display: block;
 	left: 0;
 	z-index: 1000;
 /*	float: left; */
-/*	padding: 5px 0;*/
-/*	margin: 2px 0 0;*/
+	padding: 0;
+	margin: 2px 0 0;
 	list-style: none;
 	font-size: 14px;
 	text-align: center;
@@ -252,7 +252,7 @@ display: block;
 }*/
 
 .dropdown-menu-a {
-	padding: 15px 0px; //
+	padding: 20px 0px; //
 	text-align: center;
 	white-space: normal;
 	color: #fff;
@@ -271,14 +271,13 @@ display: block;
 }
 
 .dropdown-menu-a:hover,
-.dropdown-menu-a:focus{
-	background-color: rgba(86, 99, 100, 1);
-	color: #46b8da;
+.dropdown-menu-a:focus
+{
+	background-color: #c5c7c9;
+	color: #000;
 	text-decoration: none;
 	
 }
-
-
 
 /* end menu dropdown */
 
@@ -365,7 +364,7 @@ display: block;
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a" 
 										> PLATFORM </a>
-										<ul class="dropdown-menu">
+										<ul class="dropdown-menu-container">
 										<li class="dropdown-menu-a">
 											<a class="dropdown-menu-a"
 												href="">QWERYU</a></li>
