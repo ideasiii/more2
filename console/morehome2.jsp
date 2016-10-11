@@ -182,24 +182,31 @@
 	font-size: 1em;
 	letter-spacing: 0.05em;
 	position: relative;
-	margin-right: -1px;
-	width:100%;
+	/*	margin-right: -1px;*/
+	width: 100%;
 }
 
-.menu-header .menu-header-li:hover .dropdown-menu-container,
-	.menu-header .menu-header-li .menu-header-a:hover {
+.menu-header .menu-header-li:hover .dropdown-menu-container {
 	color: #46b8da;
 	display: block;
 }
 
+.menu-header .menu-header-li .menu-header-a:hover {
+	color: #46b8da;
+	display: block;
+	font-weight: bold;
+	background-color: rgba(86, 99, 100, 1);
+	background-image: radial-gradient(#000, rgba(86, 99, 100, 1) 70%);
+}
+
 .gradient-blue {
 	background-color: white;
-	background-image: linear-gradient(to left, #428bca 40%, white 85%);
+	background-image: linear-gradient(to left, #428bca 35%, white 85%);
 }
 
 .gradient-gray {
 	background-color: transparent;
-	background-image: linear-gradient(to left, rgba(86, 99, 100, 0.89) 60%,
+	background-image: linear-gradient(to left, rgba(86, 99, 100, 0.89) 70%,
 		white 85%);
 }
 /* end menu section */
@@ -207,7 +214,7 @@
 /* menu dropdown */
 .dropdown-menu-container {
 	position: absolute;
-	display: none;               /*test*/
+	display: none; /*test*/
 	/*	visibility: hidden;*/
 	/*	opacity: 0;*/
 	/*	pointer-events: none;*/
@@ -255,12 +262,8 @@
 }
 
 .dropdown-menu-li:hover {
-	background-color: #949494;
-	background-image:
-    radial-gradient(
-     white,
-      #949494 90%
-    );
+	background-color: rgba(86, 99, 100, 0);
+	background-image: radial-gradient(white, rgba(86, 99, 100, 0) 65%);
 }
 
 .dropdown-menu-li:hover a {
@@ -355,23 +358,46 @@
 										class="menu-header-a"> PLATFORM </a>
 										<ul class="dropdown-menu-container">
 											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+												href="">MORE MDM</a></li>
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+												href="">MORE API</a></li>
+										</ul></li>
+
+									<li class="menu-header-li"><a href=""
+										class="menu-header-a"> DASHBOARD </a>
+										<ul class="dropdown-menu-container">
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+												href="">QWERYU</a></li>
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+												href="">ANALYSIS</a></li>
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+												href="">ASFDGFHVGH</a></li>
+										</ul></li>
+										
+										<li class="menu-header-li"><a href=""
+										class="menu-header-a"> RESOURCES </a>
+										<ul class="dropdown-menu-container">
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+												href="">MORE SDK</a></li>
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+												href="">ASFGHJMK</a></li>
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+												href="">ASFDGFHVGH</a></li>
+												<li class="dropdown-menu-li"><a class="dropdown-menu-a"
 												href="">QWERYU</a></li>
 											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
 												href="">ASFGHJMK</a></li>
 											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
 												href="">ASFDGFHVGH</a></li>
 										</ul></li>
-
-
-									<li class="menu-header-li dropdown"><a href=""
-										class="menu-header-a dropdown-toggle" role="button"
-										aria-haspopup="1"> DASHBOARD </a></li>
-									<li class="menu-header-li dropdown"><a href=""
-										class="menu-header-a dropdown-toggle" role="button"
-										aria-haspopup="1"> RESOURCES </a></li>
-									<li class="menu-header-li dropdown"><a href=""
-										class="menu-header-a dropdown-toggle" role="button"
-										aria-haspopup="1"> DEVELOPER </a></li>
+										
+										<li class="menu-header-li"><a href=""
+										class="menu-header-a"> DEVELOPER </a>
+										<ul class="dropdown-menu-container">
+											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+												href="">QWERYU</a></li>
+										</ul></li>
+									
 								</ul>
 							</div>
 						</div>
