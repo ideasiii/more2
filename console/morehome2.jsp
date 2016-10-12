@@ -192,7 +192,7 @@
 }
 
 .menu-header .menu-header-li .menu-header-a:hover {
-	color: #46b8da;
+	color: #9fd256;               /*#46b8da;*/
 	display: block;
 	font-weight: bold;
 	background-color: rgba(86, 99, 100, 1);
@@ -267,13 +267,13 @@
 }
 
 .dropdown-menu-li:hover a {
-	color: #428bca;
+	color: #357ebd;
 	font-weight: bold;
 	text-decoration: none;
 }
 /* end menu dropdown */
 
-/* background */
+/* text background */
 .container {
 	margin-right: auto;
 	margin-left: auto;
@@ -283,19 +283,68 @@
 
 .silk {
 	background-color: rgba(255, 255, 255, 0.50);
-	 background-image:
-    radial-gradient(
-      circle at top right,
-      white,
-      #546263 85%
-    );
+	background-image: radial-gradient(circle at top right, white 10%, #546263 90%);
+}
+
+.container-text {
+	padding: 6rem 8rem;
+	/*	padding-left:10rem;*/
+	text-align: right;
 }
 
 .bg-grey {
 	background: #546263;
 }
 
-/* end background */
+.bg-white {
+	background: #fff;
+}
+
+.bg-blue {
+	background: #357ebd;
+}
+
+.bg-green {
+	background: #9fd256;
+}
+
+.bg-orange {
+	background: #F08800;
+}
+
+.bg-purple {
+	background: #a264e7;
+}
+
+.vline-right-bk {
+	border-right: 10px solid #F08800;
+	padding-right: 10px;
+}
+
+.photo{
+	border-radius:5px;
+	visibility: hidden;
+	z-index:1005;
+}
+
+@media (min-width: 992px) {
+.photoframe{
+	position:absolute;
+    top:110px;
+    right:65%;
+    z-index:1000;
+    background-color:#F08800;
+	text-align:center;
+	border:5px solid #F08800;
+}
+.photo{
+	border-radius:5px;
+	visibility: visible;
+	z-index:1005;
+}
+}
+
+/* end text background */
 
 /* footer */
 .footer {
@@ -437,21 +486,46 @@
 
 		<div id="content">
 			<div class="inner" style="min-height: 700px; padding: 0;">
-				<div id="intro" class="bg-grey" style="padding: 50px 0px;min-height: 1000px;">
-				<div class="silk">
-				<div class="container">
-						<div class="row" style="padding-top: 6rem; padding-bottom: 6rem;">
+				<div id="intro" class="bg-grey"
+					style="padding: 50px 0px; min-height: 500px;">
+					<div class="silk">
+						<div class="container">
+							<div class="row container-text">
 
+								<h2 style="font-weight: bold; padding-right: 20px;">MORE
+									Platform</h2>
+								<h3 style="font-weight: bold;" class="vline-right-bk">
+									<p>將多項服務與應用包裝成多個獨立的模組</p>
+									<p>提供給APP開發人員加入到APP專案裡</p>
+									<p>透過API呼叫即可執行多種應用與服務</p>
+								</h3>
 
-
-
-
+							</div>
 						</div>
 					</div>
-				
+					<div class="photoframe">
+					<img src="/assets/img/sample1.png" class="photo" >
+					
+					
+					</div>
+					
 				</div>
-		
+
+				<div id="intro" class="bg-white"
+					style="padding: 50px 0px; min-height: 500px;">
+
+					<div class="silk">
+						<div class="container">
+						
+						
+						
+						
+						
+						</div>
+					</div>
 				</div>
+
+
 			</div>
 		</div>
 		<!--END PAGE CONTENT -->
