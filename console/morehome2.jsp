@@ -192,11 +192,11 @@
 }
 
 .menu-header .menu-header-li .menu-header-a:hover {
-	color: #9fd256;               /*#46b8da;*/
-	display: block;
+	color: #9fd256; /*#46b8da;*/ display : block;
 	font-weight: bold;
 	background-color: rgba(86, 99, 100, 1);
 	background-image: radial-gradient(#000, rgba(86, 99, 100, 1) 70%);
+	display: block;
 }
 
 .gradient-blue {
@@ -281,11 +281,19 @@
 	padding-right: 5px;
 }
 
-.silk {
+.silk-white {
 	background-color: rgba(255, 255, 255, 0.50);
 	background-image: radial-gradient(circle at top right, white 10%, #546263 90%);
 }
 
+.silk-white-green {
+	background-color: rgba(255, 255, 255, 0.50);
+	background-image: radial-gradient(circle at top right, white 10%, #9fd256 90%);
+}
+.silk-grey {
+	background-color: rgba(255, 255, 255, 0.50);
+	background-image: radial-gradient(circle at top left, #546263 10%, white 90%);
+}
 .container-text {
 	padding: 6rem 8rem;
 	/*	padding-left:10rem;*/
@@ -316,32 +324,42 @@
 	background: #a264e7;
 }
 
-.vline-right-bk {
+.vline-right-orange {
 	border-right: 10px solid #F08800;
 	padding-right: 10px;
 }
 
-.photo{
-	border-radius:5px;
-	visibility: hidden;
-	z-index:1005;
+.vline-right-green {
+	border-right: 10px solid #9fd256;
+	padding-right: 10px;
 }
 
-@media (min-width: 992px) {
-.photoframe{
-	position:absolute;
-    top:110px;
-    right:65%;
-    z-index:1000;
-    background-color:#F08800;
-	text-align:center;
-	border:5px solid #F08800;
+.vline-right-blue {
+	border-right: 10px solid #428bca;
+	padding-right: 10px;
 }
-.photo{
-	border-radius:5px;
-	visibility: visible;
-	z-index:1005;
+
+.photo {
+	border-radius: 5px;
+	visibility: hidden;
+	z-index: 1005;
 }
+
+@media ( min-width : 992px) {
+	.photoframe {
+		position: absolute;
+		top: 110px;
+		right: 65%;
+		z-index: 1000;
+		background-color: #F08800;
+		text-align: center;
+		border: 5px solid #F08800;
+	}
+	.photo {
+		border-radius: 5px;
+		visibility: visible;
+		z-index: 1005;
+	}
 }
 
 /* end text background */
@@ -488,13 +506,13 @@
 			<div class="inner" style="min-height: 700px; padding: 0;">
 				<div id="intro" class="bg-grey"
 					style="padding: 50px 0px; min-height: 500px;">
-					<div class="silk">
+					<div class="silk-white">
 						<div class="container">
 							<div class="row container-text">
 
-								<h2 style="font-weight: bold; padding-right: 20px;">MORE
+								<h2 style="font-weight: bold; padding-right: 20px;"><span style="color:#001075;">MORE</span>
 									Platform</h2>
-								<h3 style="font-weight: bold;" class="vline-right-bk">
+								<h3 style="font-weight: bold;" class="vline-right-orange">
 									<p>將多項服務與應用包裝成多個獨立的模組</p>
 									<p>提供給APP開發人員加入到APP專案裡</p>
 									<p>透過API呼叫即可執行多種應用與服務</p>
@@ -504,27 +522,50 @@
 						</div>
 					</div>
 					<div class="photoframe">
-					<img src="/assets/img/sample1.png" class="photo" >
-					
-					
+						<img src="/assets/img/sample1.png" class="photo">
 					</div>
-					
+
 				</div>
 
-				<div id="intro" class="bg-white"
+				<div id="" class="bg-white"
 					style="padding: 50px 0px; min-height: 500px;">
 
-					<div class="silk">
+					<div class="silk-grey">
 						<div class="container">
-						
-						
-						
-						
-						
+						<div class="row container-text">
+
+								<h2 style="font-weight: bold; padding-right: 20px;">MORE
+									Platform</h2>
+								<h3 style="font-weight: bold;" class="vline-right-green">
+									<p>將多項服務與應用包裝成多個獨立的模組</p>
+									<p>提供給APP開發人員加入到APP專案裡</p>
+									<p>透過API呼叫即可執行多種應用與服務</p>
+								</h3>
+
+							</div>
 						</div>
 					</div>
 				</div>
 
+				<div id="" class="bg-green"
+					style="padding: 50px 0px; min-height: 500px;">
+
+					<div class="silk-white-green">
+						<div class="container">
+						<div class="row container-text">
+
+								<h2 style="font-weight: bold; padding-right: 20px;">MORE
+									Platform</h2>
+								<h3 style="font-weight: bold;" class="vline-right-blue">
+									<p>將多項服務與應用包裝成多個獨立的模組</p>
+									<p>提供給APP開發人員加入到APP專案裡</p>
+									<p>透過API呼叫即可執行多種應用與服務</p>
+								</h3>
+
+							</div>
+							</div>
+					</div>
+				</div>
 
 			</div>
 		</div>
