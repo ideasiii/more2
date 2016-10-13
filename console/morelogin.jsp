@@ -18,17 +18,28 @@
     }
 
     final String strHostUrl = request.getRequestURL().toString();
+    final String strShowIosSdk = request.getParameter(Common.IOS);
+
+    ArrayList<More.SdkData> listSdk = new ArrayList<More.SdkData>();
+    int nCount = more.querySdk(listSdk);
+    int nshowSdkType = 0;
+    if (StringUtility.isValid(strShowIosSdk) && strShowIosSdk.trim().equals(Common.IOS))
+		nshowSdkType = 1;
+
+    final String strContextPath = request.getContextPath();
     final String uri = request.getRequestURI();
     final String pageName = uri.substring(uri.lastIndexOf("/") + 1);
-%>
 
+    // test
+    String strP1 = request.getParameter("1");
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="MORE">
 <meta name="description" content="MORE">
-<title>MORE HOME</title>
+<title>Login | MORE</title>
 
 <!-- GLOBAL STYLES -->
 <link rel="stylesheet"
@@ -42,9 +53,10 @@
 	href="/assets/plugins/font-awesome-4.6.2/css/font-awesome_3.css" />
 <!--END GLOBAL STYLES -->
 
-<!-- PAGE LEVEL STYLES -->
-
-<!-- END PAGE LEVEL  STYLES -->
+  <!-- PAGE LEVEL STYLES -->
+    <link rel="stylesheet" href="/assets/css/login.css" />
+    <link rel="stylesheet" href="/assets/plugins/magic/magic.css" />
+     <!-- END PAGE LEVEL STYLES -->
 
 <!-- JavaScript -->
 
@@ -192,7 +204,8 @@
 }
 
 .menu-header .menu-header-li .menu-header-a:hover {
-	color: #9fd256; /*#46b8da;*/ display : block;
+	color: #9fd256; /*#46b8da;*/
+	display: block;
 	font-weight: bold;
 	background-color: rgba(86, 99, 100, 1);
 	background-image: radial-gradient(#000, rgba(86, 99, 100, 1) 70%);
@@ -512,72 +525,63 @@
 
 
 		<!--PAGE CONTENT -->
-		<img width="100%" src="/assets/img/bg-col-xl-shape-thin.jpg" alt="" />
-
 		<div id="content">
-			<div class="inner" style="min-height: 700px; padding: 0;">
-				<div id="intro" class="bg-grey"
-					style="padding: 50px 0px; min-height: 500px;">
-					<div class="silk-white">
-						<div class="container">
-							<div class="row container-text-r">
-
-								<h2 style="font-weight: bold; padding-right: 20px;"><span style="color:#001075;">MORE</span>
-									Platform</h2>
-								<h3 style="font-weight: bold;" class="vline-right-orange">
-									<p>將多項服務與應用包裝成多個獨立的模組</p>
-									<p>提供給APP開發人員加入到APP專案裡</p>
-									<p>透過API呼叫即可執行多種應用與服務</p>
-								</h3>
-
-							</div>
-						</div>
-					</div>
-					<div class="photoframe">
-						<img src="/assets/img/sample1.png" class="photo">
-					</div>
-
-				</div>
-
-				<div id="" class="bg-white"
-					style="padding: 50px 0px; min-height: 500px;">
-
+		<div class="inner" style="min-height: 700px; padding: 0;">
+		<div id="intro" class="bg-white"
+					style="padding: 80px 0px; min-height: 500px;">
 					<div class="silk-grey">
-						<div class="container">
-						<div class="row container-text-r">
-
-								<h2 style="font-weight: bold; padding-right: 20px;">Dashboard</h2>
-								<h3 style="font-weight: bold;" class="vline-right-green">
-									<p>將多項服務與應用包裝成多個獨立的模組</p>
-									<p>提供給APP開發人員加入到APP專案裡</p>
-									<p>透過API呼叫即可執行多種應用與服務</p>
-								</h3>
-
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="" class="bg-green"
-					style="padding: 50px 0px; min-height: 500px;">
-
-					<div class="silk-white-green">
-						<div class="container">
-						<div class="row container-text-r">
-
-								<h2 style="font-weight: bold; padding-right: 20px;">Resources</h2>
-								<h3 style="font-weight: bold;" class="vline-right-blue">
-									<p>將多項服務與應用包裝成多個獨立的模組</p>
-									<p>提供給APP開發人員加入到APP專案裡</p>
-									<p>透過API呼叫即可執行多種應用與服務</p>
-								</h3>
-
-							</div>
-							</div>
-					</div>
-				</div>
-
+		<div class="container">
+		<div class="row container-text-c">
+			
+			<div class="text-center">
+        <h2 style="font-weight: bold;"> Login to MORE</h2>
+    </div>
+    <div class="tab-content" style="border:0;padding:0;">
+        <div id="login" class="tab-pane active">
+            <form action="index.html" class="form-signin">
+                <h4 class="text-center">
+                    Enter Your E-mail and Password
+                </h4>
+                <input type="text" placeholder="E-mail Account" class="form-control" />
+                <input type="password" placeholder="Password" class="form-control" />
+                <button class="btn text-muted text-center btn-warning btn-grad" type="submit">Login</button>
+            </form>
+        </div>
+        <div id="forgot" class="tab-pane">
+            <form action="index.html" class="form-signin">
+                <h4 class="text-center">Enter Your Valid E-mail</h4>
+                <input type="email"  required="required" placeholder="Your E-mail"  class="form-control" />
+                <br />
+                <button class="btn text-muted text-center btn-success btn-grad" type="submit">Recover Password</button>
+            </form>
+        </div>
+        <div id="signup" class="tab-pane">
+            <form action="index.html" class="form-signin">
+                <h4 class="text-center">Please Fill Details to Register</h4>
+                 <input type="text" placeholder="E-mail Account" class="form-control" />
+                 <input type="text" placeholder="Name" class="form-control" />
+                <input type="text" placeholder="Organization" class="form-control" />
+                <input type="email" placeholder="Phone" class="form-control" />
+                <input type="password" placeholder="Password" class="form-control" />
+                <input type="password" placeholder="Retype Password" class="form-control" />
+                <button class="btn text-muted text-center btn-success btn-grad" type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <div class="text-center">
+        <ul class="list-inline">
+            <li><a class="text-muted" href="#login" data-toggle="tab">Login</a></li>
+            <li><a class="text-muted" href="#forgot" data-toggle="tab">Forgot Password</a></li>
+            <li><a class="text-muted" href="#signup" data-toggle="tab">Sign Up</a></li>
+        </ul>
+    </div>
+			
+			
+		</div>
+		</div>
+		</div>
 			</div>
+		</div>
 		</div>
 		<!--END PAGE CONTENT -->
 
@@ -621,6 +625,7 @@
 	<script src="/assets/plugins/flot/jquery.flot.time.js"></script>
 	<script src="/assets/plugins/flot/jquery.flot.stack.js"></script>
 	<script src="/assets/js/for_index.js"></script>
+	<script src="/assets/js/login.js"></script>
 	<!-- END PAGE LEVEL SCRIPTS -->
 
 </body>
