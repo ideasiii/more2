@@ -53,10 +53,13 @@
 	href="/assets/plugins/font-awesome-4.6.2/css/font-awesome_3.css" />
 <!--END GLOBAL STYLES -->
 
-  <!-- PAGE LEVEL STYLES -->
-    <link rel="stylesheet" href="/assets/css/login.css" />
-    <link rel="stylesheet" href="/assets/plugins/magic/magic.css" />
-     <!-- END PAGE LEVEL STYLES -->
+<!-- PAGE LEVEL STYLES -->
+
+<link
+	href="/assets/plugins/jquery-steps-master/demo/css/jquery.steps2.css"
+	rel="stylesheet" />
+
+<!-- END PAGE LEVEL STYLES -->
 
 <!-- JavaScript -->
 
@@ -303,10 +306,12 @@
 	background-color: rgba(255, 255, 255, 0.50);
 	background-image: radial-gradient(circle at top right, white 10%, #9fd256 90%);
 }
+
 .silk-grey {
 	background-color: rgba(255, 255, 255, 0.50);
 	background-image: radial-gradient(circle at top left, #546263 10%, white 90%);
 }
+
 .container-text-r {
 	padding: 6rem 8rem;
 	/*	padding-left:10rem;*/
@@ -526,62 +531,150 @@
 
 		<!--PAGE CONTENT -->
 		<div id="content">
-		<div class="inner" style="min-height: 600px; padding: 0;">
-		<div id="intro" class="bg-white"
-					style="padding: 80px 0px; min-height: 500px;">
-					<div class="silk-grey">
-		<div class="container">
-		<div class="row container-text-c">
-			
-			<div class="text-center">
-        <h2 style="font-weight: bold;"> Login to MORE</h2>
-    </div>
-    <div class="tab-content" style="border:0;padding:0;">
-        <div id="login" class="tab-pane active">
-            <form action="index.html" class="form-signin">
-                <h4 class="text-center">
-                    Enter Your E-mail and Password
-                </h4>
-                <input type="text" placeholder="E-mail Account" class="form-control" />
-                <input type="password" placeholder="Password" class="form-control" />
-                <button class="btn text-muted text-center btn-warning btn-grad" type="submit">Login</button>
-            </form>
-        </div>
-        <div id="forgot" class="tab-pane">
-            <form action="index.html" class="form-signin">
-                <h4 class="text-center">Enter Your Valid E-mail</h4>
-                <input type="email"  required="required" placeholder="Your E-mail"  class="form-control" />
-                <br />
-                <button class="btn text-muted text-center btn-success btn-grad" type="submit">Recover Password</button>
-            </form>
-        </div>
-        <div id="signup" class="tab-pane">
-            <form action="index.html" class="form-signin">
-                <h4 class="text-center">Please Fill Details to Register</h4>
-                 <input type="text" placeholder="E-mail Account" class="form-control" />
-                 <input type="text" placeholder="Name" class="form-control" />
-                <input type="text" placeholder="Organization" class="form-control" />
-                <input type="email" placeholder="Phone" class="form-control" />
-                <input type="password" placeholder="Password" class="form-control" />
-                <input type="password" placeholder="Retype Password" class="form-control" />
-                <button class="btn text-muted text-center btn-success btn-grad" type="submit">Register</button>
-            </form>
-        </div>
-    </div>
-    <div class="text-center">
-        <ul class="list-inline">
-            <li><a class="text-muted" href="#login" data-toggle="tab">Login</a></li>
-            <li><a class="text-muted" href="#forgot" data-toggle="tab">Forgot Password</a></li>
-            <li><a class="text-muted" href="#signup" data-toggle="tab">Sign Up</a></li>
-        </ul>
-    </div>
-			
-			
-		</div>
-		</div>
-		</div>
+			<div class="inner" style="min-height: 700px; padding: 0;">
+				<div id="intro" class="silk-grey"
+					style="padding: 50px 0px; min-height: 700px;">
+				
+						<div class="container">
+							<div class="row container-text-c"style="padding: 1rem 8rem;">
+
+								<div class="text-center" style="padding: 2rem 0;">
+									<h2 style="font-weight: bold;">Sign Up For MORE Account</h2>
+								</div>
+
+								<div id="wizard">
+									<h2>Agreement</h2>
+									<section style="overflow-y: scroll;">
+										<div style="padding-left: 15px;text-align:left;">
+											<p style="text-align: justify; color: gray;">
+												<b>Notification and Letter of Consent for Collection,
+													Processing and Use of Personal Information<br /> (Version: P-X-X)</b>
+												<br /> <br /> MAccording to the R.O.C. Personal
+												Information Protection Act and the internal
+												policy/regulations of Institute for Information Industry
+												(hereinafter referred to as “III”), III is obligated to make
+												the following notification known to you before you provide
+												personal information to III. Please read it carefully. <br />
+												<br />1. Purposes and Categories of Personal Information to
+												be Collected For the purpose of carrying out III’s business,
+												activity or project, the purpose of providing service,
+												internal administrative management or reporting to the
+												competent authority, the purpose complying with the
+												Endowment, or the purpose of sending III’s or industry
+												relevant information, III needs you to provide these
+												categories of personal information: name, contact
+												information (such as phone number, title, e-mail address,
+												residential or office address), ID card number, or other
+												information which may be used to identify you directly or
+												indirectly. <br /> <br /> Note: You may choose, at any
+												time in the future, not to receive any promotional
+												information from III by clicking the link provided in the
+												promotional message. <br /> <br /> 2. Time Period, Area,
+												Target and Way of the Use of Personal Information Unless the
+												purposes of use relating to international businesses or
+												activities, your personal information will be used solely by
+												III in a reasonable way in the territory of the Republic of
+												China to the extent necessary to implement the purposes of
+												collection until the purposes of collection prescribed above
+												is fulfilled. <br /> <br /> 3. Your Rights with regard to
+												Personal Information Provided You may exercise the following
+												rights in pursuant to the rules of the activities/project or
+												by submitting your inquiry/request on our website
+												(http://www.iii.org.tw/) at “Application for Exercising
+												Rights with Regard to Personal Information” page: <br />
+												(1) any inquiry and request for a review of the personal
+												information;<br /> (2) any request to make duplications of
+												the personal information;<br /> (3) any request to
+												supplement or correct the personal information;<br /> (4)
+												any request to discontinue collection, processing or use of
+												the personal information; <br /> (5) any request to delete
+												the personal information.<br />
+												<br /> 4. The Influence on Your Rights and Interests while
+												You Choose not to Provide Your Personal Information<br />
+												If you provide incorrect personal information or choose not
+												to provide your personal information to III, III may not be
+												able to provide you with services relating to the purposes
+												prescribed above. <br />
+												<br /> 5. You understand that this document complies with
+												the R.O.C. Personal Information Protection Act and relating
+												regulations, and you agree that III keeps this document for
+												further checking. <br />
+												<br />
+
+											</p>
+
+											<form>
+												<div class="checkbox">
+												<input type="checkbox" id="ch1" /> <label class="text-danger"
+														for="ch1">I have read and understood the above notification.</label>
+														</div>
+														<div class="checkbox">
+													<input type="checkbox" id="ch2" class="danger" /> <label class="text-danger"
+														for="ch2">I agreed that III may collect, process and use my personal information for the purposes of collection prescribed above.</label>
+												</div>
+
+											</form>
+
+										</div>
+									</section>
+
+									<h2>Personal</h2>
+									<section style="width: 100%; padding: 25px 10rem;">
+
+										<form role="form">
+											<div class="form-group">
+												<label>Name</label> <input class="form-control" />
+												<p class="help-block">Example block-level help text
+													here.</p>
+											</div>
+											<div class="form-group">
+												<label>Organization</label> <input class="form-control" />
+												<p class="help-block">Example block-level help text
+													here.</p>
+											</div>
+											<div class="form-group">
+												<label>Phone</label> <input class="form-control" />
+												<p class="help-block">Example block-level help text
+													here.</p>
+											</div>
+
+
+										</form>
+
+									</section>
+
+
+
+									<h2>Login</h2>
+									<section style="width: 100%; padding: 25px 8rem;">
+										<form role="form">
+											<div class="form-group">
+												<label>E-mail Account</label> <input class="form-control" />
+												<p class="help-block">Example block-level help text
+													here.</p>
+											</div>
+											<div class="form-group">
+												<label>Password</label> <input class="form-control" />
+												<p class="help-block">Example block-level help text
+													here.</p>
+											</div>
+											<div class="form-group">
+												<label>Retype Password</label> <input class="form-control" />
+												<p class="help-block">Example block-level help text
+													here.</p>
+											</div>
+										</form>
+									</section>
+								</div>
+
+
+
+
+							</div>
+						</div>
+				
+				</div>
 			</div>
-		</div>
 		</div>
 		<!--END PAGE CONTENT -->
 
@@ -624,8 +717,12 @@
 	<script src="/assets/plugins/flot/jquery.flot.resize.js"></script>
 	<script src="/assets/plugins/flot/jquery.flot.time.js"></script>
 	<script src="/assets/plugins/flot/jquery.flot.stack.js"></script>
-	<script src="/assets/js/for_index.js"></script>
-	<script src="/assets/js/login.js"></script>
+	<script
+		src="/assets/plugins/jquery-steps-master/lib/jquery.cookie-1.3.1.js"></script>
+	<script
+		src="/assets/plugins/jquery-steps-master/build/jquery.steps2.js"></script>
+	<script src="/assets/js/WizardInit.js"></script>
+
 	<!-- END PAGE LEVEL SCRIPTS -->
 
 </body>
