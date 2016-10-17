@@ -62,9 +62,10 @@
 <!-- END PAGE LEVEL STYLES -->
 
 <!-- JavaScript -->
+<script type="text/javascript">
 
 
-
+</script>
 
 <style>
 
@@ -603,13 +604,13 @@
 
 											</p>
 
-											<form>
+											<form role="form" name="formAgreement" id="formAgreement">
 												<div class="checkbox">
 												<input type="checkbox" id="ch1" /> <label class="text-danger"
 														for="ch1">I have read and understood the above notification.</label>
 														</div>
 														<div class="checkbox">
-													<input type="checkbox" id="ch2" class="danger" /> <label class="text-danger"
+													<input type="checkbox" id="ch2" /> <label class="text-danger"
 														for="ch2">I agreed that III may collect, process and use my personal information for the purposes of collection prescribed above.</label>
 												</div>
 
