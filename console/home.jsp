@@ -432,7 +432,7 @@
 				<!-- LOGO SECTION -->
 				<header>
 					<div class="header-angle navbar-brand">
-						<a href="morehome2.jsp" class="navbar-brand"> <img
+						<a href="home.jsp" class="navbar-brand"> <img
 							class="logo" height="80"
 							src="/assets/img/more_logo_white_board_sm.png" alt="" />
 						</a>
@@ -443,9 +443,9 @@
 					<div class="super-header gradient-blue">
 						<ul class="super-header-ul">
 							<li class="super-header-li"><a class="super-header-a"
-								href="">Login</a></li>
+								href="login.jsp">Login</a></li>
 							<li class="super-header-li"><a class="super-header-a"
-								href="">Sign Up</a></li>
+								href="signup.jsp">Sign Up</a></li>
 
 						</ul>
 					</div>
