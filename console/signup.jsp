@@ -9,29 +9,28 @@
 <%@ page import="sdk.ideas.Logs"%>
 <%
     final String strToken = request.getParameter(Common.USER_TOKEN);
-    More more = new More();
-    boolean bLogined = false;
+			More more = new More();
+			boolean bLogined = false;
 
-    if (null != strToken && !strToken.trim().equals("null") && StringUtility.isValid(strToken))
-    {
-		bLogined = true;
-    }
+			if (null != strToken && !strToken.trim().equals("null") && StringUtility.isValid(strToken)) {
+				bLogined = true;
+			}
 
-    final String strHostUrl = request.getRequestURL().toString();
-    final String strShowIosSdk = request.getParameter(Common.IOS);
+			final String strHostUrl = request.getRequestURL().toString();
+			final String strShowIosSdk = request.getParameter(Common.IOS);
 
-    ArrayList<More.SdkData> listSdk = new ArrayList<More.SdkData>();
-    int nCount = more.querySdk(listSdk);
-    int nshowSdkType = 0;
-    if (StringUtility.isValid(strShowIosSdk) && strShowIosSdk.trim().equals(Common.IOS))
-		nshowSdkType = 1;
+			ArrayList<More.SdkData> listSdk = new ArrayList<More.SdkData>();
+			int nCount = more.querySdk(listSdk);
+			int nshowSdkType = 0;
+			if (StringUtility.isValid(strShowIosSdk) && strShowIosSdk.trim().equals(Common.IOS))
+				nshowSdkType = 1;
 
-    final String strContextPath = request.getContextPath();
-    final String uri = request.getRequestURI();
-    final String pageName = uri.substring(uri.lastIndexOf("/") + 1);
+			final String strContextPath = request.getContextPath();
+			final String uri = request.getRequestURI();
+			final String pageName = uri.substring(uri.lastIndexOf("/") + 1);
 
-    // test
-    String strP1 = request.getParameter("1");
+			// test
+			String strP1 = request.getParameter("1");
 %>
 <!DOCTYPE html>
 <html>
@@ -63,8 +62,7 @@
 
 <!-- JavaScript -->
 <script type="text/javascript">
-
-
+	
 </script>
 
 <style>
@@ -451,7 +449,7 @@
 				<!-- LOGO SECTION -->
 				<header>
 					<div class="header-angle navbar-brand">
-						<a href="morehome2.jsp" class="navbar-brand"> <img
+						<a href="home.jsp" class="navbar-brand"> <img
 							class="logo" height="80"
 							src="/assets/img/more_logo_white_board_sm.png" alt="" />
 						</a>
@@ -462,9 +460,9 @@
 					<div class="super-header gradient-blue">
 						<ul class="super-header-ul">
 							<li class="super-header-li"><a class="super-header-a"
-								href="">Login</a></li>
+								href="login.jsp">Login</a></li>
 							<li class="super-header-li"><a class="super-header-a"
-								href="">Sign Up</a></li>
+								href="signup.jsp">Sign Up</a></li>
 
 						</ul>
 					</div>
@@ -535,22 +533,26 @@
 			<div class="inner" style="min-height: 700px; padding: 0;">
 				<div id="intro" class="silk-grey"
 					style="padding: 50px 0px; min-height: 700px;">
-				
-						<div class="container">
-							<div class="row container-text-c"style="padding: 1rem 8rem;">
 
-								<div class="text-center" style="padding: 2rem 0;">
-									<h2 style="font-weight: bold;">Sign Up For MORE Account</h2>
-								</div>
+					<div class="container">
+						<div class="row container-text-c" style="padding: 1rem 8rem;">
 
+							<div class="text-center" style="padding: 2rem 0;">
+								<h2 style="font-weight: bold;">Sign Up For MORE Account</h2>
+							</div>
+							
+							<form role="form" name="formSignUp" id="formSignUp">
+							
+							
 								<div id="wizard">
 									<h2>Agreement</h2>
 									<section style="overflow-y: scroll;">
-										<div style="padding-left: 15px;text-align:left;">
+										<div style="padding-left: 15px; text-align: left;">
 											<p style="text-align: justify; color: gray;">
 												<b>Notification and Letter of Consent for Collection,
-													Processing and Use of Personal Information<br /> (Version: P-X-X)</b>
-												<br /> <br /> MAccording to the R.O.C. Personal
+													Processing and Use of Personal Information<br /> (Version:
+													P-X-X)
+												</b> <br /> <br /> MAccording to the R.O.C. Personal
 												Information Protection Act and the internal
 												policy/regulations of Institute for Information Industry
 												(hereinafter referred to as “III”), III is obligated to make
@@ -589,32 +591,30 @@
 												supplement or correct the personal information;<br /> (4)
 												any request to discontinue collection, processing or use of
 												the personal information; <br /> (5) any request to delete
-												the personal information.<br />
-												<br /> 4. The Influence on Your Rights and Interests while
-												You Choose not to Provide Your Personal Information<br />
-												If you provide incorrect personal information or choose not
-												to provide your personal information to III, III may not be
-												able to provide you with services relating to the purposes
-												prescribed above. <br />
+												the personal information.<br /> <br /> 4. The Influence on
+												Your Rights and Interests while You Choose not to Provide
+												Your Personal Information<br /> If you provide incorrect
+												personal information or choose not to provide your personal
+												information to III, III may not be able to provide you with
+												services relating to the purposes prescribed above. <br />
 												<br /> 5. You understand that this document complies with
 												the R.O.C. Personal Information Protection Act and relating
 												regulations, and you agree that III keeps this document for
-												further checking. <br />
-												<br />
+												further checking. <br /> <br />
 
 											</p>
-
-											<form role="form" name="formSignUp1" id="formSignUp1">
+										
 												<div class="checkbox">
-												<input type="checkbox" id="ch1" /> <label class="text-danger"
-														for="ch1">I have read and understood the above notification.</label>
-														</div>
-														<div class="checkbox">
-													<input type="checkbox" id="ch2" /> <label class="text-danger"
-														for="ch2">I agreed that III may collect, process and use my personal information for the purposes of collection prescribed above.</label>
+													<input type="checkbox" id="ch1" /> <label
+														class="text-danger" for="ch1">I have read and
+														understood the above notification.</label>
 												</div>
-
-											</form>
+												<div class="checkbox">
+													<input type="checkbox" id="ch2" /> <label
+														class="text-danger" for="ch2">I agreed that III
+														may collect, process and use my personal information for
+														the purposes of collection prescribed above.</label>
+												</div>
 
 										</div>
 									</section>
@@ -622,58 +622,52 @@
 									<h2>Personal</h2>
 									<section style="width: 100%; padding: 25px 10rem;">
 
-										<form role="form" name="formSignUp2">
-											<div class="form-group">
-												<label>Name</label> <input type="text" name="name" class="form-control" />
-												<p class="help-block">Example block-level help text
-													here.</p>
-											</div>
-											<div class="form-group">
-												<label>Organization</label> <input type="text" name="organization" class="form-control" />
-												<p class="help-block">Example block-level help text
-													here.</p>
-											</div>
-											<div class="form-group">
-												<label>Phone</label> <input type="text" name="phone" class="form-control" />
-												<p class="help-block">Example block-level help text
-													here.</p>
-											</div>
-
-
-										</form>
-
+										<div class="form-group">
+											<label>Name</label> <input type="text" name="inputName"
+												class="form-control" />
+											<p class="help-block">Example block-level help text here.</p>
+										</div>
+										<div class="form-group">
+											<label>Organization</label> <input type="text"
+												name="inputOrganization" class="form-control" />
+											<p class="help-block">Example block-level help text here.</p>
+										</div>
+										<div class="form-group">
+											<label>Phone</label> <input type="text" name="inputPhone"
+												class="form-control" />
+											<p class="help-block">Example block-level help text here.</p>
+										</div>
 									</section>
-
 
 
 									<h2>Login</h2>
 									<section style="width: 100%; padding: 25px 8rem;">
-										<form role="form" name="formSignUp3">
-											<div class="form-group">
-												<label>E-mail Account</label> <input type="text" name="email" class="form-control" />
-												<p class="help-block">Example block-level help text
-													here.</p>
-											</div>
-											<div class="form-group">
-												<label>Password</label> <input type="text" name="password" class="form-control" />
-												<p class="help-block">Example block-level help text
-													here.</p>
-											</div>
-											<div class="form-group">
-												<label>Retype Password</label> <input type="text" name="password2" class="form-control" />
-												<p class="help-block">Example block-level help text
-													here.</p>
-											</div>
-										</form>
+
+										<div class="form-group">
+											<label>E-mail Account</label> <input type="text"
+												name="inputEmail" class="form-control" />
+											<p class="help-block">Example block-level help text here.</p>
+										</div>
+										<div class="form-group">
+											<label>Password</label> <input type="text"
+												name="inputPassword" class="form-control" />
+											<p class="help-block">Example block-level help text here.</p>
+										</div>
+										<div class="form-group">
+											<label>Retype Password</label> <input type="text"
+												name="inputPassword2" class="form-control" />
+											<p class="help-block">Example block-level help text here.</p>
+										</div>
+
 									</section>
 								</div>
+							</form>
 
 
 
-
-							</div>
 						</div>
-				
+					</div>
+
 				</div>
 			</div>
 		</div>
