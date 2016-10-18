@@ -604,7 +604,7 @@
 
 											</p>
 
-											<form role="form" name="formAgreement" id="formAgreement">
+											<form role="form" name="formSignUp1" id="formSignUp1">
 												<div class="checkbox">
 												<input type="checkbox" id="ch1" /> <label class="text-danger"
 														for="ch1">I have read and understood the above notification.</label>
@@ -622,19 +622,19 @@
 									<h2>Personal</h2>
 									<section style="width: 100%; padding: 25px 10rem;">
 
-										<form role="form">
+										<form role="form" name="formSignUp2">
 											<div class="form-group">
-												<label>Name</label> <input class="form-control" />
+												<label>Name</label> <input type="text" name="name" class="form-control" />
 												<p class="help-block">Example block-level help text
 													here.</p>
 											</div>
 											<div class="form-group">
-												<label>Organization</label> <input class="form-control" />
+												<label>Organization</label> <input type="text" name="organization" class="form-control" />
 												<p class="help-block">Example block-level help text
 													here.</p>
 											</div>
 											<div class="form-group">
-												<label>Phone</label> <input class="form-control" />
+												<label>Phone</label> <input type="text" name="phone" class="form-control" />
 												<p class="help-block">Example block-level help text
 													here.</p>
 											</div>
@@ -648,19 +648,19 @@
 
 									<h2>Login</h2>
 									<section style="width: 100%; padding: 25px 8rem;">
-										<form role="form">
+										<form role="form" name="formSignUp3">
 											<div class="form-group">
-												<label>E-mail Account</label> <input class="form-control" />
+												<label>E-mail Account</label> <input type="text" name="email" class="form-control" />
 												<p class="help-block">Example block-level help text
 													here.</p>
 											</div>
 											<div class="form-group">
-												<label>Password</label> <input class="form-control" />
+												<label>Password</label> <input type="text" name="password" class="form-control" />
 												<p class="help-block">Example block-level help text
 													here.</p>
 											</div>
 											<div class="form-group">
-												<label>Retype Password</label> <input class="form-control" />
+												<label>Retype Password</label> <input type="text" name="password2" class="form-control" />
 												<p class="help-block">Example block-level help text
 													here.</p>
 											</div>
