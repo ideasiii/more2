@@ -528,7 +528,7 @@
 		<div id="content">
 		<div class="inner" style="min-height: 600px; padding: 0;">
 		<div id="intro" class="bg-white"
-					style="padding: 80px 0px; min-height: 500px;">
+					style="padding: 100px 0px; min-height: 500px;">
 					<div class="silk-grey">
 		<div class="container">
 		<div class="row container-text-c">
