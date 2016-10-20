@@ -265,8 +265,49 @@
 	background-image: radial-gradient(white, rgba(86, 99, 100, 0) 65%);
 }
 
+.dropdown-menu-li:focus,
+.dropdown-menu-li:active,
+.dropdown-menu-li.active {
+	background-color: rgba(86, 99, 100, 0);
+	background-image: rgba(86, 99, 100, 0);
+}
+
 .dropdown-menu-li:hover a {
 	color: #357ebd;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.sub-menu-li{
+	padding: 12px 0px; //
+	text-align: center;
+	white-space: normal;
+	clear: both;
+	position: relative;
+	margin-right: -1px;
+	cursor: pointer;
+	display:inline-block;
+}
+
+.sub-menu-li a{
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: normal;
+	line-height: 1.42857;
+	font-family: "texgyreadventor", sans-serif;
+	font-style: normal;
+	font-size: 1em;
+	/*letter-spacing: 0.05em;*/
+}
+
+.sub-menu-li:hover {
+	background-color: rgba(86, 99, 100, 0);
+	background-image: rgba(86, 99, 100, 0);
+}
+
+.sub-menu-li:hover a {
+	color: black;
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -549,8 +590,22 @@
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> RESOURCES </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">MORE SDK</a></li>
+											<li class="dropdown-menu-li active">
+											<a class="dropdown-menu-a accordion-toggle" data-toggle="collapse" data-target="#sdk-nav"
+												href="#">MORE SDK</a>
+												<ul class="collapse" id="sdk-nav">
+												<li class="sub-menu-li">
+												<a href="" >sfgj</a>
+												</li>
+												<li class="sub-menu-li">
+												<a href="" >dfgbhnjk</a>
+												</li>
+												<li class="sub-menu-li">
+												<a href="" >cvyh</a>
+												</li>
+												</ul>
+												
+												</li>
 											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
 												href="">ASFGHJMK</a></li>
 											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
