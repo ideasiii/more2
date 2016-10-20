@@ -50,7 +50,6 @@
 
 
 
-
 <style>
 
 /* logo section */
@@ -312,6 +311,77 @@
 	text-align: left;
 }
 
+@media ( min-width : 768px) {
+.full-height-s{
+	padding-top: 80px; 
+	min-height: 500px;
+}
+.full-height-m{
+	padding: 150px 0px; 
+	min-height: 500px;
+}
+}
+
+@media ( min-width : 992px) {
+.full-height-s{
+	padding: 175px 0px; 
+	min-height: 500px;
+}
+.full-height-m{
+	padding: 182px 0px; 
+	min-height: 500px;
+}
+}
+
+@media ( min-width : 1248px) {
+.full-height-s{
+	padding: 80px 0px; 
+	min-height: 500px;
+}
+.full-height-m{
+	padding: 150px 0px; 
+	min-height: 500px;
+}
+}
+
+@media ( min-width : 1360px) {
+.full-height-s{
+	padding: 80px 0px; 
+	min-height: 455px;
+}
+.full-height-m{
+	padding: 150px 0px; 
+	min-height: 500px;
+}
+}
+
+@media ( min-width : 1420px) {
+.full-height-s{
+	padding: 130px 0px; 
+	min-height: 500px;
+}
+.full-height-m{
+	padding: 200px 0px; 
+	min-height: 500px;
+}
+}
+
+@media ( min-width : 1650px) {
+.full-height-s{
+	padding: 175px 0px; 
+	min-height: 500px;
+}
+.full-height-m{
+	padding: 285px 0px; 
+	min-height: 500px;
+}
+}
+
+.full-height-outer {
+	position: relative;
+    overflow: hidden;
+}
+
 .bg-grey {
 	background: #546263;
 }
@@ -516,8 +586,7 @@
 
 		<div id="content">
 			<div class="inner" style="min-height: 700px; padding: 0;">
-				<div id="intro" class="bg-grey"
-					style="padding: 50px 0px; min-height: 500px;">
+				<div id="intro" class="full-height-outer bg-grey full-height-s">
 					<div class="silk-white">
 						<div class="container">
 							<div class="row container-text-r">
@@ -539,8 +608,8 @@
 
 				</div>
 
-				<div id="" class="bg-white"
-					style="padding: 50px 0px; min-height: 500px;">
+				<div id="" class="full-height-outer bg-white full-height-m"
+					>
 
 					<div class="silk-grey">
 						<div class="container">
@@ -558,9 +627,7 @@
 					</div>
 				</div>
 
-				<div id="" class="bg-green"
-					style="padding: 50px 0px; min-height: 500px;">
-
+				<div id="" class="full-height-outer bg-green full-height-m">
 					<div class="silk-white-green">
 						<div class="container">
 						<div class="row container-text-r">
