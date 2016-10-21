@@ -278,6 +278,48 @@
 	text-decoration: none;
 }
 
+#3level-sdk {
+	padding: 12px 0px; //
+	text-align: center;
+	white-space: normal;
+	clear: both;
+	position: relative;
+	margin-right: -1px;
+	cursor: pointer;
+	display:inline-block;
+}
+
+#3level-sdk:hover .sub-menu-container{
+	color: #46b8da;
+	display: block;
+}
+
+
+
+.sub-menu-container{
+	position: absolute;
+	display: none; /*test*/
+	border-radius: 0;
+	background-color: rgba(86, 99, 100, 0.85);
+	margin-top: -1px !important;
+	width: 100%;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	min-width: initial;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	/*	float: left; */
+	padding: 0;
+	margin: 2px 0 0;
+	list-style: none;
+	font-size: 14px;
+	text-align: center;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	background-clip: padding-box;
+}
+
 .sub-menu-li{
 	padding: 12px 0px; //
 	text-align: center;
@@ -570,30 +612,30 @@
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> PLATFORM </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a 
 												href="">MORE MDM</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a 
 												href="">MORE API</a></li>
 										</ul></li>
 
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> DASHBOARD </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a 
 												href="">QWERYU</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a 
 												href="">ANALYSIS</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a 
 												href="">ASFDGFHVGH</a></li>
 										</ul></li>
 
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> RESOURCES </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li active">
-											<a class="dropdown-menu-a accordion-toggle" data-toggle="collapse" data-target="#sdk-nav"
-												href="#">MORE SDK</a>
-												<ul class="collapse" id="sdk-nav">
+											<li class="dropdown-menu-li" id="3level-sdk">
+											<a 
+												href="">MORE SDK</a>
+												<ul class="sub-menu-container">
 												<li class="sub-menu-li">
 												<a href="" >sfgj</a>
 												</li>
@@ -606,22 +648,22 @@
 												</ul>
 												
 												</li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a 
 												href="">ASFGHJMK</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a 
 												href="">ASFDGFHVGH</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a 
 												href="">QWERYU</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a 
 												href="">ASFGHJMK</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a 
 												href="">ASFDGFHVGH</a></li>
 										</ul></li>
 
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> DEVELOPER </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
+											<li class="dropdown-menu-li"><a 
 												href="">QWERYU</a></li>
 										</ul></li>
 
