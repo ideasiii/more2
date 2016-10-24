@@ -17,20 +17,7 @@
 			}
 
 			final String strHostUrl = request.getRequestURL().toString();
-			final String strShowIosSdk = request.getParameter(Common.IOS);
 
-			ArrayList<More.SdkData> listSdk = new ArrayList<More.SdkData>();
-			int nCount = more.querySdk(listSdk);
-			int nshowSdkType = 0;
-			if (StringUtility.isValid(strShowIosSdk) && strShowIosSdk.trim().equals(Common.IOS))
-				nshowSdkType = 1;
-
-			final String strContextPath = request.getContextPath();
-			final String uri = request.getRequestURI();
-			final String pageName = uri.substring(uri.lastIndexOf("/") + 1);
-
-			// test
-			String strP1 = request.getParameter("1");
 %>
 <!DOCTYPE html>
 <html>
@@ -53,15 +40,24 @@
 <!--END GLOBAL STYLES -->
 
 <!-- PAGE LEVEL STYLES -->
-
 <link
 	href="/assets/plugins/jquery-steps-master/demo/css/jquery.steps2.css"
 	rel="stylesheet" />
-
 <!-- END PAGE LEVEL STYLES -->
 
 <!-- JavaScript -->
 <script type="text/javascript">
+	function showBtnV(formName) {
+		var form = document.getElementById(formName);
+		var formname = form.name;
+
+		if (formname == "formSignUp") {
+			document.getElementById("btnA").style.display = "none";
+			document.getElementById("btnV").style.display = "block";
+		}
+	}
+	
+	
 	
 </script>
 
@@ -644,19 +640,30 @@
 									<section style="width: 100%; padding: 25px 8rem;">
 
 										<div class="form-group">
-											<label>E-mail Account</label> <input type="text"
+											<label style="margin-left:5.5rem;">E-mail Account</label> <button id="btnV" type="button"
+										class="btn btn-xs btn-grad btn-default"
+										style="float:right;"
+										onclick="checkAccountListData('formAddGroup')">Verification</button>
+										<button id="btnA" type="button" class="btn btn-xs btn-success"
+										style="display: none; float:right;"
+										>Available</button>
+										
+										<input type="text"
 												name="inputEmail" class="form-control" />
-											<p class="help-block">Example block-level help text here.</p>
+												
+												
+												
+											<p class="help-block" style="color:#b94a48;">Notification: E-mail account cannot be changed.</p>
 										</div>
 										<div class="form-group">
 											<label>Password</label> <input type="text"
 												name="inputPassword" class="form-control" />
-											<p class="help-block">Example block-level help text here.</p>
+											<p class="help-block">(Must be less than 20 letters in alphanumeric format.)</p>
 										</div>
 										<div class="form-group">
 											<label>Retype Password</label> <input type="text"
 												name="inputPassword2" class="form-control" />
-											<p class="help-block">Example block-level help text here.</p>
+											<p class="help-block"> </p>
 										</div>
 
 									</section>
