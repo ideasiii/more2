@@ -422,7 +422,7 @@
 	min-height: 500px;
 }
 .full-height-m{
-	padding: 150px 0px; 
+	padding: 190px 0px; 
 	min-height: 500px;
 }
 }
@@ -433,7 +433,7 @@
 	min-height: 455px;
 }
 .full-height-m{
-	padding: 150px 0px; 
+	padding: 190px 0px; 
 	min-height: 500px;
 }
 }
@@ -455,7 +455,7 @@
 	min-height: 500px;
 }
 .full-height-m{
-	padding: 285px 0px; 
+	padding: 315px 0px; 
 	min-height: 500px;
 }
 }
