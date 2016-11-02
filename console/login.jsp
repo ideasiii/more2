@@ -53,10 +53,10 @@
 	href="/assets/plugins/font-awesome-4.6.2/css/font-awesome_3.css" />
 <!--END GLOBAL STYLES -->
 
-  <!-- PAGE LEVEL STYLES -->
-    <link rel="stylesheet" href="/assets/css/login.css" />
-    <link rel="stylesheet" href="/assets/plugins/magic/magic.css" />
-     <!-- END PAGE LEVEL STYLES -->
+<!-- PAGE LEVEL STYLES -->
+<link rel="stylesheet" href="/assets/css/login.css" />
+<link rel="stylesheet" href="/assets/plugins/magic/magic.css" />
+<!-- END PAGE LEVEL STYLES -->
 
 <!-- JavaScript -->
 
@@ -103,7 +103,7 @@
 	color: #fff;
 	display: inline-block; //
 	vertical-align: middle;
-	padding-right: 10px;
+	/*padding-right: 10px;*/
 	&:
 	first-child
 	{
@@ -303,10 +303,12 @@
 	background-color: rgba(255, 255, 255, 0.50);
 	background-image: radial-gradient(circle at top right, white 10%, #9fd256 90%);
 }
+
 .silk-grey {
 	background-color: rgba(255, 255, 255, 0.50);
 	background-image: radial-gradient(circle at top left, #546263 10%, white 90%);
 }
+
 .container-text-r {
 	padding: 6rem 8rem;
 	/*	padding-left:10rem;*/
@@ -445,9 +447,8 @@
 				<!-- LOGO SECTION -->
 				<header>
 					<div class="header-angle navbar-brand">
-						<a href="home.jsp" class="navbar-brand"> <img
-							class="logo" height="80"
-							src="/assets/img/more_logo_white_board_sm.png" alt="" />
+						<a href="home.jsp" class="navbar-brand"> <img class="logo"
+							height="80" src="/assets/img/more_logo_white_board_sm.png" alt="" />
 						</a>
 					</div>
 					<!-- END LOGO SECTION -->
@@ -459,7 +460,9 @@
 								href="login.jsp">Login</a></li>
 							<li class="super-header-li"><a class="super-header-a"
 								href="signup.jsp">Sign Up</a></li>
-
+							<li class="super-header-li"><a class="super-header-a"
+								href="/more_manager/manager/mainpage.jsp"><i
+									class="icon-gear fa-inverse"></i></a></li>
 						</ul>
 					</div>
 					<!-- END LOGIN SECTION  -->
@@ -526,62 +529,71 @@
 
 		<!--PAGE CONTENT -->
 		<div id="content">
-		<div class="inner" style="min-height: 600px; padding: 0;">
-		<div id="intro" class="bg-white"
+			<div class="inner" style="min-height: 600px; padding: 0;">
+				<div id="intro" class="bg-white"
 					style="padding: 100px 0px; min-height: 500px;">
 					<div class="silk-grey">
-		<div class="container">
-		<div class="row container-text-c">
-			
-			<div class="text-center">
-        <h2 style="font-weight: bold;"> Login to MORE</h2>
-    </div>
-    <div class="tab-content" style="border:0;padding:0;">
-        <div id="login" class="tab-pane active">
-            <form action="index.html" class="form-signin">
-                <h4 class="text-center">
-                    Enter Your E-mail and Password
-                </h4>
-                <input type="text" placeholder="E-mail Account" class="form-control" />
-                <input type="password" placeholder="Password" class="form-control" />
-                <button class="btn text-muted text-center btn-warning btn-grad" type="submit">Login</button>
-            </form>
-        </div>
-        <div id="forgot" class="tab-pane">
-            <form action="index.html" class="form-signin">
-                <h4 class="text-center">Enter Your Valid E-mail</h4>
-                <input type="email"  required="required" placeholder="Your E-mail"  class="form-control" />
-                <br />
-                <button class="btn text-muted text-center btn-success btn-grad" type="submit">Recover Password</button>
-            </form>
-        </div>
-        <div id="signup" class="tab-pane">
-            <form action="index.html" class="form-signin">
-                <h4 class="text-center">Please Fill Details to Register</h4>
-                 <input type="text" placeholder="E-mail Account" class="form-control" />
-                 <input type="text" placeholder="Name" class="form-control" />
-                <input type="text" placeholder="Organization" class="form-control" />
-                <input type="email" placeholder="Phone" class="form-control" />
-                <input type="password" placeholder="Password" class="form-control" />
-                <input type="password" placeholder="Retype Password" class="form-control" />
-                <button class="btn text-muted text-center btn-success btn-grad" type="submit">Register</button>
-            </form>
-        </div>
-    </div>
-    <div class="text-center">
-        <ul class="list-inline">
-            <li><a class="text-muted" href="#login" data-toggle="tab">Login</a></li>
-            <li><a class="text-muted" href="#forgot" data-toggle="tab">Forgot Password</a></li>
-            <li><a class="text-muted" href="#signup" data-toggle="tab">Sign Up</a></li>
-        </ul>
-    </div>
-			
-			
-		</div>
-		</div>
-		</div>
+						<div class="container">
+							<div class="row container-text-c">
+
+								<div class="text-center">
+									<h2 style="font-weight: bold;">Login to MORE</h2>
+								</div>
+								<div class="tab-content" style="border: 0; padding: 0;">
+									<div id="login" class="tab-pane active">
+										<form action="index.html" class="form-signin">
+											<h4 class="text-center">Enter Your E-mail and Password</h4>
+											<input type="text" placeholder="E-mail Account"
+												class="form-control" /> <input type="password"
+												placeholder="Password" class="form-control" />
+											<button
+												class="btn text-muted text-center btn-warning btn-grad"
+												type="submit">Login</button>
+										</form>
+									</div>
+									<div id="forgot" class="tab-pane">
+										<form action="index.html" class="form-signin">
+											<h4 class="text-center">Enter Your Valid E-mail</h4>
+											<input type="email" required="required"
+												placeholder="Your E-mail" class="form-control" /> <br />
+											<button
+												class="btn text-muted text-center btn-success btn-grad"
+												type="submit">Recover Password</button>
+										</form>
+									</div>
+									<div id="signup" class="tab-pane">
+										<form action="index.html" class="form-signin">
+											<h4 class="text-center">Please Fill Details to Register</h4>
+											<input type="text" placeholder="E-mail Account"
+												class="form-control" /> <input type="text"
+												placeholder="Name" class="form-control" /> <input
+												type="text" placeholder="Organization" class="form-control" />
+											<input type="email" placeholder="Phone" class="form-control" />
+											<input type="password" placeholder="Password"
+												class="form-control" /> <input type="password"
+												placeholder="Retype Password" class="form-control" />
+											<button
+												class="btn text-muted text-center btn-success btn-grad"
+												type="submit">Register</button>
+										</form>
+									</div>
+								</div>
+								<div class="text-center">
+									<ul class="list-inline">
+										<li><a class="text-muted" href="#login" data-toggle="tab">Login</a></li>
+										<li><a class="text-muted" href="#forgot"
+											data-toggle="tab">Forgot Password</a></li>
+										<li><a class="text-muted" href="#signup"
+											data-toggle="tab">Sign Up</a></li>
+									</ul>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
 		</div>
 		<!--END PAGE CONTENT -->
 

@@ -17,7 +17,6 @@
 			}
 
 			final String strHostUrl = request.getRequestURL().toString();
-
 %>
 <!DOCTYPE html>
 <html>
@@ -25,7 +24,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="MORE">
 <meta name="description" content="MORE">
-<title>Login | MORE</title>
+<title>SignUp | MORE</title>
 
 <!-- GLOBAL STYLES -->
 <link rel="stylesheet"
@@ -56,8 +55,8 @@
 			document.getElementById("btnV").style.display = "block";
 		}
 	}
-	
-	
+</script>
+<script>
 	
 </script>
 
@@ -101,7 +100,7 @@
 	color: #fff;
 	display: inline-block; //
 	vertical-align: middle;
-	padding-right: 10px;
+	/*	padding-right: 10px;*/
 	&:
 	first-child
 	{
@@ -445,9 +444,8 @@
 				<!-- LOGO SECTION -->
 				<header>
 					<div class="header-angle navbar-brand">
-						<a href="home.jsp" class="navbar-brand"> <img
-							class="logo" height="80"
-							src="/assets/img/more_logo_white_board_sm.png" alt="" />
+						<a href="home.jsp" class="navbar-brand"> <img class="logo"
+							height="80" src="/assets/img/more_logo_white_board_sm.png" alt="" />
 						</a>
 					</div>
 					<!-- END LOGO SECTION -->
@@ -455,11 +453,30 @@
 					<!-- LOGIN SECTION  -->
 					<div class="super-header gradient-blue">
 						<ul class="super-header-ul">
+							<%
+							    if (bLogined)
+							    {
+							%>
+							<li class="super-header-li"><a class="super-header-a"
+								href="login.jsp">Logout</a></li>
+							<li class="super-header-li"><a class="super-header-a"
+								href="/more_manager/manager/mainpage.jsp"><i
+									class="icon-gear fa-inverse"></i></a></li>
+							<%
+							    }
+							    else
+							    {
+							%>
 							<li class="super-header-li"><a class="super-header-a"
 								href="login.jsp">Login</a></li>
 							<li class="super-header-li"><a class="super-header-a"
 								href="signup.jsp">Sign Up</a></li>
-
+							<li class="super-header-li"><a class="super-header-a"
+								href="/more_manager/manager/mainpage.jsp"><i
+									class="icon-gear fa-inverse"></i></a></li>
+							<%
+							    }
+							%>
 						</ul>
 					</div>
 					<!-- END LOGIN SECTION  -->
@@ -536,10 +553,10 @@
 							<div class="text-center" style="padding: 2rem 0;">
 								<h2 style="font-weight: bold;">Sign Up For MORE Account</h2>
 							</div>
-							
+
 							<form role="form" name="formSignUp" id="formSignUp">
-							
-							
+
+
 								<div id="wizard">
 									<h2>Agreement</h2>
 									<section style="overflow-y: scroll;">
@@ -599,18 +616,18 @@
 												further checking. <br /> <br />
 
 											</p>
-										
-												<div class="checkbox">
-													<input type="checkbox" id="ch1" /> <label
-														class="text-danger" for="ch1">I have read and
-														understood the above notification.</label>
-												</div>
-												<div class="checkbox">
-													<input type="checkbox" id="ch2" /> <label
-														class="text-danger" for="ch2">I agreed that III
-														may collect, process and use my personal information for
-														the purposes of collection prescribed above.</label>
-												</div>
+
+											<div class="checkbox">
+												<input type="checkbox" id="ch1" /> <label
+													class="text-danger" for="ch1">I have read and
+													understood the above notification.</label>
+											</div>
+											<div class="checkbox">
+												<input type="checkbox" id="ch2" /> <label
+													class="text-danger" for="ch2">I agreed that III may
+													collect, process and use my personal information for the
+													purposes of collection prescribed above.</label>
+											</div>
 
 										</div>
 									</section>
@@ -619,51 +636,53 @@
 									<section style="width: 100%; padding: 25px 10rem;">
 
 										<div class="form-group">
-											<label>Name</label> <input type="text" name="inputName"
+											<label>Name</label> <input type="text" name="<%=Common.MEMBER_NAME%>"
+								
 												class="form-control" />
 											<p class="help-block">Example block-level help text here.</p>
 										</div>
 										<div class="form-group">
 											<label>Organization</label> <input type="text"
-												name="inputOrganization" class="form-control" />
+												name="<%=Common.MEMBER_COMPANY%>" class="form-control" />
 											<p class="help-block">Example block-level help text here.</p>
 										</div>
 										<div class="form-group">
-											<label>Phone</label> <input type="text" name="inputPhone"
+											<label>Phone</label> <input type="text" name="<%=Common.MEMBER_PHONE%>"
 												class="form-control" />
 											<p class="help-block">Example block-level help text here.</p>
 										</div>
 									</section>
-
-
+									
 									<h2>Login</h2>
 									<section style="width: 100%; padding: 25px 8rem;">
 
 										<div class="form-group">
-											<label style="margin-left:5.5rem;">E-mail Account</label> <button id="btnV" type="button"
-										class="btn btn-xs btn-grad btn-default"
-										style="float:right;"
-										onclick="checkAccountListData('formAddGroup')">Verification</button>
-										<button id="btnA" type="button" class="btn btn-xs btn-success"
-										style="display: none; float:right;"
-										>Available</button>
-										
-										<input type="text"
-												name="inputEmail" class="form-control" />
-												
-												
-												
-											<p class="help-block" style="color:#b94a48;">Notification: E-mail account cannot be changed.</p>
+											<label style="margin-left: 5.5rem;">E-mail Account</label>
+											<button id="btnV" type="button"
+												class="btn btn-xs btn-grad btn-default"
+												style="float: right;"
+												onclick="checkAccountListData('formAddGroup')">Verification</button>
+											<button id="btnA" type="button"
+												class="btn btn-xs btn-success"
+												style="display: none; float: right;">Available</button>
+
+											<input type="text" name="<%=Common.MEMBER_EMAIL%>" class="form-control" />
+
+
+
+											<p class="help-block" style="color: #b94a48;">Notification:
+												E-mail account cannot be changed.</p>
 										</div>
 										<div class="form-group">
 											<label>Password</label> <input type="text"
-												name="inputPassword" class="form-control" />
-											<p class="help-block">(Must be less than 20 letters in alphanumeric format.)</p>
+												name="<%=Common.MEMBER_PASSWORD%>" class="form-control" />
+											<p class="help-block">(Must be less than 20 letters in
+												alphanumeric format.)</p>
 										</div>
 										<div class="form-group">
 											<label>Retype Password</label> <input type="text"
 												name="inputPassword2" class="form-control" />
-											<p class="help-block"> </p>
+											<p class="help-block"></p>
 										</div>
 
 									</section>

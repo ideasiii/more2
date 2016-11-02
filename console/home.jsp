@@ -90,7 +90,7 @@
 	color: #fff;
 	display: inline-block; //
 	vertical-align: middle;
-	padding-right: 10px;
+	/*padding-right: 10px;*/
 	&:
 	first-child
 	{
@@ -191,7 +191,8 @@
 }
 
 .menu-header .menu-header-li .menu-header-a:hover {
-	color: #9fd256; /*#46b8da;*/ display : block;
+	color: #9fd256; /*#46b8da;*/
+	display: block;
 	font-weight: bold;
 	background-color: rgba(86, 99, 100, 1);
 	background-image: radial-gradient(#000, rgba(86, 99, 100, 1) 70%);
@@ -265,9 +266,8 @@
 	background-image: radial-gradient(white, rgba(86, 99, 100, 0) 65%);
 }
 
-.dropdown-menu-li:focus,
-.dropdown-menu-li:active,
-.dropdown-menu-li.active {
+.dropdown-menu-li:focus, .dropdown-menu-li:active, .dropdown-menu-li.active
+	{
 	background-color: rgba(86, 99, 100, 0);
 	background-image: rgba(86, 99, 100, 0);
 }
@@ -286,17 +286,15 @@
 	position: relative;
 	margin-right: -1px;
 	cursor: pointer;
-	display:inline-block;
+	display: inline-block;
 }
 
-#3level-sdk:hover .sub-menu-container{
+#3level-sdk:hover .sub-menu-container {
 	color: #46b8da;
 	display: block;
 }
 
-
-
-.sub-menu-container{
+.sub-menu-container {
 	position: absolute;
 	display: none; /*test*/
 	border-radius: 0;
@@ -320,7 +318,7 @@
 	background-clip: padding-box;
 }
 
-.sub-menu-li{
+.sub-menu-li {
 	padding: 12px 0px; //
 	text-align: center;
 	white-space: normal;
@@ -328,10 +326,10 @@
 	position: relative;
 	margin-right: -1px;
 	cursor: pointer;
-	display:inline-block;
+	display: inline-block;
 }
 
-.sub-menu-li a{
+.sub-menu-li a {
 	text-decoration: none;
 	text-transform: uppercase;
 	color: #fff;
@@ -372,10 +370,12 @@
 	background-color: rgba(255, 255, 255, 0.50);
 	background-image: radial-gradient(circle at top right, white 10%, #9fd256 90%);
 }
+
 .silk-grey {
 	background-color: rgba(255, 255, 255, 0.50);
 	background-image: radial-gradient(circle at top left, #546263 10%, white 90%);
 }
+
 .container-text-r {
 	padding: 6rem 8rem;
 	/*	padding-left:10rem;*/
@@ -395,74 +395,74 @@
 }
 
 @media ( min-width : 768px) {
-.full-height-s{
-	padding-top: 80px; 
-	min-height: 500px;
-}
-.full-height-m{
-	padding: 150px 0px; 
-	min-height: 500px;
-}
+	.full-height-s {
+		padding-top: 80px;
+		min-height: 500px;
+	}
+	.full-height-m {
+		padding: 150px 0px;
+		min-height: 500px;
+	}
 }
 
 @media ( min-width : 992px) {
-.full-height-s{
-	padding: 175px 0px; 
-	min-height: 500px;
-}
-.full-height-m{
-	padding: 182px 0px; 
-	min-height: 500px;
-}
+	.full-height-s {
+		padding: 175px 0px;
+		min-height: 500px;
+	}
+	.full-height-m {
+		padding: 182px 0px;
+		min-height: 500px;
+	}
 }
 
 @media ( min-width : 1248px) {
-.full-height-s{
-	padding: 80px 0px; 
-	min-height: 500px;
-}
-.full-height-m{
-	padding: 190px 0px; 
-	min-height: 500px;
-}
+	.full-height-s {
+		padding: 80px 0px;
+		min-height: 500px;
+	}
+	.full-height-m {
+		padding: 190px 0px;
+		min-height: 500px;
+	}
 }
 
 @media ( min-width : 1360px) {
-.full-height-s{
-	padding: 80px 0px; 
-	min-height: 455px;
-}
-.full-height-m{
-	padding: 190px 0px; 
-	min-height: 500px;
-}
+	.full-height-s {
+		padding: 80px 0px;
+		min-height: 455px;
+	}
+	.full-height-m {
+		padding: 190px 0px;
+		min-height: 500px;
+	}
 }
 
 @media ( min-width : 1420px) {
-.full-height-s{
-	padding: 130px 0px; 
-	min-height: 500px;
-}
-.full-height-m{
-	padding: 200px 0px; 
-	min-height: 500px;
-}
+	.full-height-s {
+		padding: 130px 0px;
+		min-height: 500px;
+	}
+	.full-height-m {
+		padding: 200px 0px;
+		min-height: 500px;
+	}
 }
 
 @media ( min-width : 1650px) {
-.full-height-s{
-	padding: 175px 0px; 
-	min-height: 500px;
-}
-.full-height-m{
-	padding: 315px 0px; 
-	min-height: 500px;
-}
+	.full-height-s {
+		padding: 175px 0px;
+		min-height: 500px;
+	}
+	.full-height-m {
+		padding: 315px 0px;
+		min-height: 500px;
+	}
 }
 
 .full-height-outer {
 	position: relative;
-    overflow: hidden;
+	overflow: hidden;
 }
 
 .bg-grey {
@@ -585,9 +585,8 @@
 				<!-- LOGO SECTION -->
 				<header>
 					<div class="header-angle navbar-brand">
-						<a href="home.jsp" class="navbar-brand"> <img
-							class="logo" height="80"
-							src="/assets/img/more_logo_white_board_sm.png" alt="" />
+						<a href="home.jsp" class="navbar-brand"> <img class="logo"
+							height="80" src="/assets/img/more_logo_white_board_sm.png" alt="" />
 						</a>
 					</div>
 					<!-- END LOGO SECTION -->
@@ -599,7 +598,9 @@
 								href="login.jsp">Login</a></li>
 							<li class="super-header-li"><a class="super-header-a"
 								href="signup.jsp">Sign Up</a></li>
-
+							<li class="super-header-li"><a class="super-header-a"
+								href="/more_manager/manager/mainpage.jsp"><i
+									class="icon-gear fa-inverse"></i></a></li>
 						</ul>
 					</div>
 					<!-- END LOGIN SECTION  -->
@@ -612,59 +613,39 @@
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> PLATFORM </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a 
-												href="">MORE MDM</a></li>
-											<li class="dropdown-menu-li"><a 
-												href="">MORE API</a></li>
+											<li class="dropdown-menu-li"><a href="">MORE MDM</a></li>
+											<li class="dropdown-menu-li"><a href="">MORE API</a></li>
 										</ul></li>
 
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> DASHBOARD </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a 
-												href="">QWERYU</a></li>
-											<li class="dropdown-menu-li"><a 
-												href="">ANALYSIS</a></li>
-											<li class="dropdown-menu-li"><a 
-												href="">ASFDGFHVGH</a></li>
+											<li class="dropdown-menu-li"><a href="">QWERYU</a></li>
+											<li class="dropdown-menu-li"><a href="">ANALYSIS</a></li>
+											<li class="dropdown-menu-li"><a href="">ASFDGFHVGH</a></li>
 										</ul></li>
 
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> RESOURCES </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li" id="3level-sdk">
-											<a 
-												href="">MORE SDK</a>
+											<li class="dropdown-menu-li" id="3level-sdk"><a href="">MORE
+													SDK</a>
 												<ul class="sub-menu-container">
-												<li class="sub-menu-li">
-												<a href="" >sfgj</a>
-												</li>
-												<li class="sub-menu-li">
-												<a href="" >dfgbhnjk</a>
-												</li>
-												<li class="sub-menu-li">
-												<a href="" >cvyh</a>
-												</li>
-												</ul>
-												
-												</li>
-											<li class="dropdown-menu-li"><a 
-												href="">ASFGHJMK</a></li>
-											<li class="dropdown-menu-li"><a 
-												href="">ASFDGFHVGH</a></li>
-											<li class="dropdown-menu-li"><a 
-												href="">QWERYU</a></li>
-											<li class="dropdown-menu-li"><a 
-												href="">ASFGHJMK</a></li>
-											<li class="dropdown-menu-li"><a 
-												href="">ASFDGFHVGH</a></li>
+													<li class="sub-menu-li"><a href="">sfgj</a></li>
+													<li class="sub-menu-li"><a href="">dfgbhnjk</a></li>
+													<li class="sub-menu-li"><a href="">cvyh</a></li>
+												</ul></li>
+											<li class="dropdown-menu-li"><a href="">ASFGHJMK</a></li>
+											<li class="dropdown-menu-li"><a href="">ASFDGFHVGH</a></li>
+											<li class="dropdown-menu-li"><a href="">QWERYU</a></li>
+											<li class="dropdown-menu-li"><a href="">ASFGHJMK</a></li>
+											<li class="dropdown-menu-li"><a href="">ASFDGFHVGH</a></li>
 										</ul></li>
 
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> DEVELOPER </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a 
-												href="">QWERYU</a></li>
+											<li class="dropdown-menu-li"><a href="">QWERYU</a></li>
 										</ul></li>
 
 								</ul>
@@ -688,8 +669,9 @@
 						<div class="container">
 							<div class="row container-text-r">
 
-								<h2 style="font-weight: bold; padding-right: 20px;"><span style="color:#001075;">MORE</span>
-									Platform</h2>
+								<h2 style="font-weight: bold; padding-right: 20px;">
+									<span style="color: #001075;">MORE</span> Platform
+								</h2>
 								<h3 style="font-weight: bold;" class="vline-right-orange">
 									<p>將多項服務與應用包裝成多個獨立的模組</p>
 									<p>提供給APP開發人員加入到APP專案裡</p>
@@ -705,12 +687,11 @@
 
 				</div>
 
-				<div id="" class="full-height-outer bg-white full-height-m"
-					>
+				<div id="" class="full-height-outer bg-white full-height-m">
 
 					<div class="silk-grey">
 						<div class="container">
-						<div class="row container-text-r">
+							<div class="row container-text-r">
 
 								<h2 style="font-weight: bold; padding-right: 20px;">Dashboard</h2>
 								<h3 style="font-weight: bold;" class="vline-right-green">
@@ -727,7 +708,7 @@
 				<div id="" class="full-height-outer bg-green full-height-m">
 					<div class="silk-white-green">
 						<div class="container">
-						<div class="row container-text-r">
+							<div class="row container-text-r">
 
 								<h2 style="font-weight: bold; padding-right: 20px;">Resources</h2>
 								<h3 style="font-weight: bold;" class="vline-right-blue">
@@ -737,7 +718,7 @@
 								</h3>
 
 							</div>
-							</div>
+						</div>
 					</div>
 				</div>
 
