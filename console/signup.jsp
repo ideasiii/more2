@@ -17,6 +17,21 @@
 			}
 
 			final String strHostUrl = request.getRequestURL().toString();
+
+			String strAccountV = "";
+
+			ArrayList<String> listEmailAccount = new ArrayList<String>();
+			int nACount = more.queryMemberAccountList(listEmailAccount);
+			
+		for(int i = 0; i < listEmailAccount.size(); ++i)
+		{
+		    strAccountV = strAccountV +  listEmailAccount.get(i);
+			if (i != (listEmailAccount.size()-1)) {
+				strAccountV += ',';
+			}
+		}
+
+			
 %>
 <!DOCTYPE html>
 <html>
@@ -56,8 +71,58 @@
 		}
 	}
 </script>
+<script type="text/javascript">
+	function Trim(x) {
+		return x.replace(/^\s+|\s+$/gm, '');
+	}
+</script>
 <script>
-	
+	function checkAccountListData(formName) {
+
+		var form = document.getElementById(formName);
+		var formname = form.name;
+		var errMsg = '';
+		var accountV = form.accountList.value;
+		var spl = accountV.split(",");
+		 reg = /^[^\s]+@[^\s]+\.[^\s]{2,3}$/;
+		
+
+		if (formname == "formSignUp") {
+
+			if (Trim(form.inputEmail.value) == '') {
+				errMsg += "Please enter a valid E-mail !!\n";
+				
+			} else {
+				
+				if (!reg.test(Trim(form.inputEmail.value))) {
+					errMsg += "Wrong E-mail format !!\n";
+				} 
+			}
+			
+			
+			for ( var key in spl) {
+				// alert(spl[key]);
+				if (Trim(form.inputEmail.value) == spl[key]) {
+					errMsg += "The E-mail account '" + spl[key]
+							+ "' has been used, please change it !!";
+				}
+			}
+		} else {
+			
+		}
+
+		if (errMsg == '') {
+
+			if (formname == "formSignUp") {
+				document.getElementById('btnA').style.display = "block";
+				document.getElementById('btnV').style.display = "none";
+			}
+
+			return true;
+		}
+		alert(errMsg);
+		return false;
+	}
 </script>
 
 <style>
@@ -454,8 +519,7 @@
 					<div class="super-header gradient-blue">
 						<ul class="super-header-ul">
 							<%
-							    if (bLogined)
-							    {
+							    if (bLogined) {
 							%>
 							<li class="super-header-li"><a class="super-header-a"
 								href="login.jsp">Logout</a></li>
@@ -463,9 +527,7 @@
 								href="/more_manager/manager/mainpage.jsp"><i
 									class="icon-gear fa-inverse"></i></a></li>
 							<%
-							    }
-							    else
-							    {
+							    } else {
 							%>
 							<li class="super-header-li"><a class="super-header-a"
 								href="login.jsp">Login</a></li>
@@ -555,7 +617,8 @@
 							</div>
 
 							<form role="form" name="formSignUp" id="formSignUp">
-
+								<input name="accountList" id="accountList"
+									value="<%=strAccountV%>" type="hidden">
 
 								<div id="wizard">
 									<h2>Agreement</h2>
@@ -636,23 +699,22 @@
 									<section style="width: 100%; padding: 25px 10rem;">
 
 										<div class="form-group">
-											<label>Name</label> <input type="text" name="<%=Common.MEMBER_NAME%>"
-								
-												class="form-control" />
+											<label>Name</label> <input type="text" name="inputName"
+												id="inputName" class="form-control" />
 											<p class="help-block">Example block-level help text here.</p>
 										</div>
 										<div class="form-group">
 											<label>Organization</label> <input type="text"
-												name="<%=Common.MEMBER_COMPANY%>" class="form-control" />
+												name="inputCompany" class="form-control" />
 											<p class="help-block">Example block-level help text here.</p>
 										</div>
 										<div class="form-group">
-											<label>Phone</label> <input type="text" name="<%=Common.MEMBER_PHONE%>"
+											<label>Phone</label> <input type="text" name="inputPhone"
 												class="form-control" />
 											<p class="help-block">Example block-level help text here.</p>
 										</div>
 									</section>
-									
+
 									<h2>Login</h2>
 									<section style="width: 100%; padding: 25px 8rem;">
 
@@ -661,12 +723,13 @@
 											<button id="btnV" type="button"
 												class="btn btn-xs btn-grad btn-default"
 												style="float: right;"
-												onclick="checkAccountListData('formAddGroup')">Verification</button>
+												onclick="checkAccountListData('formSignUp')">Verification</button>
 											<button id="btnA" type="button"
 												class="btn btn-xs btn-success"
 												style="display: none; float: right;">Available</button>
 
-											<input type="text" name="<%=Common.MEMBER_EMAIL%>" class="form-control" />
+											<input type="text" name="inputEmail" class="form-control"
+												onchange="showBtnV('formSignUp')" />
 
 
 
@@ -675,7 +738,7 @@
 										</div>
 										<div class="form-group">
 											<label>Password</label> <input type="text"
-												name="<%=Common.MEMBER_PASSWORD%>" class="form-control" />
+												name="inputPassword" class="form-control" />
 											<p class="help-block">(Must be less than 20 letters in
 												alphanumeric format.)</p>
 										</div>
@@ -743,8 +806,14 @@
 	<script
 		src="/assets/plugins/jquery-steps-master/build/jquery.steps2.js"></script>
 	<script src="/assets/js/WizardInit.js"></script>
-
+	<SCRIPT type="text/javascript">
+		showBtnV();
+	</SCRIPT>
 	<!-- END PAGE LEVEL SCRIPTS -->
 
 </body>
 </html>
+
+<%
+    more = null;
+%>
