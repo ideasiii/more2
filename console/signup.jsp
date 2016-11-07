@@ -31,7 +31,9 @@
 			}
 		}
 
-			
+		/** Web Tracker **/
+		More.webTracker(request, "load page", null);
+		
 %>
 <!DOCTYPE html>
 <html>
