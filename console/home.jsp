@@ -8,11 +8,12 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="sdk.ideas.Logs"%>
 <%
-    final String strToken = request.getParameter(Common.USER_TOKEN);
-    More more = new More();
+    final String strEmail = (String) session.getAttribute("Email");
     boolean bLogined = false;
 
-    if (null != strToken && !strToken.trim().equals("null") && StringUtility.isValid(strToken))
+    More more = new More();
+
+    if (null != strEmail)
     {
 		bLogined = true;
     }

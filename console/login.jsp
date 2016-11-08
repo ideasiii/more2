@@ -8,30 +8,10 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="sdk.ideas.Logs"%>
 <%
-    final String strToken = request.getParameter(Common.USER_TOKEN);
-    More more = new More();
-    boolean bLogined = false;
+			final String strHostUrl = request.getRequestURL().toString();
 
-    if (null != strToken && !strToken.trim().equals("null") && StringUtility.isValid(strToken))
-    {
-		bLogined = true;
-    }
-
-    final String strHostUrl = request.getRequestURL().toString();
-    final String strShowIosSdk = request.getParameter(Common.IOS);
-
-    ArrayList<More.SdkData> listSdk = new ArrayList<More.SdkData>();
-    int nCount = more.querySdk(listSdk);
-    int nshowSdkType = 0;
-    if (StringUtility.isValid(strShowIosSdk) && strShowIosSdk.trim().equals(Common.IOS))
-		nshowSdkType = 1;
-
-    final String strContextPath = request.getContextPath();
-    final String uri = request.getRequestURI();
-    final String pageName = uri.substring(uri.lastIndexOf("/") + 1);
-
-    // test
-    String strP1 = request.getParameter("1");
+			/** Web Tracker **/
+			More.webTracker(request, "load page", null);
 %>
 <!DOCTYPE html>
 <html>
@@ -59,8 +39,12 @@
 <!-- END PAGE LEVEL STYLES -->
 
 <!-- JavaScript -->
-
-
+<script>
+	function formSubmit(formName) {
+		var form = document.getElementById(formName);
+		form.submit();
+	}
+</script>
 
 
 <style>
@@ -543,8 +527,9 @@
 									<div id="login" class="tab-pane active">
 										<form action="index.html" class="form-signin">
 											<h4 class="text-center">Enter Your E-mail and Password</h4>
-											<input type="text" placeholder="E-mail Account"
-												class="form-control" /> <input type="password"
+											<input id="inputEmail" name="inputEmail" type="text"
+												placeholder="E-mail Account" class="form-control" /> <input
+												id="inputPassword" name="inputPassword" type="password"
 												placeholder="Password" class="form-control" />
 											<button
 												class="btn text-muted text-center btn-warning btn-grad"
@@ -561,30 +546,13 @@
 												type="submit">Recover Password</button>
 										</form>
 									</div>
-									<div id="signup" class="tab-pane">
-										<form action="index.html" class="form-signin">
-											<h4 class="text-center">Please Fill Details to Register</h4>
-											<input type="text" placeholder="E-mail Account"
-												class="form-control" /> <input type="text"
-												placeholder="Name" class="form-control" /> <input
-												type="text" placeholder="Organization" class="form-control" />
-											<input type="email" placeholder="Phone" class="form-control" />
-											<input type="password" placeholder="Password"
-												class="form-control" /> <input type="password"
-												placeholder="Retype Password" class="form-control" />
-											<button
-												class="btn text-muted text-center btn-success btn-grad"
-												type="submit">Register</button>
-										</form>
-									</div>
+
 								</div>
 								<div class="text-center">
 									<ul class="list-inline">
 										<li><a class="text-muted" href="#login" data-toggle="tab">Login</a></li>
 										<li><a class="text-muted" href="#forgot"
 											data-toggle="tab">Forgot Password</a></li>
-										<li><a class="text-muted" href="#signup"
-											data-toggle="tab">Sign Up</a></li>
 									</ul>
 								</div>
 
@@ -642,3 +610,7 @@
 
 </body>
 </html>
+
+<%
+    more = null;
+%>

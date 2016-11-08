@@ -8,14 +8,7 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="sdk.ideas.Logs"%>
 <%
-    final String strToken = request.getParameter(Common.USER_TOKEN);
 			More more = new More();
-			boolean bLogined = false;
-
-			if (null != strToken && !strToken.trim().equals("null") && StringUtility.isValid(strToken)) {
-				bLogined = true;
-			}
-
 			final String strHostUrl = request.getRequestURL().toString();
 
 			String strAccountV = "";
