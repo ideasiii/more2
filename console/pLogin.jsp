@@ -84,7 +84,7 @@
 	</div>
 	
 	<%
-	    if (bAuthResult = true) {
+	    if (bAuthResult == true) {
 	%>
 	<form action="home.jsp" method="post" name="FormHome" id="FormHome">
 		<input name="<%=Common.MEMBER_EMAIL%>" type="hidden"
