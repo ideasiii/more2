@@ -53,11 +53,7 @@ final String strPassword = request.getParameter("inputPassword");
 
 <!-- Javascript -->
 <script>
-function formSubmit(formName) {
-	var form = document.getElementById(formName);
-	form.submit();
-}
-</script>
+<script src="js/validation.js"></script>
 
 
 </head>

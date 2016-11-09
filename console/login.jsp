@@ -39,12 +39,7 @@
 <!-- END PAGE LEVEL STYLES -->
 
 <!-- JavaScript -->
-<script>
-	function formSubmit(formName) {
-		var form = document.getElementById(formName);
-		form.submit();
-	}
-</script>
+<script src="js/validation.js"></script>
 
 
 <style>
@@ -524,8 +519,9 @@
 									<h2 style="font-weight: bold;">Login to MORE</h2>
 								</div>
 								<div class="tab-content" style="border: 0; padding: 0;">
+								
 									<div id="login" class="tab-pane active">
-										<form action="index.html" class="form-signin">
+										<form action="index.html" id="formLogin" name="formLogin" class="form-signin">
 											<h4 class="text-center">Enter Your E-mail and Password</h4>
 											<input id="inputEmail" name="inputEmail" type="text"
 												placeholder="E-mail Account" class="form-control" /> <input
@@ -533,11 +529,12 @@
 												placeholder="Password" class="form-control" />
 											<button
 												class="btn text-muted text-center btn-warning btn-grad"
-												type="submit">Login</button>
+												type="button" onclick="checkLoginData('formLogin')">Login</button>
 										</form>
 									</div>
+									
 									<div id="forgot" class="tab-pane">
-										<form action="index.html" class="form-signin">
+										<form action="index.html" id="formForgot" name="formForgot" class="form-signin">
 											<h4 class="text-center">Enter Your Valid E-mail</h4>
 											<input type="email" required="required"
 												placeholder="Your E-mail" class="form-control" /> <br />

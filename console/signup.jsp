@@ -55,6 +55,7 @@
 <!-- END PAGE LEVEL STYLES -->
 
 <!-- JavaScript -->
+<script src="js/validation.js"></script>
 <script type="text/javascript">
 	function showBtnV(formName) {
 		var form = document.getElementById(formName);
@@ -64,59 +65,6 @@
 			document.getElementById("btnA").style.display = "none";
 			document.getElementById("btnV").style.display = "block";
 		}
-	}
-</script>
-<script type="text/javascript">
-	function Trim(x) {
-		return x.replace(/^\s+|\s+$/gm, '');
-	}
-</script>
-<script>
-	function checkAccountListData(formName) {
-
-		var form = document.getElementById(formName);
-		var formname = form.name;
-		var errMsg = '';
-		var accountV = form.accountList.value;
-		var spl = accountV.split(",");
-		 reg = /^[^\s]+@[^\s]+\.[^\s]{2,3}$/;
-		
-
-		if (formname == "formSignUp") {
-
-			if (Trim(form.inputEmail.value) == '') {
-				errMsg += "Please enter a valid E-mail !!\n";
-				
-			} else {
-				
-				if (!reg.test(Trim(form.inputEmail.value))) {
-					errMsg += "Wrong E-mail format !!\n";
-				} 
-			}
-			
-			
-			for ( var key in spl) {
-				// alert(spl[key]);
-				if (Trim(form.inputEmail.value) == spl[key]) {
-					errMsg += "The E-mail account '" + spl[key]
-							+ "' has been used, please change it !!";
-				}
-			}
-		} else {
-			
-		}
-
-		if (errMsg == '') {
-
-			if (formname == "formSignUp") {
-				document.getElementById('btnA').style.display = "block";
-				document.getElementById('btnV').style.display = "none";
-			}
-
-			return true;
-		}
-		alert(errMsg);
-		return false;
 	}
 </script>
 
