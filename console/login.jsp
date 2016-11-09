@@ -610,7 +610,3 @@
 
 </body>
 </html>
-
-<%
-    more = null;
-%>

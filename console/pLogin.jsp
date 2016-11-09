@@ -15,7 +15,7 @@ final String strPassword = request.getParameter("inputPassword");
 			More more = new More();
 			
 			More.MemberData memberData = new More.MemberData();
-			int nCount = more.queryMember(strEmail, memberData);
+			int nCount = more.queryMember(request, strEmail, memberData);
 			more = null;
 			
 			boolean bAuthResult = false;

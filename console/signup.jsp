@@ -14,7 +14,7 @@
 			String strAccountV = "";
 
 			ArrayList<String> listEmailAccount = new ArrayList<String>();
-			int nACount = more.queryMemberAccountList(listEmailAccount);
+			int nACount = more.queryMemberAccountList(request, listEmailAccount);
 			
 		for(int i = 0; i < listEmailAccount.size(); ++i)
 		{
@@ -513,17 +513,7 @@
 					<!-- LOGIN SECTION  -->
 					<div class="super-header gradient-blue">
 						<ul class="super-header-ul">
-							<%
-							    if (bLogined) {
-							%>
-							<li class="super-header-li"><a class="super-header-a"
-								href="login.jsp">Logout</a></li>
-							<li class="super-header-li"><a class="super-header-a"
-								href="/more_manager/manager/mainpage.jsp"><i
-									class="icon-gear fa-inverse"></i></a></li>
-							<%
-							    } else {
-							%>
+							
 							<li class="super-header-li"><a class="super-header-a"
 								href="login.jsp">Login</a></li>
 							<li class="super-header-li"><a class="super-header-a"
@@ -531,9 +521,7 @@
 							<li class="super-header-li"><a class="super-header-a"
 								href="/more_manager/manager/mainpage.jsp"><i
 									class="icon-gear fa-inverse"></i></a></li>
-							<%
-							    }
-							%>
+							
 						</ul>
 					</div>
 					<!-- END LOGIN SECTION  -->
