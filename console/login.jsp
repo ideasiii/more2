@@ -521,7 +521,7 @@
 								<div class="tab-content" style="border: 0; padding: 0;">
 								
 									<div id="login" class="tab-pane active">
-										<form action="index.html" id="formLogin" name="formLogin" class="form-signin">
+										<form action="pLogin.jsp" id="formLogin" name="formLogin" class="form-signin">
 											<h4 class="text-center">Enter Your E-mail and Password</h4>
 											<input id="inputEmail" name="inputEmail" type="text"
 												placeholder="E-mail Account" class="form-control" /> <input
@@ -535,13 +535,14 @@
 									
 									<div id="forgot" class="tab-pane">
 										<form action="index.html" id="formForgot" name="formForgot" class="form-signin">
-											<h4 class="text-center">Enter Your Valid E-mail</h4>
+											<h4 class="text-center">Enter Your E-mail Account</h4>
 											<input type="email" required="required"
 												placeholder="Your E-mail" class="form-control" /> <br />
 											<button
 												class="btn text-muted text-center btn-success btn-grad"
 												type="submit">Recover Password</button>
 										</form>
+										<br>
 									</div>
 
 								</div>
