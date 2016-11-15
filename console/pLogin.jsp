@@ -2,7 +2,6 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ page import="java.util.Map"%>
 <%@ page import="sdk.ideas.More"%>
-<%@ page import="sdk.ideas.Common"%>
 <%@ page import="sdk.ideas.Logs"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -87,7 +86,7 @@
 	    if (bAuthResult == true) {
 	%>
 	<form action="home.jsp" method="post" name="FormHome" id="FormHome">
-		<input name="<%=Common.MEMBER_EMAIL%>" type="hidden"
+		<input name="<%=More.Common.MEMBER_EMAIL%>" type="hidden"
 			value="<%=strEmail%>" />
 	</form>
 	<script>

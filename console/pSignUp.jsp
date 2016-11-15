@@ -2,7 +2,6 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ page import="java.util.Map"%>
 <%@ page import="sdk.ideas.More"%>
-<%@ page import="sdk.ideas.Common"%>
 
 <%
 	request.setCharacterEncoding("UTF-8");
@@ -52,7 +51,7 @@
 
 	<form action="home.jsp" method="post"
 		name="FormHome" id="FormHome">
-		<input name="<%=Common.MEMBER_EMAIL%>" type="hidden"
+		<input name="<%=More.Common.MEMBER_EMAIL%>" type="hidden"
 			value="<%=strEmail%>" />
 	</form>
 	<%
