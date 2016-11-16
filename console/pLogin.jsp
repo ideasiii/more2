@@ -2,7 +2,6 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ page import="java.util.Map"%>
 <%@ page import="sdk.ideas.More"%>
-<%@ page import="sdk.ideas.Logs"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -49,10 +48,8 @@
 
 				if (0 < nCount) {
 					strToken = memberData.member_token;
-					Logs.showTrace("Login get token:" + strToken);
 					if (strPassword.trim().equals(memberData.member_password.trim())) {
 						bAuthResult = true;
-						Logs.showTrace("login success:" + memberData.member_email + "/" + memberData.member_password);
 						session.setAttribute("Email", strEmail);
 
 					} else {

@@ -178,7 +178,7 @@ public class More
 			
 		} catch (SQLException e)
 		{
-			Logs.showError(e.toString());
+			
 			e.printStackTrace();
 			More.webTracker(request, "queryMemberAccountList failed: ", e.toString());
 		}
@@ -215,7 +215,7 @@ public class More
 				memData.member_auth_state = rs.getInt("member_auth_state");
 				memData.member_group = rs.getInt("member_group");
 				memData.create_date = rs.getString("create_date");
-				Logs.showTrace("Query member:" + memData.member_email + " create_date:" + memData.create_date);
+				
 			}
 			rs.close();
 			stat.close();
@@ -225,7 +225,7 @@ public class More
 			
 		} catch (SQLException e)
 		{
-			Logs.showError(e.toString());
+			
 			e.printStackTrace();
 			More.webTracker(request, "queryMember failed: ", e.toString());
 		}
@@ -271,7 +271,7 @@ public class More
 			
 		} catch (Exception e)
 		{
-			Logs.showError(e.toString());
+			
 			More.webTracker(request, "memberAdd failed: ", e.toString());
 			return MORE_ERR_EXCEPTION;
 		}
@@ -294,7 +294,7 @@ public class More
 			return toHex(md.digest());
 		} catch (NoSuchAlgorithmException e)
 		{
-			Logs.showError(e.toString());
+			
 		}
 
 		return String.valueOf(current);
@@ -353,7 +353,7 @@ public class More
 			
 		} catch (SQLException e)
 		{
-			Logs.showError(e.toString());
+			
 			e.printStackTrace();
 			More.webTracker(request, "querySdk failed: ", e.toString());
 		}
@@ -451,7 +451,7 @@ public class More
 			
 		} catch (Exception e)
 		{
-			Logs.showError(e.toString());
+			
 			e.printStackTrace();
 			More.webTracker(request, "queryApp failed: ", e.toString());
 		}
@@ -528,7 +528,7 @@ public class More
 
 		} catch (Exception e)
 		{
-			Logs.showError(e.toString());
+			
 			e.printStackTrace();
 			More.webTracker(request, "deleteApp failed: ", e.toString());
 		}
@@ -573,7 +573,7 @@ public class More
 			
 		} catch (Exception e)
 		{
-			Logs.showError(e.toString());
+			
 			e.printStackTrace();
 			More.webTracker(request, "updateApp failed: ", e.toString());
 		}
@@ -604,7 +604,7 @@ public class More
 			
 		} catch (Exception e)
 		{
-			Logs.showError(e.toString());
+			
 			e.printStackTrace();
 			More.webTracker(request, "updateUser failed: ", e.toString());
 		}
