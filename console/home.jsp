@@ -596,11 +596,14 @@
 						<ul class="super-header-ul">
 
 							<%
-							    if (bLogined = true)
+							    if (bLogined == true)
 							    {
 							%>
 							<li class="super-header-li"><a class="super-header-a"
 								href="logout.jsp">Logout</a></li>
+							<%
+							    
+							%>
 							<li class="super-header-li"><a class="super-header-a"
 								href="/more_manager/manager/mainpage.jsp"><i
 									class="icon-gear fa-inverse"></i></a></li>
@@ -785,3 +788,6 @@
 
 </body>
 </html>
+	<%
+	    more = null;
+	%>
