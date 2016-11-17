@@ -8,14 +8,18 @@
 
 <%
     final String strEmail = (String) session.getAttribute("Email");
+    final Integer groupLevel = (Integer) session.getAttribute("Group Level");
+
     boolean bLogined = false;
+    boolean bManager = false;
 
     More more = new More();
 
     if (null != strEmail)
-    {
 		bLogined = true;
-    }
+
+    if (null != groupLevel && groupLevel == 1)
+		bManager = true;
 
     final String strHostUrl = request.getRequestURL().toString();
     final String uri = request.getRequestURI();
@@ -602,12 +606,14 @@
 							<li class="super-header-li"><a class="super-header-a"
 								href="logout.jsp">Logout</a></li>
 							<%
-							    
+							    if (bManager == true)
+									{
 							%>
 							<li class="super-header-li"><a class="super-header-a"
 								href="/more_manager/manager/mainpage.jsp"><i
 									class="icon-gear fa-inverse"></i></a></li>
 							<%
+							    }
 							    }
 							    else
 							    {
@@ -788,6 +794,6 @@
 
 </body>
 </html>
-	<%
-	    more = null;
-	%>
+<%
+    more = null;
+%>

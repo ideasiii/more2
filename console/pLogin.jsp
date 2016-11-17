@@ -45,13 +45,17 @@
 
 				boolean bAuthResult = false;
 				String strToken = null;
+				
+				Integer groupLevel = new Integer(memberData.member_group);
+				
 
 				if (0 < nCount) {
 					strToken = memberData.member_token;
 					if (strPassword.trim().equals(memberData.member_password.trim())) {
 						bAuthResult = true;
 						session.setAttribute("Email", strEmail);
-
+						session.setAttribute("Group Level", groupLevel);
+						
 					} else {
 	%>
 	<script type="text/javascript">
@@ -78,7 +82,7 @@
 			<img src="/assets/img/loading.gif" width="600px;">
 		</div>
 	</div>
-	
+
 	<%
 	    if (bAuthResult == true) {
 	%>
