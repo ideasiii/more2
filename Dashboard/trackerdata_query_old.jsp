@@ -616,35 +616,6 @@ final String strID = request.getParameter(Common.APP_ID);
 
 /* end text background */
 
-/* query page */
-.inner {
-	color: #fff;
-}
-
-.option-box {
-	height: 280px;
-	background-color: #303030;
-	border-radius: 5px;
-	text-align: center;
-	padding: 5px;
-}
-
-.white-box {
-	padding: 30px;
-	margin-top: 50px;
-	border-radius: 5px;
-	color: #000;
-	background-color: #fff;
-}
-
-#backtotop {
-	display: scroll;
-	position: fixed;
-	bottom: 5px;
-	right: 5px;
-}
-/* end query page */
-
 /* footer */
 .footer {
 	width: 100%;
@@ -692,29 +663,28 @@ final String strID = request.getParameter(Common.APP_ID);
 
 <%@include file="menu.jsp"%>
 
-<!--PAGE CONTENT -->
-		<div id="content">
-<div class="inner" style="min-height: 700px; padding: 0;">
-				<div id="intro" class="silk-grey"
-					style="padding: 50px 0px; min-height: 700px;">
-					
 	<div class="row" style="margin: 10%;">
-		<div class="col-lg-12">
-			<div class="box" style="border-radius:5px;">
-				
-		
-					
-			
+		<div class="col-lg-12" style="padding-left: 25%; padding-right: 25%;">
+			<div class="box">
+				<header>
+					<h5>
+						<i class="fa fa-search fa-1x" aria-hidden="true"></i> Raw Data
+						Query
+					</h5>
+					<div class="toolbar">
+						<div class="btn-group"></div>
+					</div>
+				</header>
 				<div class="body">
 					<div class="row">
 						<div class="col-lg-12">
-							<div class="panel option-box"
-								style="padding: 15px;background:#303030;">
+							<div class="panel panel-default title"
+								style="padding: 30px; padding-left: 15%; padding-right: 15%;">
 								<form action="trackerdata_result.jsp" role="form"
 									name="formQueryTrackerData" id="formQueryTrackerData">
 
 									<div class="form-group">
-										<label>App ID</label> <input class="form-control" style="width: 320px;"
+										<label>App ID</label> <input class="form-control"
 											name="<%=Common.APP_ID%>" />
 										<p class="help-block" style="color: #b94a48;">Notification:
 											Group name cannot be changed.</p>
@@ -725,7 +695,7 @@ final String strID = request.getParameter(Common.APP_ID);
 											<dd style="text-align: left;">
 												<label for="dp3">Start Date</label>
 												<div>
-													<input type="text" class="form-control" style="width: 170px;"
+													<input type="text" class="form-control"
 														name="<%=Common.START_DATE%>"
 														data-date-format="yyyy-mm-dd" id="dp3" />
 												</div>
@@ -736,7 +706,7 @@ final String strID = request.getParameter(Common.APP_ID);
 											<dd style="text-align: left;">
 												<label for="dp4">End Date</label>
 												<div>
-													<input type="text" class="form-control" style="width: 170px;"
+													<input type="text" class="form-control"
 														name="<%=Common.END_DATE%>" data-date-format="yyyy-mm-dd"
 														id="dp4" />
 												</div>
@@ -764,12 +734,6 @@ final String strID = request.getParameter(Common.APP_ID);
 
 
 
-
-</div>
-</div>
-</div>
-</div>
-		<!--END PAGE CONTENT -->
 
 
 	<!-- GLOBAL SCRIPTS -->

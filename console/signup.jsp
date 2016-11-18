@@ -7,25 +7,10 @@
 <%@ page import="java.util.ArrayList"%>
 
 <%
-			More more = new More();
 			final String strHostUrl = request.getRequestURL().toString();
-
-			String strAccountV = "";
-
-			ArrayList<String> listEmailAccount = new ArrayList<String>();
-			int nACount = more.queryMemberAccountList(request, listEmailAccount);
-			
-		for(int i = 0; i < listEmailAccount.size(); ++i)
-		{
-		    strAccountV = strAccountV +  listEmailAccount.get(i);
-			if (i != (listEmailAccount.size()-1)) {
-				strAccountV += ',';
-			}
-		}
-
+		
 		/** Web Tracker **/
 		More.webTracker(request, "load page", null);
-		
 %>
 <!DOCTYPE html>
 <html>
@@ -442,97 +427,22 @@
 	<!-- MAIN WRAPPER -->
 	<div id="wrap">
 
-		<!-- HEADER SECTION -->
-		<div id="top">
+		<%@include file="menu.jsp"%>
+		<% 
+		String strAccountV = "";
 
-			<nav class="navbar navbar-inverse navbar-fixed-top"
-				style="background-color: rgba(86, 99, 100, 0.89);">
-
-				<!-- LOGO SECTION -->
-				<header>
-					<div class="header-angle navbar-brand">
-						<a href="home.jsp" class="navbar-brand"> <img class="logo"
-							height="80" src="/assets/img/more_logo_white_board_sm.png" alt="" />
-						</a>
-					</div>
-					<!-- END LOGO SECTION -->
-
-					<!-- LOGIN SECTION  -->
-					<div class="super-header gradient-blue">
-						<ul class="super-header-ul">
-							
-							<li class="super-header-li"><a class="super-header-a"
-								href="login.jsp">Login</a></li>
-							<li class="super-header-li"><a class="super-header-a"
-								href="signup.jsp">Sign Up</a></li>
-							<li class="super-header-li"><a class="super-header-a"
-								href="/more_manager/manager/mainpage.jsp"><i
-									class="icon-gear fa-inverse"></i></a></li>
-							
-						</ul>
-					</div>
-					<!-- END LOGIN SECTION  -->
-
-					<!-- MENU SECTION  -->
-					<div class="menu gradient-gray">
-						<div class="row">
-							<div class="col-sm-9" style="text-align: center; float: right;">
-								<ul class="menu-header">
-									<li class="menu-header-li"><a href=""
-										class="menu-header-a"> PLATFORM </a>
-										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">MORE MDM</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">MORE API</a></li>
-										</ul></li>
-
-									<li class="menu-header-li"><a href=""
-										class="menu-header-a"> DASHBOARD </a>
-										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">QWERYU</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">ANALYSIS</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">ASFDGFHVGH</a></li>
-										</ul></li>
-
-									<li class="menu-header-li"><a href=""
-										class="menu-header-a"> RESOURCES </a>
-										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">MORE SDK</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">ASFGHJMK</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">ASFDGFHVGH</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">QWERYU</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">ASFGHJMK</a></li>
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">ASFDGFHVGH</a></li>
-										</ul></li>
-
-									<li class="menu-header-li"><a href=""
-										class="menu-header-a"> DEVELOPER </a>
-										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a class="dropdown-menu-a"
-												href="">QWERYU</a></li>
-										</ul></li>
-
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- END MENU SECTION  -->
-				</header>
-			</nav>
-		</div>
-		<!-- END HEADER SECTION -->
-
-
+			ArrayList<String> listEmailAccount = new ArrayList<String>();
+			int nACount = more.queryMemberAccountList(request, listEmailAccount);
+			
+		for(int i = 0; i < listEmailAccount.size(); ++i)
+		{
+		    strAccountV = strAccountV +  listEmailAccount.get(i);
+			if (i != (listEmailAccount.size()-1)) {
+				strAccountV += ',';
+			}
+		}
+		 %>
+		 
 		<!--PAGE CONTENT -->
 		<div id="content">
 			<div class="inner" style="min-height: 700px; padding: 0;">
