@@ -709,7 +709,7 @@ final String strID = request.getParameter(Common.APP_ID);
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="panel option-box"
-								style="padding: 15px;background:#303030;">
+								style="padding:15px 45px;background:#303030;">
 								<form action="trackerdata_result.jsp" role="form"
 									name="formQueryTrackerData" id="formQueryTrackerData">
 

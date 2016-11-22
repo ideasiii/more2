@@ -445,9 +445,9 @@
 		 
 		<!--PAGE CONTENT -->
 		<div id="content">
-			<div class="inner" style="min-height: 700px; padding: 0;">
+			<div class="inner" style=" padding: 0;">
 				<div id="intro" class="silk-grey"
-					style="padding: 50px 0px; min-height: 700px;">
+					style="padding: 20px 0px; min-height: 700px;">
 
 					<div class="container">
 						<div class="row container-text-c" style="padding: 1rem 8rem;">
@@ -466,8 +466,8 @@
 										<div style="padding-left: 15px; text-align: left;">
 											<p style="text-align: justify; color: gray;">
 												<b>Notification and Letter of Consent for Collection,
-													Processing and Use of Personal Information<br /> (Version:
-													P-X-X)
+													Processing and Use of Personal Information<br /> <span style="color: #b94a48;">(Version:
+													P-X-X)</span>
 												</b> <br /> <br /> MAccording to the R.O.C. Personal
 												Information Protection Act and the internal
 												policy/regulations of Institute for Information Industry
@@ -540,18 +540,20 @@
 
 										<div class="form-group">
 											<label>Name</label> <input type="text" name="inputName"
-												id="inputName" class="form-control" />
-											<p class="help-block">Example block-level help text here.</p>
+												id="inputName" class="form-control" /><br>
 										</div>
 										<div class="form-group">
 											<label>Organization</label> <input type="text"
-												name="inputCompany" class="form-control" />
-											<p class="help-block">Example block-level help text here.</p>
+												name="inputCompany" class="form-control" /><br>
 										</div>
 										<div class="form-group">
 											<label>Phone</label> <input type="text" name="inputPhone"
+												class="form-control" /><br>
+										</div>
+										<div class="form-group">
+											<label>Purpose</label> <input type="text" name="inputPurpose"
 												class="form-control" />
-											<p class="help-block">Example block-level help text here.</p>
+											<p class="help-block">Example text.</p>
 										</div>
 									</section>
 
@@ -585,8 +587,14 @@
 										<div class="form-group">
 											<label>Retype Password</label> <input type="text"
 												name="inputPassword2" class="form-control" />
+											<br>
+										</div>
+										<div class="form-group">
+											<label>Agreement Version</label> <input type="text"
+												name="inputAgreeV" class="form-control" />
 											<p class="help-block"></p>
 										</div>
+										
 
 									</section>
 								</div>

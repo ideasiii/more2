@@ -2,6 +2,8 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ page import="java.util.Map"%>
 <%@ page import="sdk.ideas.More"%>
+<%@page import="sdk.ideas.HttpsClient"%>
+<%@ page import="org.json.JSONObject"%>
 
 <%
 	request.setCharacterEncoding("UTF-8");
@@ -11,12 +13,34 @@
 	final String strName = request.getParameter("inputName");
 	final String strCompany = request.getParameter("inputCompany");
 	final String strPhone = request.getParameter("inputPhone");
+	final String strPurpose = request.getParameter("inputPurpose");
+	final String strAgreeV = request.getParameter("inputAgreeV");
 	
-	More more = new More();
+	
+/**	More more = new More();
 	String strToken = more.generateToken(strEmail, false);
 	int nResult = more.memberAdd(request, strEmail, strPassword, strName, strCompany, strPhone, strToken);
 
 	more = null;
+**/
+	
+	String httpsURL = "https://ser.kong.srm.pw/dashboard/user";
+	
+	JSONObject jObj = new JSONObject();
+	
+	jObj.put("email", strEmail);
+	jObj.put("password", strPassword);
+	jObj.put("groupId", 0);
+	jObj.put("displayName", strName);
+	jObj.put("company", strCompany);
+	jObj.put("phone", strPhone);
+	jObj.put("purpose", strPurpose);
+	jObj.put("agreementVersion", strAgreeV);
+	
+	HttpsClient httpsClient = new HttpsClient();
+	
+	
+	
 	
 	/** Web Tracker **/
 	More.webTracker(request, "load progress page", null);
