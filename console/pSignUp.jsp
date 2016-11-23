@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" session="false"%>
+<%@ page contentType="text/html; charset=utf-8" language="java"
+	session="false"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ page import="java.util.Map"%>
 <%@ page import="sdk.ideas.More"%>
@@ -6,46 +7,57 @@
 <%@ page import="org.json.JSONObject"%>
 
 <%
-	request.setCharacterEncoding("UTF-8");
+    request.setCharacterEncoding("UTF-8");
 
-	final String strEmail = request.getParameter("inputEmail");
-	final String strPassword = request.getParameter("inputPassword");
-	final String strName = request.getParameter("inputName");
-	final String strCompany = request.getParameter("inputCompany");
-	final String strPhone = request.getParameter("inputPhone");
-	final String strPurpose = request.getParameter("inputPurpose");
-	final String strAgreeV = request.getParameter("inputAgreeV");
-	
-	
-/**	More more = new More();
-	String strToken = more.generateToken(strEmail, false);
-	int nResult = more.memberAdd(request, strEmail, strPassword, strName, strCompany, strPhone, strToken);
+			final String strEmail = request.getParameter("inputEmail");
+			final String strPassword = request.getParameter("inputPassword");
+			final String strName = request.getParameter("inputName");
+			final String strCompany = request.getParameter("inputCompany");
+			final String strPhone = request.getParameter("inputPhone");
+			final String strPurpose = request.getParameter("inputPurpose");
+			final String strAgreeV = request.getParameter("inputAgreeV");
+			
 
-	more = null;
-**/
-	
-	String httpsURL = "https://ser.kong.srm.pw/dashboard/user";
-	
-	JSONObject jObj = new JSONObject();
-	
-	jObj.put("email", strEmail);
-	jObj.put("password", strPassword);
-	jObj.put("groupId", 0);
-	jObj.put("displayName", strName);
-	jObj.put("company", strCompany);
-	jObj.put("phone", strPhone);
-	jObj.put("purpose", strPurpose);
-	jObj.put("agreementVersion", strAgreeV);
-	
-	HttpsClient httpsClient = new HttpsClient();
-	
-	
-	
-	
-	/** Web Tracker **/
-	More.webTracker(request, "load progress page", null);
-	%>
-	
+			/**	More more = new More();
+				String strToken = more.generateToken(strEmail, false);
+				int nResult = more.memberAdd(request, strEmail, strPassword, strName, strCompany, strPhone, strToken);
+			
+				more = null;
+			**/
+
+			String httpsURL = "https://ser.kong.srm.pw/dashboard/user";
+
+			JSONObject jObj = new JSONObject();
+			jObj.put("email", strEmail);
+			jObj.put("password", strPassword);
+			jObj.put("groupId", 1);
+			jObj.put("displayName", strName);
+			jObj.put("company", strCompany);
+			jObj.put("phone", strPhone);
+			jObj.put("purpose", strPurpose);
+			jObj.put("agreementVersion", strAgreeV);
+			
+
+			HttpsClient httpsClient = new HttpsClient();
+			String strResult = httpsClient.sendPost(httpsURL, jObj.toString());
+
+			JSONObject jObjUserId = new JSONObject(strResult);
+			int nUserId = 0;
+			if (null != jObjUserId && jObjUserId.has("userId")) {
+				nUserId = jObjUserId.getInt("userId");
+				
+			}
+
+			if (nUserId > 0)
+				More.webTracker(request, "User registeration success ", "UserId: " + String.valueOf(nUserId));
+			else {
+				More.webTracker(request, "User registeration failed ", "error: no response from server");
+			}
+
+			/** Web Tracker **/
+			More.webTracker(request, "load progress page", null);
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -73,19 +85,21 @@
 		</div>
 	</div>
 
-	<form action="home.jsp" method="post"
-		name="FormHome" id="FormHome">
-		<input name="<%=More.Common.MEMBER_EMAIL%>" type="hidden"
-			value="<%=strEmail%>" />
+	<form action="home.jsp" method="post" name="FormHome" id="FormHome">
+
 	</form>
 	<%
-	if (nResult == More.MORE_ERR_SUCCESS) {
+	    if (nUserId > 0) {
 	%>
 	<script>
 		formSubmit('FormHome');
 	</script>
 	<%
-	}
+	    }
+	    else
+	    {
+		out.println(strResult);
+	    }
 	%>
 </body>
 </html>

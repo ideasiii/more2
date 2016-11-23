@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="sdk.ideas.More"%>
-<%@ page import="sdk.ideas.StringUtility"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.Iterator"%>
 <%@ page import="java.util.ArrayList"%>
@@ -12,7 +11,7 @@
 		/** Web Tracker **/
 		More.webTracker(request, "load page", null);
 %>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -51,7 +50,49 @@
 		}
 	}
 </script>
+<script language="javascript">
+	var contentEditWin = null;
+	var w = window.screen.width;
+	var h = window.screen.height;
+	var width = 0;
+	var height = 0;
+	var left = 0;
 
+	function addCanned() {
+		var url = "pVerification.jsp";
+
+				contentEditWin = window.open(url,'_blank','toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=0, top=0, width=10000, height=10000, visible=none','');
+				//contentEditWin = window.open(url, 'run', locate);
+				checkChildWin();
+	}
+
+	function checkChildWin() {
+		if (null != contentEditWin && contentEditWin.closed) {
+			contentEditWin = null;
+			//window.location.reload()
+			var mm = getCookie("email");
+			alert(mm);
+			return;
+		}
+
+		setTimeout("checkChildWin()", 1000)
+	}
+
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for (var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+	</script>
 <style>
 
 /* logo section */
@@ -565,12 +606,12 @@
 											<button id="btnV" type="button"
 												class="btn btn-xs btn-grad btn-default"
 												style="float: right;"
-												onclick="checkAccountListData('formSignUp')">Verification</button>
+												onclick="addCanned()">Verification</button>
 											<button id="btnA" type="button"
 												class="btn btn-xs btn-success"
 												style="display: none; float: right;">Available</button>
 
-											<input type="text" name="inputEmail" class="form-control"
+											<input type="text" name="inputEmail" id="inputEmail" class="form-control"
 												onchange="showBtnV('formSignUp')" />
 
 
