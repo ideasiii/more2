@@ -23,27 +23,49 @@
 
     Response respData = new Response();
     String strResult = httpsClient.sendGet(strURL, respData);
-
-    if (200 == respData.mnCode)
+    int nCode = respData.mnCode;
+    //String strMessage = respData.mstrContent;
+    
+    
+    if (200 == nCode)
     {
-	
 		More.webTracker(request, "Email verification successs", "Email: " + strEmail);
+		
+		Cookie cEmail = new Cookie("email", strEmail);
+		Cookie cCode = new Cookie("error", String.valueOf(nCode));
+		response.addCookie(cEmail);
+		response.addCookie(cCode);
     }
     else
     {
-		if (400 == respData.mnCode)
+		JSONObject jObjMessage = new JSONObject(strResult);
+	    String strMessage = null;
+	    if (null != jObjMessage && jObjMessage.has("message")) {
+		strMessage = jObjMessage.getString("message");
+	    }
+	
+		if (400 == nCode)
 		{
-			Cookie cookie = new Cookie("email", strEmail);
-			response.addCookie(cookie);
-			
-		    String strMessage = respData.mstrContent;
-		    More.webTracker(request, "Email verification failed", strMessage + " Email: " + strEmail);
+		    
+		    More.webTracker(request, "Email verification failed " + nCode, strMessage + " Email: " + strEmail);
+		    
+			Cookie cEmail = new Cookie("email", strEmail);
+			Cookie cCode = new Cookie("error", String.valueOf(nCode));
+			Cookie cMessage = new Cookie("message", strMessage);
+			response.addCookie(cEmail);
+			response.addCookie(cCode);
+			response.addCookie(cMessage);
 		}
-
+		else
+		{
+		    More.webTracker(request, "Email verification error: " + nCode , strMessage + " Email: " + strEmail);
+		}
     }
 
+
     strOutput += ("get host:" + strURL + "</br>");
-    strOutput += ("result: " + strResult + "</br>");
+    strOutput += ("result: " + strResult + "</br>");;
+    strOutput += ("code: " + nCode + "</br>");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -54,5 +76,8 @@
 <body>
 	<%=strOutput%>
 
+<script>
+		window.close();
+</script>
 </body>
 </html>

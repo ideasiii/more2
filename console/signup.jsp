@@ -50,6 +50,7 @@
 		}
 	}
 </script>
+
 <script language="javascript">
 	var contentEditWin = null;
 	var w = window.screen.width;
@@ -78,7 +79,7 @@
 			contentEditWin = window.open(url,'_blank','toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=0, top=0, width=10000, height=10000, visible=none','');
 			//contentEditWin = window.open(url, 'run', locate);
 			checkChildWin();
-			
+
 			return true;
 		}
 		alert(errMsg);
@@ -89,13 +90,34 @@
 		if (null != contentEditWin && contentEditWin.closed) {
 			contentEditWin = null;
 			//window.location.reload()
-			var mm = getCookie("email");
-			alert("Invalid E-mail: " + mm);
+			var errMsg = '';
+			var email = getCookie("email");
+			var respCode = getCookie("error")
+			var message = getCookie("message")
+			alert(email);
+			alert(respCode);
+			
+			if (respCode == '200') {
+				document.getElementById("btnA").style.display = "block";
+				document.getElementById("btnV").style.display = "none";
+			} else {
+
+				if (respCode == '400') {
+					errMsg += message ;
+
+					alert(errMsg);
+				}
+			}
+			document.cookie = "email=";
+			document.cookie = "error=";
+			document.cookie = "message=";
+			//email = getCookie("email");
+		//	alert(email);
 			return;
 		}
-
-		setTimeout("checkChildWin()", 1000)
+		setTimeout("checkChildWin()", 10)
 	}
+
 
 	function getCookie(cname) {
 		var name = cname + "=";
@@ -112,6 +134,7 @@
 		return "";
 	}
 </script>
+
 <style>
 
 /* logo section */
