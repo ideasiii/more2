@@ -541,7 +541,9 @@
 							<form role="form" name="formSignUp" id="formSignUp">
 								<input name="accountList" id="accountList"
 									value="<%=strAccountV%>" type="hidden">
-
+								<input name="agreeVersion" id="agreeVersion"
+									value="P-X-X" type="hidden">
+									
 								<div id="wizard">
 									<h2>Agreement</h2>
 									<section style="overflow-y: scroll;">
@@ -621,20 +623,20 @@
 
 									<div class="form-group">
 										<label>Name</label> <input type="text" name="inputName"
-											id="inputName" class="form-control" /><br>
+											id="inputName" class="form-control" />
 									</div>
 									<div class="form-group">
 										<label>Organization</label> <input type="text"
-											name="inputCompany" class="form-control" /><br>
+											name="inputCompany" class="form-control" />
 									</div>
 									<div class="form-group">
 										<label>Phone</label> <input type="text" name="inputPhone"
-											class="form-control" /><br>
+											class="form-control" />
 									</div>
 									<div class="form-group">
 										<label>Purpose</label> <input type="text" name="inputPurpose"
 											class="form-control" />
-										<p class="help-block">Example text.</p>
+										<p class="help-block"></p>
 									</div>
 									</section>
 
@@ -667,12 +669,12 @@
 										<label>Retype Password</label> <input type="text"
 											name="inputPassword2" class="form-control" /> <br>
 									</div>
-									<div class="form-group">
+							<!--  		<div class="form-group">
 										<label>Agreement Version</label> <input type="text"
 											name="inputAgreeV" class="form-control" />
 										<p class="help-block"></p>
 									</div>
-
+							-->
 
 									</section>
 								</div>

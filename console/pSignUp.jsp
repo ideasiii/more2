@@ -15,7 +15,7 @@
 			final String strCompany = request.getParameter("inputCompany");
 			final String strPhone = request.getParameter("inputPhone");
 			final String strPurpose = request.getParameter("inputPurpose");
-			final String strAgreeV = request.getParameter("inputAgreeV");
+			final String strAgreeV = request.getParameter("agreeVersion");
 			
 
 			/**	More more = new More();
