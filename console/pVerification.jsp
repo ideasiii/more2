@@ -63,9 +63,9 @@
     }
 
 
-    strOutput += ("get host:" + strURL + "</br>");
-    strOutput += ("result: " + strResult + "</br>");;
-    strOutput += ("code: " + nCode + "</br>");
+ //   strOutput += ("get host:" + strURL + "</br>");
+ //   strOutput += ("result: " + strResult + "</br>");;
+ //   strOutput += ("code: " + nCode + "</br>");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -74,7 +74,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%=strOutput%>
+  	<%=strOutput%>
 
 <script>
 		window.close();
