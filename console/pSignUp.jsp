@@ -19,9 +19,9 @@
 			
 
 			/**	More more = new More();
+			
 				String strToken = more.generateToken(strEmail, false);
 				int nResult = more.memberAdd(request, strEmail, strPassword, strName, strCompany, strPhone, strToken);
-			
 				more = null;
 			**/
 

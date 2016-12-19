@@ -2,6 +2,8 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ page import="java.util.Map"%>
 <%@ page import="sdk.ideas.More"%>
+<%@page import="sdk.ideas.HttpsClient"%>
+<%@ page import="org.json.JSONObject"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -36,12 +38,52 @@
 
 				final String strEmail = request.getParameter("inputEmail");
 				final String strPassword = request.getParameter("inputPassword");
-
-				More more = new More();
+				
+				/** More more = new More();
 
 				More.MemberData memberData = new More.MemberData();
 				int nCount = more.queryMember(request, strEmail, memberData);
 				more = null;
+				**/
+				
+				String httpsURL = "https://ser.kong.srm.pw/dashboard/token/client-id";
+				
+				JSONObject jobj = new JSONObject();
+				jobj.put("email", strEmail);
+				jobj.put("hashedPassword", strPassword);
+
+				HttpsClient httpsClient = new HttpsClient();
+				String strResult = httpsClient.sendPost(httpsURL, jobj.toString());
+				
+				JSONObject jObjLoginInput = new JSONObject(strResult);
+				int nUserId = 0;
+				if (null != jObjLoginInput && jObjLoginInput.has("userId")) {
+					nUserId = jObjLoginInput.getInt("userId");
+					
+					
+				}
+				
+				if (nUserId > 0)
+				{
+				    httpsURL = "https://ser.kong.srm.pw/dashboard/user";
+				    String strURL = httpsURL + "?/user-id=" + nUserId;
+				    
+				    httpsClient = new HttpsClient();
+				    String strQueryResult = httpsClient.sendGet(strURL);
+				    
+				    
+				    
+				    
+				    
+				    
+				    
+
+					More.webTracker(request, "User login success: " + nUserId, "Email: " + strEmail);
+				}
+				    
+				
+				
+				
 
 				boolean bAuthResult = false;
 				String strToken = null;
