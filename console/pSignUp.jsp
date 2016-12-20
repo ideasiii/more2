@@ -17,16 +17,20 @@
 			final String strPurpose = request.getParameter("inputPurpose");
 			final String strAgreeV = request.getParameter("agreeVersion");
 			
-
+			/** MD5 hash **/
+			
+			
+			
+			
 			/**	More more = new More();
 			
 				String strToken = more.generateToken(strEmail, false);
 				int nResult = more.memberAdd(request, strEmail, strPassword, strName, strCompany, strPhone, strToken);
 				more = null;
 			**/
-
+			
 			String httpsURL = "https://ser.kong.srm.pw/dashboard/user";
-
+			
 			JSONObject jObj = new JSONObject();
 			jObj.put("email", strEmail);
 			jObj.put("password", strPassword);
@@ -71,7 +75,6 @@
 
 <!-- Javascript -->
 <script src="js/validation.js"></script>
-
 
 </head>
 

@@ -87,11 +87,7 @@
 										<ul class="dropdown-menu-container">
 											<li class="dropdown-menu-li" id="3level-sdk"><a href="">MORE
 													SDK</a>
-												<ul class="sub-menu-container">
-													<li class="sub-menu-li"><a href="">sfgj</a></li>
-													<li class="sub-menu-li"><a href="">dfgbhnjk</a></li>
-													<li class="sub-menu-li"><a href="">cvyh</a></li>
-												</ul></li>
+												</li>
 											<li class="dropdown-menu-li"><a href="">ASFGHJMK</a></li>
 											<li class="dropdown-menu-li"><a href="">ASFDGFHVGH</a></li>
 											<li class="dropdown-menu-li"><a href="">QWERYU</a></li>
