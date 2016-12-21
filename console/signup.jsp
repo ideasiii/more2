@@ -74,6 +74,9 @@
 			}
 		}
 
+		alert(email);
+		alert(url);
+		
 		if (errMsg == '') {
 			contentEditWin = window.open(url,'_blank','toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=0, top=0, width=10000, height=10000, visible=none','');
 			//contentEditWin = window.open(url, 'run', locate);
@@ -538,8 +541,8 @@
 							</div>
 
 							<form name="formSignUp" id="formSignUp">
-								<input name="accountList" id="accountList"
-									value="<%--=strAccountV--%>" type="hidden">
+					<!--			<input name="accountList" id="accountList"
+									value="<%--=strAccountV--%>" type="hidden"> -->
 								<input name="agreeVersion" id="agreeVersion"
 									value="P-X-X" type="hidden">
 									
