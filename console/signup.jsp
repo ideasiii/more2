@@ -3,7 +3,6 @@
 <%@ page import="sdk.ideas.More"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.Iterator"%>
-<%@ page import="java.util.ArrayList"%>
 
 <%
     final String strHostUrl = request.getRequestURL().toString();
@@ -291,8 +290,7 @@
 
 .gradient-gray {
 	background-color: transparent;
-	background-image: linear-gradient(to left, rgba(86, 99, 100, 0.89) 70%,
-		white 90%);
+	background-image: linear-gradient(to left, rgba(86, 99, 100, 0.89) 70%, white 90%);
 }
 /* end menu section */
 
@@ -507,11 +505,12 @@
 
 <body class="padTop53">
 
+
 	<!-- MAIN WRAPPER -->
 	<div id="wrap">
 
 		<%@include file="menu.jsp"%>
-		<%
+		<%--
 		    String strAccountV = "";
 
 					ArrayList<String> listEmailAccount = new ArrayList<String>();
@@ -523,7 +522,7 @@
 							strAccountV += ',';
 						}
 					}
-		%>
+		--%>
 
 		<!--PAGE CONTENT -->
 		<div id="content">
@@ -538,9 +537,9 @@
 								<h2 style="font-weight: bold;">Sign Up For MORE Account</h2>
 							</div>
 
-							<form role="form" name="formSignUp" id="formSignUp">
+							<form name="formSignUp" id="formSignUp">
 								<input name="accountList" id="accountList"
-									value="<%=strAccountV%>" type="hidden">
+									value="<%--=strAccountV--%>" type="hidden">
 								<input name="agreeVersion" id="agreeVersion"
 									value="P-X-X" type="hidden">
 									

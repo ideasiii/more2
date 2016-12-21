@@ -3,7 +3,6 @@
 <%@ page import="sdk.ideas.More"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.Iterator"%>
-<%@ page import="java.util.ArrayList"%>
 
 <%
 			final String strHostUrl = request.getRequestURL().toString();

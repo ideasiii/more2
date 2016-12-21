@@ -18,9 +18,8 @@
 			final String strAgreeV = request.getParameter("agreeVersion");
 			
 			/** MD5 hash **/
-			
-			
-			
+			String hash = More.calcMD5(strPassword);
+			String strHashedPassword = More.calcMD5("$1$MoREKey" + hash);
 			
 			/**	More more = new More();
 			
@@ -33,7 +32,7 @@
 			
 			JSONObject jObj = new JSONObject();
 			jObj.put("email", strEmail);
-			jObj.put("password", strPassword);
+			jObj.put("password", strHashedPassword);
 			jObj.put("groupId", 1);
 			jObj.put("displayName", strName);
 			jObj.put("company", strCompany);
