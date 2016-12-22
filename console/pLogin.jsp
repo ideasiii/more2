@@ -39,6 +39,16 @@
 				final String strEmail = request.getParameter("inputEmail");
 				final String strPassword = request.getParameter("inputPassword");
 				
+				/** Web Tracker **/
+				More.webTracker(request, "load progress page", null);
+				
+				/** MD5 hash **/
+				More more = new More();
+				String hash = more.calcMD5(strPassword);
+				String strHashedPassword = more.calcMD5("$1$MoREKey" + hash);
+				
+				more = null;
+				
 				/** More more = new More();
 
 				More.MemberData memberData = new More.MemberData();
@@ -50,7 +60,7 @@
 				
 				JSONObject jobj = new JSONObject();
 				jobj.put("email", strEmail);
-				jobj.put("hashedPassword", strPassword);
+				jobj.put("hashedPassword", strHashedPassword);
 
 				HttpsClient httpsClient = new HttpsClient();
 				String strResult = httpsClient.sendPost(httpsURL, jobj.toString());

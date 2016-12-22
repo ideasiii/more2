@@ -17,9 +17,15 @@
 			final String strPurpose = request.getParameter("inputPurpose");
 			final String strAgreeV = request.getParameter("agreeVersion");
 			
+			/** Web Tracker **/
+			More.webTracker(request, "load progress page", null);
+			
 			/** MD5 hash **/
-			String hash = More.calcMD5(strPassword);
-			String strHashedPassword = More.calcMD5("$1$MoREKey" + hash);
+			More more = new More();
+			String hash = more.calcMD5(strPassword);
+			String strHashedPassword = more.calcMD5("$1$MoREKey" + hash);
+			
+			more = null;
 			
 			/**	More more = new More();
 			
@@ -52,13 +58,10 @@
 			}
 
 			if (nUserId > 0)
-				More.webTracker(request, "User registeration success ", "UserId: " + String.valueOf(nUserId));
+				More.webTracker(request, "User registeration success ", "Email: " + strEmail + " UserId: " + String.valueOf(nUserId));
 			else {
-				More.webTracker(request, "User registeration failed ", "error: no response from server");
+				More.webTracker(request, "User registeration failed, error: no response from server ", strResult);
 			}
-
-			/** Web Tracker **/
-			More.webTracker(request, "load progress page", null);
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
