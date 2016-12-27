@@ -67,14 +67,19 @@
 				
 				JSONObject jObjLoginInput = new JSONObject(strResult);
 				int nUserId = 0;
+				String strClientId;
 				if (null != jObjLoginInput && jObjLoginInput.has("userId")) {
 					nUserId = jObjLoginInput.getInt("userId");
-					
-					
+				}
+				if (null != jObjLoginInput && jObjLoginInput.has("clientId")) {
+				    strClientId = jObjLoginInput.getString("clientId");
 				}
 				
 				if (nUserId > 0)
 				{
+				  
+				    
+				    
 				    httpsURL = "https://ser.kong.srm.pw/dashboard/user";
 				    String strURL = httpsURL + "?/user-id=" + nUserId;
 				    
