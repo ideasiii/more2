@@ -680,7 +680,7 @@ final String strID = request.getParameter(Common.APP_ID);
 						<div class="col-lg-12">
 							<div class="panel panel-default title"
 								style="padding: 30px; padding-left: 15%; padding-right: 15%;">
-								<form action="trackerdata_result.jsp" role="form"
+								<form action="trackerdata_result_old.jsp" role="form"
 									name="formQueryTrackerData" id="formQueryTrackerData">
 
 									<div class="form-group">

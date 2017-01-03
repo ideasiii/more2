@@ -22,7 +22,7 @@
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date current = new Date();
 
-			final String strID = request.getParameter(Common.APP_ID);
+			String strID = request.getParameter(Common.APP_ID);
 			String strSD = request.getParameter(Common.START_DATE);
 			String strED = request.getParameter(Common.END_DATE);
 
@@ -102,11 +102,12 @@
 		var sd = new Date(parts[0], parts[1] - 1, parts[2]);
 		parts = form.end_date.value.split('-');
 		var ed = new Date(parts[0], parts[1] - 1, parts[2]);
+		var app = form.app_id.value
 
-		if (Trim(form.app_id.value) == '')
+		if (Trim(app) == '')
 			errMsg += "Please enter an app ID !!\n";
 		else {
-			if (re.test(Trim(form.app_id.value))) {
+			if (re.test(Trim(app))) {
 				errMsg += "App ID must contain only numeric characters !!\n";
 			}
 		}
@@ -693,10 +694,10 @@
 	<!--PAGE CONTENT -->
 	<div id="content">
 		<div class="inner" style="padding: 0;">
-			<div id="intro" class="silk-grey"
-				style="padding: 50px 0px; min-height: 700px;">
+			<div id="intro"
+				style="padding: 50px 0px; min-height: 700px; background-color: #8f8f8f;">
 
-				<div class="row" style="margin: 10%;">
+				<div class="row" style="margin: 5% 10%;">
 					<div class="col-lg-12" style="padding: 0px 1.7%;">
 
 
@@ -712,7 +713,10 @@
 											<div class="form-group">
 												<div class="col-lg-4 form-inline" style="width: 340px;">
 													<label class="col-lg-4">App ID</label> <input
-														class="form-control" name="<%=Common.APP_ID%>" />
+														class="form-control"
+														<%if (null != strID) {%>
+														value="<%=strID%>" <%}%>
+														name="<%=Common.APP_ID%>" />
 												</div>
 											</div>
 
@@ -721,7 +725,7 @@
 													<label class="col-lg-4" for="dp3">Start Date</label> <input
 														type="text" class="form-control"
 														name="<%=Common.START_DATE%>"
-														data-date-format="yyyy-mm-dd" id="dp3" />
+														data-date-format="yyyy-mm-dd" value="<%=strSD%>" id="dp3" />
 												</div>
 											</div>
 
@@ -730,12 +734,12 @@
 													<label class="col-lg-4" for="dp4">End Date</label> <input
 														type="text" class="form-control"
 														name="<%=Common.END_DATE%>" data-date-format="yyyy-mm-dd"
-														id="dp4" />
+														value="<%=strED%>" id="dp4" />
 												</div>
 											</div>
 
 										</form>
-								
+
 										<button type="button"
 											class="btn btn-primary btn-circle btn-xl" title="Query"
 											onClick="checkInputData('formQueryTrackerData')">
@@ -744,51 +748,36 @@
 									</div>
 
 									<div class="box white-box">
-										<table class="table table-bordered"
-											style="border: 2px #dddddd solid; display: block; word-break: break-all">
-											<thead>
-												<tr>
-													<th style="width: 30%; vertical-align: middle;">Host</th>
-													<th style="width: 12.5%; vertical-align: middle;">Client</th>
-													<th style="width: 12.5%; vertical-align: middle;">Action</th>
-													<th style="width: 15%; vertical-align: middle;">Create
-														Time</th>
-													<th style="width: 30%; vertical-align: middle;">Event</th>
-												</tr>
-											</thead>
-											<tbody>
+										<%
+										    if (null != strID) {
 
-												<%
-												    MongoClient mongoClient = new MongoClient();
-															DB db = mongoClient.getDB("website");
-															if (null != db) {
-																DBCollection collection = db.getCollection("more");
+														MongoClient mongoClient = new MongoClient();
+														DB db = mongoClient.getDB("access");
+														if (null != db) {
+															DBCollection collection = db.getCollection("mobile");
 
+															{
 																BasicDBObject dataQuery = new BasicDBObject();
-																dataQuery.put("create_date", new BasicDBObject("$gte", strSD).append("$lte", strED + " 23:59:59"));
-																//out.println(strSD + strED);
+																dataQuery.put("ID", new BasicDBObject("$regex", strID).append("$options", "i"));
+																dataQuery.put("create_date",
+																		new BasicDBObject("$gte", strSD).append("$lte", strED + " 23:59:59"));
+																//out.println(strSD+strED);
 
 																DBCursor cursor = collection.find(dataQuery);
-																cursor.sort(new BasicDBObject("create_date", 1));
-
 																while (cursor.hasNext()) {
 																	JSONObject jsonobj = new JSONObject(cursor.next().toString());
 																	jsonobj.remove("_id");
-												%>
-												<tr>
-													<td><%=jsonobj.getString("host")%></td>
-													<td><%=jsonobj.getString("client")%></td>
-													<td><%=jsonobj.getString("action")%></td>
-													<td><%=jsonobj.getString("create_date")%></td>
-													<td><%=jsonobj.getString("event")%></td>
-												</tr>
-												<%
-												    } //while
+										%>
+
+										<p><%=jsonobj.toString()%></p>
+
+										<%
+										    }
 															}
-															mongoClient.close();
-												%>
-											</tbody>
-										</table>
+														}
+														mongoClient.close();
+													}
+										%>
 									</div>
 
 
@@ -806,7 +795,6 @@
 
 			</div>
 		</div>
-	</div>
 	</div>
 	<!--END PAGE CONTENT -->
 
@@ -842,7 +830,52 @@
 			formInit();
 		});
 	</script>
-
+	<script>
+		//<![CDATA[
+		(function() {
+			$("body")
+					.append(
+							"<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='Back to Top'/>");
+			var img = "/assets/img/go-top3.png", locatioin = 2 / 3, right = 160, opacity = 0.4, speed = 500, $button = $("#goTopButton"), $body = $(document), $win = $(window);
+			$button.attr("src", img);
+			$button.on({
+				mouseover : function() {
+					$button.css("opacity", 1);
+				},
+				mouseout : function() {
+					$button.css("opacity", opacity);
+				},
+				click : function() {
+					$("html, body").animate({
+						scrollTop : 0
+					}, speed);
+				}
+			});
+			window.goTopMove = function() {
+				var scrollH = $body.scrollTop(), winH = $win.height(), css = {
+					"top" : winH * locatioin + "px",
+					"position" : "fixed",
+					"right" : right,
+					"opacity" : opacity
+				};
+				if (scrollH > 20) {
+					$button.css(css);
+					$button.fadeIn("slow");
+				} else {
+					$button.fadeOut("slow");
+				}
+			};
+			$win.on({
+				scroll : function() {
+					goTopMove();
+				},
+				resize : function() {
+					goTopMove();
+				}
+			});
+		})();
+		//]]>
+	</script>
 	<!--END PAGE LEVEL SCRIPT-->
 
 </body>
