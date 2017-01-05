@@ -421,7 +421,7 @@
 		<div id="content">
 			<div class="inner" style="min-height: 700px; padding: 0;">
 				<div id="intro"
-					style="background-image: url('/assets/img/123.jpg'); background-attachment: fixed; background-repeat: no-repeat; min-height: 700px; min-width: 1300px;">
+					style="background-image: url('/assets/img/123.jpg'); background-size:contain; background-attachment: fixed; background-repeat: no-repeat; min-height: 700px;">
 
 
 
