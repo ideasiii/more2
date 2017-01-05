@@ -5,10 +5,10 @@
 <%@ page import="java.util.Iterator"%>
 
 <%
-			final String strHostUrl = request.getRequestURL().toString();
+    final String strHostUrl = request.getRequestURL().toString();
 
-			/** Web Tracker **/
-			More.webTracker(request, "load page", null);
+    /** Web Tracker **/
+    More.webTracker(request, "load page", null);
 %>
 <!DOCTYPE html>
 <html>
@@ -418,11 +418,18 @@
 
 
 		<!--PAGE CONTENT -->
-		
-		
-		
-		
-		
+		<div id="content">
+			<div class="inner" style="min-height: 700px; padding: 0;">
+				<div id="intro"
+					style="background-image: url('/assets/img/123.jpg'); background-attachment: fixed; background-repeat: no-repeat; min-height: 700px; min-width: 1300px;">
+
+
+
+
+
+				</div>
+			</div>
+		</div>
 		<!--END PAGE CONTENT -->
 
 
@@ -469,5 +476,4 @@
 <%
     more = null;
 %>
-		
-		
+
