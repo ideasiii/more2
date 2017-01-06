@@ -419,21 +419,31 @@
 	display:block;
 }
 
-.block-list li {
+#block-list ul {
+	list-style: none;
+    margin: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#block-list li {
 	float:left; 
 	margin:10px;
 }
 
-.block-list div {
+#block-list div {
 	left: 0;
-    text-align: center;
     width: 220px;
 }
 
 .block-list .title {
 	font-size: 16px;
-    padding: 15px 10px;
+    padding: 12px 10px;
     height: 30px;
+}
+
+.block-list .bg-blue {
+	background-color: #39b3d7;
 }
 
 /* end SDK */
@@ -454,11 +464,11 @@
 			<div class="inner" style="min-height: 700px; padding: 0;">
 				<div id="intro" class="landscape-bg"
 					style="background-image: url('/assets/img/landscape1.jpg'); min-height: 700px;">
-					<div class="box">
+					<div id="block-list" class="panel-body" style="padding:70px 140px;">
 					<ul class="block-list">
-					<li>
+					<li class="bg-blue">
 					<div>
-					<p class="title">
+					<p class="title"><i class="icon-circle fa-inverse" style="color: #8be6f4;"></i>  Tracker
 					</p>
 					</div> 
 					
