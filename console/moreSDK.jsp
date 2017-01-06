@@ -406,6 +406,38 @@
 	color: #9D9D9D;
 }
 /* end footer */
+
+/* SDK */
+
+.landscape-bg {
+	background-size: cover; 
+	background-attachment: fixed; 
+	background-repeat: no-repeat; 
+}
+
+.block-list {
+	display:block;
+}
+
+.block-list li {
+	float:left; 
+	margin:10px;
+}
+
+.block-list div {
+	left: 0;
+    text-align: center;
+    width: 220px;
+}
+
+.block-list .title {
+	font-size: 16px;
+    padding: 15px 10px;
+    height: 30px;
+}
+
+/* end SDK */
+
 </style>
 </head>
 
@@ -420,12 +452,23 @@
 		<!--PAGE CONTENT -->
 		<div id="content">
 			<div class="inner" style="min-height: 700px; padding: 0;">
-				<div id="intro"
-					style="background-image: url('/assets/img/123.jpg'); background-size:contain; background-attachment: fixed; background-repeat: no-repeat; min-height: 700px;">
-
-
-
-
+				<div id="intro" class="landscape-bg"
+					style="background-image: url('/assets/img/landscape1.jpg'); min-height: 700px;">
+					<div class="box">
+					<ul class="block-list">
+					<li>
+					<div>
+					<p class="title">
+					</p>
+					</div> 
+					
+					
+					</li>
+				
+					
+					
+					</ul>
+					</div>
 
 				</div>
 			</div>
