@@ -408,46 +408,80 @@
 /* end footer */
 
 /* SDK */
-
 .landscape-bg {
-	background-size: cover; 
-	background-attachment: fixed; 
-	background-repeat: no-repeat; 
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
 }
 
 .block-list {
-	display:block;
+	display: block;
 }
 
 #block-list ul {
 	list-style: none;
-    margin: 0;
-    min-height: 0;
-    overflow: hidden;
+	margin: 0;
+	min-height: 0;
+	overflow: hidden;
 }
 
 #block-list li {
-	float:left; 
-	margin:10px;
+	float: left;
+	margin: 10px;
 }
 
 #block-list div {
 	left: 0;
-    width: 220px;
+	width: 220px;
 }
 
 .block-list .title {
 	font-size: 16px;
-    padding: 12px 10px;
-    height: 30px;
+	padding: 8px 10px;
+	height: 36px;
+	vertical-align: middle;
+	margin: 0px;
+}
+
+.block-list .panel-body {
+	font-size: 16px;
+	height: 120px;
+	vertical-align: middle;
+	display:inline-block;
+	background-color: rgba(255, 255, 255, 0.2)
+}
+
+.block-list .panel-content {
+	display: block;
+/*	font-weight:bold;*/
+	font-size: 18px;
+	margin-top:14px;
+	text-decoration:none;
+	color:#232323;
+}
+
+.block-list .spotlight {
+	background-color: rgba(86, 99, 100, 0.3);
+	background-image: radial-gradient(white, rgba(86, 99, 100, 0) 65%);
 }
 
 .block-list .bg-blue {
 	background-color: #39b3d7;
 }
 
-/* end SDK */
+.block-list .light-blue {
+	color: #8be6f4;
+}
 
+.block-list .bg-pink {
+	background-color: #d16a7f;
+}
+
+.block-list .light-pink {
+	color: #f97791;
+}
+
+/* end SDK */
 </style>
 </head>
 
@@ -464,20 +498,83 @@
 			<div class="inner" style="min-height: 700px; padding: 0;">
 				<div id="intro" class="landscape-bg"
 					style="background-image: url('/assets/img/landscape1.jpg'); min-height: 700px;">
-					<div id="block-list" class="panel-body" style="padding:70px 140px;">
-					<ul class="block-list">
-					<li class="bg-blue">
-					<div>
-					<p class="title"><i class="icon-circle fa-inverse" style="color: #8be6f4;"></i>  Tracker
-					</p>
-					</div> 
-					
-					
-					</li>
-				
-					
-					
-					</ul>
+					<div id="block-list" class="panel-body" style="padding: 70px 10.5%;">
+						<ul class="block-list">
+							<li>
+								<div>
+									<p class="title bg-blue">
+										<i class="icon-circle fa-inverse light-blue"></i> Tracker
+									</p>
+								</div>
+
+								<div class="panel-body">
+									<i class="icon-screenshot fa-inverse icon-4x light-blue"
+										style="float:right;padding: 14px 18px;"></i>
+										
+										<a class="panel-content">Document</a> 
+										<a class="panel-content">Download</a>
+								</div>
+
+
+
+							</li>
+							<li>
+								<div>
+									<p class="title bg-blue">
+										<i class="icon-circle fa-inverse light-blue"></i> Tracker
+									</p>
+								</div>
+
+								<div class="panel-body">
+									<i class="icon-screenshot fa-inverse icon-4x light-blue"
+										style="float:right;padding: 14px 18px;"></i>
+										
+										<a class="panel-content">Document</a> 
+										<a class="panel-content">Download</a>
+								</div>
+
+
+
+							</li>
+							<li>
+								<div>
+									<p class="title bg-blue">
+										<i class="icon-circle fa-inverse light-blue"></i> Tracker
+									</p>
+								</div>
+
+								<div class="panel-body">
+									<i class="icon-screenshot fa-inverse icon-4x light-blue"
+										style="float:right;padding: 14px 18px;"></i>
+										
+										<a class="panel-content">Document</a> 
+										<a class="panel-content">Download</a>
+								</div>
+
+
+
+							</li>
+							<li>
+								<div>
+									<p class="title bg-blue">
+										<i class="icon-circle fa-inverse light-blue"></i> Tracker
+									</p>
+								</div>
+
+								<div class="panel-body">
+									<i class="icon-screenshot fa-inverse icon-4x light-blue"
+										style="float:right;padding: 14px 18px;"></i>
+									
+										<a class="panel-content">Document</a> 
+										<a class="panel-content">Download</a>
+								</div>
+
+
+
+							</li>
+
+
+						</ul>
 					</div>
 
 				</div>
