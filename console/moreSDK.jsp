@@ -16,7 +16,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="MORE">
 <meta name="description" content="MORE">
-<title>Login | MORE</title>
+<title>SDK | MORE</title>
 
 <!-- GLOBAL STYLES -->
 <link rel="stylesheet"
@@ -447,38 +447,114 @@
 	font-size: 16px;
 	height: 120px;
 	vertical-align: middle;
-	display:inline-block;
-	background-color: rgba(255, 255, 255, 0.2)
+	display: inline-block;
+	background-color: rgba(255, 255, 255, 0.3)
 }
 
 .block-list .panel-content {
 	display: block;
-/*	font-weight:bold;*/
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/*	font-weight:bold;*/
 	font-size: 18px;
-	margin-top:14px;
-	text-decoration:none;
-	color:#232323;
+	width: 112px;
+	text-decoration: none;
+	text-align:center;
+	color: #000;
+	position: absolute;
+	padding: 2px 0px;
+	margin-top:8px;
+}
+
+.block-list .panel-content:hover {
+	background-color: transparent;
+	background-image: radial-gradient (rgba (86, 99, 100, 1),
+		rgba(255, 255, 255, 0) 70%);
+}
+
+.block-list .text-style2 {
+	font-family: "Great Vibes", cursive;
+	font-style: italic;
+}
+
+.spotlight {
+	background-color: transparent;
+	background-image: radial-gradient(rgba(110, 110, 110, 0.4),
+		rgba(255, 255, 255, 0) 90%);
 }
 
 .block-list .spotlight {
-	background-color: rgba(86, 99, 100, 0.3);
-	background-image: radial-gradient(white, rgba(86, 99, 100, 0) 65%);
+	background-color: transparent;
+	background-image: radial-gradient(rgba(255, 255, 255, 0.7),
+		rgba(255, 255, 255, 0) 70%);
 }
 
-.block-list .bg-blue {
+.block-list .spotlight2 {
+	background-color: rgba(255, 255, 255, 0);
+	background-image: linear-gradient( to right, rgba(255, 255, 255, 0) , rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) );
+}
+
+.block-list .white-text {
+	color: white;
+}
+
+.block-list .bg-blue1 {
+	background-color: #3888d7;
+}
+
+.block-list .blue1 {
+	color: #3888d7;
+}
+
+.block-list .light-blue1 {
+	color: #0d3d6d;
+}
+
+.block-list .bg-blue2 {
 	background-color: #39b3d7;
 }
 
-.block-list .light-blue {
-	color: #8be6f4;
+.block-list .blue2 {
+	color: #39b3d7;
+}
+
+.block-list .light-blue2 {
+	color: #5be9ff;
 }
 
 .block-list .bg-pink {
-	background-color: #d16a7f;
+	background-color: #ce526b;
+}
+
+.block-list .pink {
+	color: #d16a7f;
 }
 
 .block-list .light-pink {
 	color: #f97791;
+}
+
+.block-list .bg-yellow {
+	background-color: #e2ad5d;
+}
+
+.block-list .yellow {
+	color: #e2ad5d;
+}
+
+.block-list .light-yellow {
+	color: #f9e181;
+}
+
+.block-list .bg-orange {
+	background-color: #dd6452;
+}
+
+.block-list .orange {
+	color: #dd6452;
+}
+
+.block-list .light-orange {
+	color: #f9a67f;
 }
 
 /* end SDK */
@@ -495,88 +571,305 @@
 
 		<!--PAGE CONTENT -->
 		<div id="content">
-			<div class="inner" style="min-height: 700px; padding: 0;">
+			<div class="inner" style="min-height: 1000px; padding: 0;">
 				<div id="intro" class="landscape-bg"
-					style="background-image: url('/assets/img/landscape1.jpg'); min-height: 700px;">
-					<div id="block-list" class="panel-body" style="padding: 70px 10.5%;">
-						<ul class="block-list">
-							<li>
-								<div>
-									<p class="title bg-blue">
-										<i class="icon-circle fa-inverse light-blue"></i> Tracker
-									</p>
-								</div>
+					style="background-image: url('/assets/img/tech2_1920.jpg'); min-height: 1000px;">
+					<div class="spotlight" style="min-height: 1000px;">
+						<div id="block-list" class="panel-body"
+							style="padding: 100px 10.5%;">
+							<ul class="block-list">
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Tracker
+										</p>
+									</div>
 
-								<div class="panel-body">
-									<i class="icon-screenshot fa-inverse icon-4x light-blue"
-										style="float:right;padding: 14px 18px;"></i>
-										
-										<a class="panel-content">Document</a> 
-										<a class="panel-content">Download</a>
-								</div>
+									<div class="panel-body">
+										<i class="icon-screenshot fa-inverse icon-4x light-blue1"
+											style="float: right; padding: 14px; position: relative;"></i>
+
+										<a href="" class="panel-content text-style2">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Ads
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="fa-tag fa-inverse icon-4x light-blue1"
+											style="float: right; padding: 14px; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Facebook
+											Login
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="icon-facebook-sign fa-inverse icon-4x light-blue1"
+											style="float: right; padding: 14px; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Tencent
+											Login
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="fa-qq fa-inverse icon-3x light-blue1"
+											style="float: right; padding: 20px 14px; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Camera
+											Controller
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="fa-camera-retro fa-inverse icon-3x light-blue1"
+											style="float: right; padding: 20px 14px; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Screen
+											Lock Controller
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="icon-lock fa-inverse icon-4x light-blue1"
+											style="float: right; padding: 14px 18px; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Battery
+											Controller
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="fa-battery-3 fa-inverse icon-3x light-blue1"
+											style="float: right; padding: 20px 8px; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Location
+											Controller
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="fa-map-marker fa-inverse icon-4x light-blue1"
+											style="float: right; padding: 14px 24px; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Storage
+											Space Controller
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="fa-hdd-o fa-inverse icon-4x light-blue1"
+											style="float: right; padding: 14px; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i>
+											Application List
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="fa-th-list fa-inverse icon-3x light-blue1"
+											style="float: right; padding: 22px 14px; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Content
+											Controller
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="fa-file-text fa-inverse icon-3x light-blue1"
+											style="float: right; padding: 22px 14px; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i>
+											Application Controller
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="fa-cog fa-inverse icon-4x light-blue1"
+											style="float: right; padding: 14px; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Mute
+											Controller
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="fa-volume-off fa-inverse icon-4x light-blue1"
+											style="float: right; padding: 14px 24px;; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Record
+											Controller
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="icon-signin fa-inverse icon-4x light-blue1"
+											style="float: right; padding: 14px; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Restore
+											Controller
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="icon-exchange fa-inverse icon-3x light-blue1"
+											style="float: right; padding: 18px 14px; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
+
+								<li>
+									<div>
+										<p class="title bg-blue1">
+											<i class="icon-circle fa-inverse light-blue1"></i> Wi-Fi
+											Controller
+										</p>
+									</div>
+
+									<div class="panel-body">
+										<i class="fa-wifi fa-inverse icon-4x light-blue1"
+											style="float: right; padding: 14px 0px;; position: relative;"></i>
+
+										<a href="" class="panel-content spotlight">Document</a> <a
+											href="" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
+									</div>
+								</li>
 
 
 
-							</li>
-							<li>
-								<div>
-									<p class="title bg-blue">
-										<i class="icon-circle fa-inverse light-blue"></i> Tracker
-									</p>
-								</div>
+							</ul>
+						</div>
 
-								<div class="panel-body">
-									<i class="icon-screenshot fa-inverse icon-4x light-blue"
-										style="float:right;padding: 14px 18px;"></i>
-										
-										<a class="panel-content">Document</a> 
-										<a class="panel-content">Download</a>
-								</div>
-
-
-
-							</li>
-							<li>
-								<div>
-									<p class="title bg-blue">
-										<i class="icon-circle fa-inverse light-blue"></i> Tracker
-									</p>
-								</div>
-
-								<div class="panel-body">
-									<i class="icon-screenshot fa-inverse icon-4x light-blue"
-										style="float:right;padding: 14px 18px;"></i>
-										
-										<a class="panel-content">Document</a> 
-										<a class="panel-content">Download</a>
-								</div>
-
-
-
-							</li>
-							<li>
-								<div>
-									<p class="title bg-blue">
-										<i class="icon-circle fa-inverse light-blue"></i> Tracker
-									</p>
-								</div>
-
-								<div class="panel-body">
-									<i class="icon-screenshot fa-inverse icon-4x light-blue"
-										style="float:right;padding: 14px 18px;"></i>
-									
-										<a class="panel-content">Document</a> 
-										<a class="panel-content">Download</a>
-								</div>
-
-
-
-							</li>
-
-
-						</ul>
 					</div>
-
 				</div>
 			</div>
 		</div>
