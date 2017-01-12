@@ -96,7 +96,8 @@ public class More
 	final public static String SDK_DESC = "sdk_desc";
 	final public static String SDK_FILE = "sdk_file";
 	final public static String SDK_DOC = "sdk_doc";
-
+	final public static String SDK_ICON = "sdk_icon";
+	
 	final public static String APP_EDIT = "app_edit";
     }
 
@@ -104,7 +105,7 @@ public class More
 	    Common.APP_OS, Common.USER_TOKEN, Common.USER_NAME, Common.USER_EMAIL, Common.USER_PHONE));
 
     final public static ArrayList<String> listSdkField = new ArrayList<>(
-	    Arrays.asList(Common.SDK_ID, Common.SDK_OS, Common.SDK_OWNER, Common.SDK_NAME, Common.SDK_DESC, Common.SDK_FILE, Common.SDK_DOC, Common.CREATE_DATE));
+	    Arrays.asList(Common.SDK_ID, Common.SDK_OS, Common.SDK_OWNER, Common.SDK_NAME, Common.SDK_DESC, Common.SDK_FILE, Common.SDK_DOC, Common.SDK_ICON, Common.CREATE_DATE));
 
     public static class MemberData
     {
@@ -129,6 +130,7 @@ public class More
 	public String sdk_desc;
 	public String sdk_file;
 	public String sdk_doc;
+	public String sdk_icon;
 	public String create_date;
     }
 
@@ -346,6 +348,7 @@ public class More
 		    sdkData.sdk_desc = mapItem.getOrDefault(Common.SDK_DESC, "No Description");
 		    sdkData.sdk_file = mapItem.get(Common.SDK_FILE);
 		    sdkData.sdk_doc = mapItem.getOrDefault(Common.SDK_DOC, "");
+		    sdkData.sdk_icon = mapItem.get(Common.SDK_ICON);
 		    sdkData.create_date = mapItem.get(Common.CREATE_DATE);
 		    listSdk.add(sdkData);
 		    sdkData = null;

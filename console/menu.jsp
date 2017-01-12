@@ -77,7 +77,7 @@
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> DASHBOARD </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a href="http://140.92.142.89/more2/Dashboard/trackerdata_query.jsp">Traker Data Query</a></li>
+											<li class="dropdown-menu-li"><a href="/more2/Dashboard/trackerdata_query.jsp">Traker Data Query</a></li>
 											<li class="dropdown-menu-li"><a href="">ANALYSIS</a></li>
 											<li class="dropdown-menu-li"><a href="">ASFDGFHVGH</a></li>
 										</ul></li>
@@ -85,7 +85,7 @@
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> RESOURCES </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li" id="3level-sdk"><a href="">MORE
+											<li class="dropdown-menu-li" id="3level-sdk"><a href="/more2/console/moreSDK.jsp">MORE
 													SDK</a>
 												</li>
 											<li class="dropdown-menu-li"><a href="">ASFGHJMK</a></li>

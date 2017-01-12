@@ -522,11 +522,13 @@
 /* footer */
 .footer {
 	width: 100%;
-	background: #E0E0E0;
+	background: rgba(86, 99, 100, 1);
+	/*display: table-row;*/
+	height:20%;
 }
 
 .footer .link_area {
-	background: #F0F0F0;
+	background:  rgba(86, 99, 100, 1);
 	text-align: right;
 	padding: 30px 0;
 }
@@ -543,7 +545,7 @@
 }
 
 .footer .link_area .link_group .link a {
-	color: #000;
+	color: #fff;
 }
 
 .footer .link_area .link_group .link a:hover {

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="sdk.ideas.More"%>
+<%@ page import="sdk.ideas.*"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.Iterator"%>
 
@@ -9,6 +9,7 @@
 
     /** Web Tracker **/
     More.webTracker(request, "load page", null);
+    
 %>
 <!DOCTYPE html>
 <html>
@@ -370,11 +371,11 @@
 /* footer */
 .footer {
 	width: 100%;
-	background: #E0E0E0;
+	background: rgba(86, 99, 100, 1);
 }
 
 .footer .link_area {
-	background: #F0F0F0;
+	background: rgba(86, 99, 100, 1);
 	text-align: right;
 	padding: 30px 0;
 }
@@ -391,7 +392,7 @@
 }
 
 .footer .link_area .link_group .link a {
-	color: #000;
+	color: #fff;
 }
 
 .footer .link_area .link_group .link a:hover {
@@ -461,13 +462,13 @@
 	text-align: center;
 	color: #000;
 	position: absolute;
-	padding: 2px 0px;
+	padding: 8px 0px;
 	margin-top: 8px;
 }
 
 .block-list .panel-content:hover {
 	background-color: transparent;
-	background-image: radial-gradient(rgba(86, 99, 100, 1),
+	background-image: radial-gradient(rgba(179, 210, 83, 1),
 		rgba(255, 255, 255, 0) 70%);
 }
 
@@ -620,14 +621,15 @@
 
 		<%@include file="menu.jsp"%>
 		<%
-		    
+		    ArrayList<More.SdkData> listSdk = new ArrayList<More.SdkData>();
+		    int nCount = more.querySdk(request, listSdk);
 		%>
 
 		<!--PAGE CONTENT -->
 		<div id="content">
-			<div class="inner" style="min-height: 1000px; padding: 0;">
+			<div class="inner" style="min-height: 100%; padding: 0;">
 				<div id="intro" class="landscape-bg"
-					style="background-image: url('/assets/img/tech2_1920.jpg'); min-height: 1000px;">
+					style="background-image: url('/assets/img/tech2_1920.jpg'); min-height: 100%;">
 					<div class="spotlight" style="min-height: 1000px;">
 						<div id="block-list" class="panel-body"
 							style="padding: 100px 10.5%;">
@@ -636,28 +638,40 @@
 							<ul class="block-list">
 
 								<%
-								    
+								    if (0 < nCount)
+								    {
+										Iterator<More.SdkData> it = null;
+										it = listSdk.iterator();
+										More.SdkData sdkData = null;
+										while (it.hasNext())
+										{
+										    sdkData = it.next();
+										    if (sdkData.sdk_os.trim().equals("ios"))
+											continue;
 								%>
 								<li>
 									<div>
 										<p class="title bg-blue1">
-											<%
-											    String tmp = "icon-circle fa-inverse light-blue1";
-											%>
-											<i class="<%=tmp%>"></i> Tracker
+											<i class="icon-circle fa-inverse light-blue1"></i> <%=sdkData.sdk_name%>
 										</p>
 									</div>
 
 									<div class="panel-body">
-										<i class="icon-screenshot fa-inverse icon-4x light-blue1 s-14"></i>
-
-										<a href="" class="panel-content text-style2">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
+										<i class="<%=sdkData.sdk_icon%>"></i> <a
+											href="<%=sdkData.sdk_doc%>" class="panel-content spotlight">Document</a>
+										<a href="<%=sdkData.sdk_file%>"
+											class="panel-content spotlight" style="margin-top: 45px;">Download</a>
 									</div>
 								</li>
 
-								<li>
+								<%
+								    }
+
+								    }
+								%>
+
+
+								<!--		<li>
 									<div>
 										<p class="title bg-blue1">
 											<i class="icon-circle fa-inverse light-blue1"></i> Ads
@@ -665,9 +679,8 @@
 									</div>
 
 									<div class="panel-body">
-										<i class="fa-tag fa-inverse icon-4x light-blue1 s-14"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
+										<i class="fa-tag fa-inverse icon-4x light-blue1 s-14"></i> <a
+											href="" class="panel-content spotlight">Document</a> <a
 											href="" class="panel-content spotlight"
 											style="margin-top: 45px;">Download</a>
 									</div>
@@ -700,9 +713,8 @@
 									</div>
 
 									<div class="panel-body">
-										<i class="fa-qq fa-inverse icon-3x light-blue1 s-2014"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
+										<i class="fa-qq fa-inverse icon-3x light-blue1 s-2014"></i> <a
+											href="" class="panel-content spotlight">Document</a> <a
 											href="" class="panel-content spotlight"
 											style="margin-top: 45px;">Download</a>
 									</div>
@@ -786,9 +798,8 @@
 									</div>
 
 									<div class="panel-body">
-										<i class="fa-hdd-o fa-inverse icon-4x light-blue1 s-14"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
+										<i class="fa-hdd-o fa-inverse icon-4x light-blue1 s-14"></i> <a
+											href="" class="panel-content spotlight">Document</a> <a
 											href="" class="panel-content spotlight"
 											style="margin-top: 45px;">Download</a>
 									</div>
@@ -837,9 +848,8 @@
 									</div>
 
 									<div class="panel-body">
-										<i class="fa-cog fa-inverse icon-4x light-blue1 s-14"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
+										<i class="fa-cog fa-inverse icon-4x light-blue1 s-14"></i> <a
+											href="" class="panel-content spotlight">Document</a> <a
 											href="" class="panel-content spotlight"
 											style="margin-top: 45px;">Download</a>
 									</div>
@@ -911,9 +921,9 @@
 											href="" class="panel-content spotlight"
 											style="margin-top: 45px;">Download</a>
 									</div>
-								</li>
+								</li>  
 
-
+ -->
 
 							</ul>
 						</div>

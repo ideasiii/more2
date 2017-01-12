@@ -462,16 +462,88 @@
 	}
 }
 
+@media ( min-width : 768px) {
+	.full-height-s {
+		padding-top: 80px;
+		min-height: 500px;
+	}
+	.full-height-m {
+		padding: 150px 0px;
+		min-height: 500px;
+	}
+}
+
+@media ( min-width : 992px) {
+	.full-height-s {
+		padding: 175px 0px;
+		min-height: 500px;
+	}
+	.full-height-m {
+		padding: 182px 0px;
+		min-height: 500px;
+	}
+}
+
+@media ( min-width : 1248px) {
+	.full-height-s {
+		padding: 80px 0px;
+		min-height: 500px;
+	}
+	.full-height-m {
+		padding: 190px 0px;
+		min-height: 500px;
+	}
+}
+
+@media ( min-width : 1360px) {
+	.full-height-s {
+		padding: 80px 0px;
+		min-height: 455px;
+	}
+	.full-height-m {
+		padding: 190px 0px;
+		min-height: 500px;
+	}
+}
+
+@media ( min-width : 1420px) {
+	.full-height-s {
+		padding: 130px 0px;
+		min-height: 500px;
+	}
+	.full-height-m {
+		padding: 200px 0px;
+		min-height: 500px;
+	}
+}
+
+@media ( min-width : 1650px) {
+	.full-height-s {
+		padding: 175px 0px;
+		min-height: 500px;
+	}
+	.full-height-m {
+		padding: 315px 0px;
+		min-height: 500px;
+	}
+}
+
+.full-height-outer {
+	position: relative;
+	overflow: hidden;
+}
 /* end text background */
 
 /* footer */
 .footer {
 	width: 100%;
-	background: #E0E0E0;
+	background: rgba(86, 99, 100, 1);
+	/*display: table-row;*/
+	height:20%;
 }
 
 .footer .link_area {
-	background: #F0F0F0;
+	background: rgba(86, 99, 100, 1);
 	text-align: right;
 	padding: 30px 0;
 }
@@ -488,7 +560,7 @@
 }
 
 .footer .link_area .link_group .link a {
-	color: #000;
+	color: #fff;
 }
 
 .footer .link_area .link_group .link a:hover {
@@ -530,11 +602,11 @@
 		<!--PAGE CONTENT -->
 		<div id="content">
 			<div class="inner" style="padding: 0;">
-				<div id="intro" class="silk-grey"
-					style="padding: 20px 0px; min-height: 700px;">
+				<div id="intro" class="silk-grey full-height-s full-height-outer"
+					>
 
 					<div class="container">
-						<div class="row container-text-c" style="padding: 1rem 8rem;">
+						<div class="row container-text-c" style="padding: 0.6rem 8rem;">
 
 							<div class="text-center" style="padding: 2rem 0;">
 								<h2 style="font-weight: bold;">Sign Up For MORE Account</h2>
