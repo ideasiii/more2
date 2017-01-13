@@ -22,7 +22,7 @@
 				<!-- LOGO SECTION -->
 				<header>
 					<div class="header-angle navbar-brand">
-						<a href="home.jsp" class="navbar-brand"> <img class="logo"
+						<a href="/more2/console/home.jsp" class="navbar-brand"> <img class="logo"
 							height="80" src="/assets/img/more_logo_white_board_sm.png" alt="" />
 						</a>
 					</div>
@@ -37,7 +37,7 @@
 							    {
 							%>
 							<li class="super-header-li"><a class="super-header-a"
-								href="logout.jsp">Logout</a></li>
+								href="/more2/console/logout.jsp">Logout</a></li>
 							<%
 							    if (bManager == true)
 									{
@@ -52,9 +52,9 @@
 							    {
 							%>
 							<li class="super-header-li"><a class="super-header-a"
-								href="login.jsp">Login</a></li>
+								href="/more2/console/login.jsp">Login</a></li>
 							<li class="super-header-li"><a class="super-header-a"
-								href="signup.jsp">Sign Up</a></li>
+								href="/more2/console/signup.jsp">Sign Up</a></li>
 							<%
 							    }
 							%>
@@ -77,7 +77,7 @@
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> DASHBOARD </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a href="/more2/Dashboard/trackerdata_query.jsp">Traker Data Query</a></li>
+											<li class="dropdown-menu-li"><a href="/more2/Dashboard/trackerdata_query.jsp">Traker Data</a></li>
 											<li class="dropdown-menu-li"><a href="">ANALYSIS</a></li>
 											<li class="dropdown-menu-li"><a href="">ASFDGFHVGH</a></li>
 										</ul></li>
