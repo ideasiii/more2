@@ -442,6 +442,7 @@
 	height: 36px;
 	vertical-align: middle;
 	margin: 0px;
+	/*color:#000;*/
 }
 
 .block-list .panel-body {
@@ -475,6 +476,8 @@
 .block-list .text-style2 {
 	font-family: "Great Vibes", cursive;
 	font-style: italic;
+	color: #053463;
+	
 }
 
 .spotlight {
@@ -658,7 +661,7 @@
 
 									<div class="panel-body">
 										<i class="<%=sdkData.sdk_icon%>"></i> <a
-											href="<%=sdkData.sdk_doc%>" class="panel-content spotlight">Document</a>
+											href="<%=sdkData.sdk_doc%>" class="panel-content spotlight text-style2">Document</a>
 										<a href="<%=sdkData.sdk_file%>"
 											class="panel-content spotlight" style="margin-top: 45px;">Download</a>
 									</div>
