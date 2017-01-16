@@ -85,7 +85,7 @@
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> RESOURCES </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li" id="3level-sdk"><a href="/more2/console/moreSDK.jsp">MORE
+											<li class="dropdown-menu-li" id="3level-sdk"><a href="/more2/console/moreSDKandroid.jsp">MORE
 													SDK</a>
 												</li>
 											<li class="dropdown-menu-li"><a href="">ASFGHJMK</a></li>
