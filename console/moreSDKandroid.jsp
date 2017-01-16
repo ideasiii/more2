@@ -9,7 +9,6 @@
 
     /** Web Tracker **/
     More.webTracker(request, "load page", null);
-    
 %>
 <!DOCTYPE html>
 <html>
@@ -477,7 +476,6 @@
 	font-family: "Great Vibes", cursive;
 	font-style: italic;
 	color: #053463;
-	
 }
 
 .spotlight {
@@ -498,19 +496,19 @@
 		rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0));
 }
 
-.block-list .white-text {
+.white-text {
 	color: white;
 }
 
-.block-list .bg-blue1 {
+.bg-blue1 {
 	background-color: #3888d7;
 }
 
-.block-list .blue1 {
+.blue1 {
 	color: #3888d7;
 }
 
-.block-list .light-blue1 {
+.light-blue1 {
 	color: #0d3d6d;
 }
 
@@ -614,6 +612,55 @@
 }
 
 /* end SDK icon list */
+
+/* connect bar */
+.connect-bar {
+	position:absolute;
+	right:-71px;
+	width:180px;
+	text-align:center;
+	top:235px;
+	text-transform: uppercase;
+    font-style: normal;
+    padding: 5px;
+}
+
+.connect-bar:hover {
+	color:white;
+	padding-bottom:15px;
+	overflow: hidden ;
+} 
+
+.counte {
+	transform: rotate(-90deg);
+	padding-bottom:13px;
+}
+
+.border-blue {
+	border-radius: 6px 6px 0px 0px;
+	box-shadow: 0 0 0 3px #66afff inset, 0 0 0 5px rgba(100,173,255,0.5) inset ;
+    z-index: 100 ;
+    overflow: hidden ;
+}
+
+.border-green {
+	border-radius: 6px 6px 0px 0px;
+	box-shadow: 0 0 0 3px #b2e532 , 0 0 0 5px rgba(222,247,153,0.5)  ;
+    z-index: 100 ;
+    overflow: hidden ;
+}
+
+.border-grey {
+	border-radius: 6px 6px 0px 0px;
+	box-shadow: 0 0 0 3px #adadad , 0 0 0 5px rgba(255,255,255,0.8)  ;
+    z-index: 100 ;
+    overflow: hidden ;
+}
+
+
+
+
+/* end connect bar */
 </style>
 </head>
 
@@ -637,6 +684,11 @@
 						<div id="block-list" class="panel-body"
 							style="padding: 100px 10.5%;">
 
+<a href="moreSDKios.jsp" class="connect-bar counte border-grey bg-grey white-text"  style="text-decoration:none;">
+<i class="icon-apple fa-inverse icon-large" style="margin-right:5px;"></i> IOS
+</a>
+
+
 							<!-- SDK Android List -->
 							<ul class="block-list">
 
@@ -655,15 +707,17 @@
 								<li>
 									<div>
 										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> <%=sdkData.sdk_name%>
+											<i class="icon-circle fa-inverse light-blue1"></i>
+											<%=sdkData.sdk_name%>
 										</p>
 									</div>
 
 									<div class="panel-body">
 										<i class="<%=sdkData.sdk_icon%>"></i> <a
-											href="<%=sdkData.sdk_doc%>" class="panel-content spotlight text-style2">Document</a>
-										<a href="<%=sdkData.sdk_file%>"
-											class="panel-content spotlight" style="margin-top: 45px;">Download</a>
+											href="<%=sdkData.sdk_doc%>"
+											class="panel-content spotlight text-style2">Document</a> <a
+											href="<%=sdkData.sdk_file%>" class="panel-content spotlight"
+											style="margin-top: 45px;">Download</a>
 									</div>
 								</li>
 
@@ -672,261 +726,6 @@
 
 								    }
 								%>
-
-
-								<!--		<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> Ads
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i class="fa-tag fa-inverse icon-4x light-blue1 s-14"></i> <a
-											href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> Facebook
-											Login
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i
-											class="icon-facebook-sign fa-inverse icon-4x light-blue1 s-14"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> Tencent
-											Login
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i class="fa-qq fa-inverse icon-3x light-blue1 s-2014"></i> <a
-											href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> Camera
-											Controller
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i
-											class="fa-camera-retro fa-inverse icon-3x light-blue1 s-2014"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> Screen
-											Lock Controller
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i class="icon-lock fa-inverse icon-4x light-blue1 s-1418"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> Battery
-											Controller
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i class="fa-battery-3 fa-inverse icon-3x light-blue1 s-2008"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> Location
-											Controller
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i class="fa-map-marker fa-inverse icon-4x light-blue1 s-1424"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> Storage
-											Space Controller
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i class="fa-hdd-o fa-inverse icon-4x light-blue1 s-14"></i> <a
-											href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i>
-											Application List
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i class="fa-th-list fa-inverse icon-3x light-blue1 s-2214"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> Content
-											Controller
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i class="fa-file-text fa-inverse icon-3x light-blue1 s-2214"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i>
-											Application Controller
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i class="fa-cog fa-inverse icon-4x light-blue1 s-14"></i> <a
-											href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> Mute
-											Controller
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i class="fa-volume-off fa-inverse icon-4x light-blue1 s-1424"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> Record
-											Controller
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i class="icon-signin fa-inverse icon-4x light-blue1 s-14"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> Restore
-											Controller
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i class="icon-exchange fa-inverse icon-3x light-blue1 s-1814"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>
-
-								<li>
-									<div>
-										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> Wi-Fi
-											Controller
-										</p>
-									</div>
-
-									<div class="panel-body">
-										<i class="fa-wifi fa-inverse icon-4x light-blue1 s-1400"></i>
-
-										<a href="" class="panel-content spotlight">Document</a> <a
-											href="" class="panel-content spotlight"
-											style="margin-top: 45px;">Download</a>
-									</div>
-								</li>  
-
- -->
 
 							</ul>
 						</div>
@@ -972,7 +771,14 @@
 	<!-- END GLOBAL SCRIPTS -->
 
 	<!-- PAGE LEVEL SCRIPTS -->
+	$(function(){ var banner =
+	$('.banner-selected').children('.banner-item').attr('for');
 
+	$('.banner-item').click(function(){ var trigger = $(this).attr('for');
+	var parent = $(this).parent();
+
+	$('.banner').removeClass('banner-selected');
+	parent.addClass('banner-selected'); }); })
 
 	<!-- END PAGE LEVEL SCRIPTS -->
 
