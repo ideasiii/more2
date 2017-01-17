@@ -9,7 +9,6 @@
 
     /** Web Tracker **/
     More.webTracker(request, "load page", null);
-    
 %>
 <!DOCTYPE html>
 <html>
@@ -17,7 +16,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="MORE">
 <meta name="description" content="MORE">
-<title>SDK | MORE</title>
+<title>SDK ios version | MORE</title>
 
 <!-- GLOBAL STYLES -->
 <link rel="stylesheet"
@@ -320,6 +319,10 @@
 	background: #9fd256;
 }
 
+.bg-deepgreen {
+	background: #90c113;
+}
+
 .bg-orange {
 	background: #F08800;
 }
@@ -476,8 +479,7 @@
 .block-list .text-style2 {
 	font-family: "Great Vibes", cursive;
 	font-style: italic;
-	color: #053463;
-	
+	/*color: #053463;*/
 }
 
 .spotlight {
@@ -617,50 +619,48 @@
 
 /* connect bar */
 .connect-bar {
-	position:absolute;
-	right:-71px;
-	width:180px;
-	text-align:center;
-	top:235px;
+	position: absolute;
+	right: -71px;
+	width: 180px;
+	text-align: center;
+	top: 235px;
 	text-transform: uppercase;
-    font-style: normal;
-    padding: 5px;
+	font-style: normal;
+	padding: 5px;
 }
 
 .connect-bar:hover {
-	color:white;
-	padding-bottom:15px;
-	overflow: hidden ;
-} 
+	color: white;
+	padding-bottom: 25px;
+	margin-bottom: -7px;
+}
 
 .counte {
 	transform: rotate(-90deg);
-	padding-bottom:13px;
+	padding-bottom: 13px;
 }
 
 .border-blue {
 	border-radius: 6px 6px 0px 0px;
-	box-shadow: 0 0 0 3px #66afff inset, 0 0 0 5px rgba(100,173,255,0.5) inset ;
-    z-index: 100 ;
-    overflow: hidden ;
+	box-shadow: 0 0 0 3px #66afff inset, 0 0 0 5px rgba(100, 173, 255, 0.5)
+		inset;
+	z-index: 100;
+	overflow: hidden;
 }
 
 .border-green {
 	border-radius: 6px 6px 0px 0px;
-	box-shadow: 0 0 0 3px #b2e532 , 0 0 0 5px rgba(222,247,153,0.5)  ;
-    z-index: 100 ;
-    overflow: hidden ;
+	box-shadow: 0 0 0 3px #b2e532, 0 0 0 5px rgba(222, 247, 153, 0.5);
+	z-index: 100;
+	overflow: hidden;
 }
 
 .border-grey {
 	border-radius: 6px 6px 0px 0px;
-	box-shadow: 0 0 0 3px #adadad , 0 0 0 5px rgba(255,255,255,0.8)  ;
-    z-index: 100 ;
-    overflow: hidden ;
+	box-shadow: 0 0 0 3px #adadad, 0 0 0 5px rgba(255, 255, 255, 0.8);
+	z-index: 100;
+	overflow: hidden;
 }
-
-
-
 
 /* end connect bar */
 </style>
@@ -686,9 +686,12 @@
 						<div id="block-list" class="panel-body"
 							style="padding: 100px 10.5%;">
 
-<a href="moreSDKandroid.jsp" class="connect-bar counte border-green bg-green white-text"  style="text-decoration:none;">
-<i class="icon-android fa-inverse icon-large" style="margin-right:5px;"></i> Android
-</a>
+							<a href="moreSDKandroid.jsp"
+								class="connect-bar counte border-green bg-deepgreen white-text"
+								style="text-decoration: none;"> <i
+								class="icon-android fa-inverse icon-large"
+								style="margin-right: 5px;"></i> Android
+							</a>
 
 							<!-- SDK Android List -->
 							<ul class="block-list">
@@ -702,21 +705,23 @@
 										while (it.hasNext())
 										{
 										    sdkData = it.next();
-										    if (sdkData.sdk_os.trim().equals("ios"))
+										    if (sdkData.sdk_os.trim().equals("android"))
 											continue;
 								%>
 								<li>
 									<div>
 										<p class="title bg-blue1">
-											<i class="icon-circle fa-inverse light-blue1"></i> <%=sdkData.sdk_name%>
+											<i class="icon-circle fa-inverse light-blue1"></i>
+											<%=sdkData.sdk_name%>
 										</p>
 									</div>
 
 									<div class="panel-body">
 										<i class="<%=sdkData.sdk_icon%>"></i> <a
-											href="<%=sdkData.sdk_doc%>" class="panel-content spotlight text-style2">Document</a>
-										<a href="<%=sdkData.sdk_file%>"
-											class="panel-content spotlight" style="margin-top: 45px;">Download</a>
+											href="<%=sdkData.sdk_doc%>"
+											class="panel-content spotlight text-style2">Document</a> <a
+											href="<%=sdkData.sdk_file%>" class="panel-content spotlight text-style2"
+											style="margin-top: 45px;">Download</a>
 									</div>
 								</li>
 

@@ -16,7 +16,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="MORE">
 <meta name="description" content="MORE">
-<title>SDK | MORE</title>
+<title>SDK android version | MORE</title>
 
 <!-- GLOBAL STYLES -->
 <link rel="stylesheet"
@@ -319,6 +319,10 @@
 	background: #9fd256;
 }
 
+.bg-deepgreen {
+	background: #90c113;
+}
+
 .bg-orange {
 	background: #F08800;
 }
@@ -475,7 +479,7 @@
 .block-list .text-style2 {
 	font-family: "Great Vibes", cursive;
 	font-style: italic;
-	color: #053463;
+	/*color: #053463;*/
 }
 
 .spotlight {
@@ -615,50 +619,48 @@
 
 /* connect bar */
 .connect-bar {
-	position:absolute;
-	right:-71px;
-	width:180px;
-	text-align:center;
-	top:235px;
+	position: absolute;
+	right: -71px;
+	width: 180px;
+	text-align: center;
+	top: 235px;
 	text-transform: uppercase;
-    font-style: normal;
-    padding: 5px;
+	font-style: normal;
+	padding: 5px;
 }
 
 .connect-bar:hover {
-	color:white;
-	padding-bottom:15px;
-	overflow: hidden ;
-} 
+	color: white;
+	padding-bottom: 25px;
+	margin-bottom: -7px;
+}
 
 .counte {
 	transform: rotate(-90deg);
-	padding-bottom:13px;
+	padding-bottom: 13px;
 }
 
 .border-blue {
 	border-radius: 6px 6px 0px 0px;
-	box-shadow: 0 0 0 3px #66afff inset, 0 0 0 5px rgba(100,173,255,0.5) inset ;
-    z-index: 100 ;
-    overflow: hidden ;
+	box-shadow: 0 0 0 3px #66afff inset, 0 0 0 5px rgba(100, 173, 255, 0.5)
+		inset;
+	z-index: 100;
+	overflow: hidden;
 }
 
 .border-green {
 	border-radius: 6px 6px 0px 0px;
-	box-shadow: 0 0 0 3px #b2e532 , 0 0 0 5px rgba(222,247,153,0.5)  ;
-    z-index: 100 ;
-    overflow: hidden ;
+	box-shadow: 0 0 0 3px #b2e532, 0 0 0 5px rgba(222, 247, 153, 0.5);
+	z-index: 100;
+	overflow: hidden;
 }
 
 .border-grey {
 	border-radius: 6px 6px 0px 0px;
-	box-shadow: 0 0 0 3px #adadad , 0 0 0 5px rgba(255,255,255,0.8)  ;
-    z-index: 100 ;
-    overflow: hidden ;
+	box-shadow: 0 0 0 3px #adadad, 0 0 0 5px rgba(255, 255, 255, 0.8);
+	z-index: 100;
+	overflow: hidden;
 }
-
-
-
 
 /* end connect bar */
 </style>
@@ -684,9 +686,12 @@
 						<div id="block-list" class="panel-body"
 							style="padding: 100px 10.5%;">
 
-<a href="moreSDKios.jsp" class="connect-bar counte border-grey bg-grey white-text"  style="text-decoration:none;">
-<i class="icon-apple fa-inverse icon-large" style="margin-right:5px;"></i> IOS
-</a>
+							<a href="moreSDKios.jsp"
+								class="connect-bar counte border-grey bg-grey white-text"
+								style="text-decoration: none;"> <i
+								class="icon-apple fa-inverse icon-large"
+								style="margin-right: 5px;"></i> IOS
+							</a>
 
 
 							<!-- SDK Android List -->
@@ -716,7 +721,7 @@
 										<i class="<%=sdkData.sdk_icon%>"></i> <a
 											href="<%=sdkData.sdk_doc%>"
 											class="panel-content spotlight text-style2">Document</a> <a
-											href="<%=sdkData.sdk_file%>" class="panel-content spotlight"
+											href="<%=sdkData.sdk_file%>" class="panel-content spotlight text-style2"
 											style="margin-top: 45px;">Download</a>
 									</div>
 								</li>
@@ -771,14 +776,6 @@
 	<!-- END GLOBAL SCRIPTS -->
 
 	<!-- PAGE LEVEL SCRIPTS -->
-	$(function(){ var banner =
-	$('.banner-selected').children('.banner-item').attr('for');
-
-	$('.banner-item').click(function(){ var trigger = $(this).attr('for');
-	var parent = $(this).parent();
-
-	$('.banner').removeClass('banner-selected');
-	parent.addClass('banner-selected'); }); })
 
 	<!-- END PAGE LEVEL SCRIPTS -->
 
