@@ -3,6 +3,7 @@
 <%@ page import="java.util.Map"%>
 <%@ page import="sdk.ideas.More"%>
 <%@page import="sdk.ideas.HttpsClient"%>
+<%@ page import="sdk.ideas.HttpsClient.*"%>
 <%@ page import="org.json.JSONObject"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -75,17 +76,20 @@
 				    strClientId = jObjLoginInput.getString("clientId");
 				}
 				
+				
 				if (nUserId > 0)
 				{
-				  
-				    
-				    
-				    httpsURL = "https://ser.kong.srm.pw/dashboard/user";
-				    String strURL = httpsURL + "?/user-id=" + nUserId;
+				    httpsURL = "https://ser.kong.srm.pw/dashboard/token/authorize";
+				
+				    jobj = new JSONObject();
+					jobj.put("email", strEmail);
+					jobj.put("clientId", strClientId);
 				    
 				    httpsClient = new HttpsClient();
-				    String strQueryResult = httpsClient.sendGet(strURL);
+				    String strAuthResult = httpsClient.sendPost(httpsURL, jobj.toString());
 				    
+				    Response respData = new Response();
+				    String strCodeResult = httpsClient.sendGet(strURL, respData);
 				    
 				    
 				    
