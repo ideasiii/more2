@@ -88,8 +88,9 @@
 				    httpsClient = new HttpsClient();
 				    String strAuthResult = httpsClient.sendPost(httpsURL, jobj.toString());
 				    
-				    Response respData = new Response();
-				    String strCodeResult = httpsClient.sendGet(strURL, respData);
+				    JSONObject jObjAuth = new JSONObject(strAuthResult);
+				    
+			
 				    
 				    
 				    
