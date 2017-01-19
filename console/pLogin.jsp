@@ -39,33 +39,33 @@
 
 				final String strEmail = request.getParameter("inputEmail");
 				final String strPassword = request.getParameter("inputPassword");
-				
+
 				/** Web Tracker **/
 				More.webTracker(request, "load progress page", null);
-				
+
 				/** MD5 hash **/
 				More more = new More();
 				String hash = more.calcMD5(strPassword);
 				String strHashedPassword = more.calcMD5("$1$MoREKey" + hash);
-				
-				more = null;
-				
-				/** More more = new More();
 
+				more = null;
+
+				/** More more = new More();
+				
 				More.MemberData memberData = new More.MemberData();
 				int nCount = more.queryMember(request, strEmail, memberData);
 				more = null;
 				**/
-				
+
 				String httpsURL = "https://ser.kong.srm.pw/dashboard/token/client-id";
-				
+
 				JSONObject jobj = new JSONObject();
 				jobj.put("email", strEmail);
 				jobj.put("hashedPassword", strHashedPassword);
 
 				HttpsClient httpsClient = new HttpsClient();
 				String strResult = httpsClient.sendPost(httpsURL, jobj.toString());
-				
+
 				JSONObject jObjLoginInput = new JSONObject(strResult);
 				int nUserId = 0;
 				String strClientId;
@@ -73,43 +73,58 @@
 					nUserId = jObjLoginInput.getInt("userId");
 				}
 				if (null != jObjLoginInput && jObjLoginInput.has("clientId")) {
-				    strClientId = jObjLoginInput.getString("clientId");
+					strClientId = jObjLoginInput.getString("clientId");
 				}
-				
-				
-				if (nUserId > 0)
-				{
-				    httpsURL = "https://ser.kong.srm.pw/dashboard/token/authorize";
-				
-				    jobj = new JSONObject();
+
+				if (nUserId > 0) {
+					httpsURL = "https://ser.kong.srm.pw/dashboard/token/authorize";
+
+					jobj = new JSONObject();
 					jobj.put("email", strEmail);
 					jobj.put("clientId", strClientId);
-				    
-				    httpsClient = new HttpsClient();
-				    String strAuthResult = httpsClient.sendPost(httpsURL, jobj.toString());
-				    
-				    JSONObject jObjAuth = new JSONObject(strAuthResult);
-				    
-			
-				    
-				    
-				    
-				    
-				    
-				    
 
-					More.webTracker(request, "User login success: " + nUserId, "Email: " + strEmail);
+					httpsClient = new HttpsClient();
+					String strAuthResult = httpsClient.sendPost(httpsURL, jobj.toString());
+
+					JSONObject jObjAuth = new JSONObject(strAuthResult);
+					String strStatus = null;
+					String strMessage = null;
+					if (null != jObjAuth && jObjAuth.has("userId")) {
+						nUserId = jObjAuth.getInt("userId");
+
+						if (nUserId > 0) {
+							More.webTracker(request, "User login success: " + nUserId, "Email: " + strEmail);
+
+							Cookie cEmail = new Cookie("email", strEmail);
+							response.addCookie(cEmail);
+
+						}
+					} else {
+
+						strStatus = jObjAuth.getString("status");
+						strMessage = jObjAuth.getString("message");
+
+						More.webTracker(request, "Login failed : " + strStatus, strMessage + " Email: " + strEmail);
+
+						Cookie cEmail = new Cookie("email", strEmail);
+						Cookie cStatus = new Cookie("status", strStatus);
+						Cookie cMessage = new Cookie("message", strMessage);
+						response.addCookie(cEmail);
+						response.addCookie(cStatus);
+						response.addCookie(cMessage);
+					}
+
 				}
-				    
-				
-				
-				
 
+				
+				
+				
+				
+				
 				boolean bAuthResult = false;
 				String strToken = null;
-				
+
 				Integer groupLevel = new Integer(memberData.member_group);
-				
 
 				if (0 < nCount) {
 					strToken = memberData.member_token;
@@ -117,7 +132,7 @@
 						bAuthResult = true;
 						session.setAttribute("Email", strEmail);
 						session.setAttribute("Group Level", groupLevel);
-						
+
 					} else {
 	%>
 	<script type="text/javascript">
@@ -133,8 +148,7 @@
 	<%
 	    }
 
-				/** Web Tracker **/
-				More.webTracker(request, "load progress page", null);
+			
 	%>
 
 	<div class="row">

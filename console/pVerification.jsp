@@ -47,7 +47,7 @@
 		if (400 == nCode)
 		{
 		    
-		    More.webTracker(request, "Email verification failed " + nCode, strMessage + " Email: " + strEmail);
+		    More.webTracker(request, "Email verification failed : " + nCode, strMessage + " Email: " + strEmail);
 		    
 			Cookie cEmail = new Cookie("email", strEmail);
 			Cookie cCode = new Cookie("error", String.valueOf(nCode));
