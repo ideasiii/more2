@@ -26,7 +26,12 @@
 	}
 
 	function jumpLoginPage() {
-		alert("The password is incorrect !!\n");
+		alert("Error: wrong email or password. \n");
+		location.replace("login.jsp");
+	}
+	
+	function jumpLoginPageUnverified() {
+		alert("User is not verified, please contact us. \n");
 		location.replace("login.jsp");
 	}
 </script>
@@ -34,11 +39,12 @@
 </head>
 <body>
 
-	<%
+	<%	
 	    request.setCharacterEncoding("UTF-8");
 
 				final String strEmail = request.getParameter("inputEmail");
 				final String strPassword = request.getParameter("inputPassword");
+				boolean bAuthResult = false;
 
 				/** Web Tracker **/
 				More.webTracker(request, "load progress page", null);
@@ -48,14 +54,7 @@
 				String hash = more.calcMD5(strPassword);
 				String strHashedPassword = more.calcMD5("$1$MoREKey" + hash);
 
-				more = null;
-
-				/** More more = new More();
 				
-				More.MemberData memberData = new More.MemberData();
-				int nCount = more.queryMember(request, strEmail, memberData);
-				more = null;
-				**/
 
 				String httpsURL = "https://ser.kong.srm.pw/dashboard/token/client-id";
 
@@ -66,9 +65,14 @@
 				HttpsClient httpsClient = new HttpsClient();
 				String strResult = httpsClient.sendPost(httpsURL, jobj.toString());
 
-				JSONObject jObjLoginInput = new JSONObject(strResult);
+				JSONObject jObjLoginInput = new JSONObject(strResult.trim());
+		
 				int nUserId = 0;
-				String strClientId;
+				int nUserId2 = 0;
+				String strClientId = null;
+				String strStatus = null;
+				String strMessage = null;
+				
 				if (null != jObjLoginInput && jObjLoginInput.has("userId")) {
 					nUserId = jObjLoginInput.getInt("userId");
 				}
@@ -87,24 +91,40 @@
 					String strAuthResult = httpsClient.sendPost(httpsURL, jobj.toString());
 
 					JSONObject jObjAuth = new JSONObject(strAuthResult);
-					String strStatus = null;
-					String strMessage = null;
+					
+					
 					if (null != jObjAuth && jObjAuth.has("userId")) {
-						nUserId = jObjAuth.getInt("userId");
-
-						if (nUserId > 0) {
-							More.webTracker(request, "User login success: " + nUserId, "Email: " + strEmail);
+						nUserId2 = jObjAuth.getInt("userId");
+					}
+						if (nUserId2 > 0) {
+						    bAuthResult = true;
+							More.webTracker(request, "User login success: " + nUserId2, "Email: " + strEmail);
 
 							Cookie cEmail = new Cookie("email", strEmail);
 							response.addCookie(cEmail);
 
+							More.MemberData memberData = new More.MemberData();
+							int nCount = more.queryMember(request, strEmail, memberData);
+							more = null;
+
+							Integer groupLevel = new Integer(memberData.member_group);
+							
+							if (0 < nCount) {
+									
+									session.setAttribute("Email", strEmail);
+									session.setAttribute("Group Level", groupLevel);
+							
 						}
+							
+						
 					} else {
-
-						strStatus = jObjAuth.getString("status");
-						strMessage = jObjAuth.getString("message");
-
-						More.webTracker(request, "Login failed : " + strStatus, strMessage + " Email: " + strEmail);
+					  
+					   if (null != jObjAuth && jObjAuth.has("status") && jObjAuth.has("message")){
+							strStatus = jObjAuth.getString("status");
+							strMessage = jObjAuth.getString("message");
+					   }
+					   
+						More.webTracker(request, "Login authorize failed : " + strStatus, strMessage + " Email: " + strEmail);
 
 						Cookie cEmail = new Cookie("email", strEmail);
 						Cookie cStatus = new Cookie("status", strStatus);
@@ -112,54 +132,44 @@
 						response.addCookie(cEmail);
 						response.addCookie(cStatus);
 						response.addCookie(cMessage);
+						
+						if (null != strMessage && strMessage.equals("User is not verified.")){
+						%>
+						<script type="text/javascript">
+							setTimeout('jumpLoginPageUnverified()', 1);
+						</script>
+						<%
+						}else{
+						    %>
+							<script type="text/javascript">
+								setTimeout('jumpLoginPage()', 1);
+							</script>
+							<%
+						    
+						}
+						
 					}
-
-				}
-
-				
-				
-				
-				
-				
-				boolean bAuthResult = false;
-				String strToken = null;
-
-				Integer groupLevel = new Integer(memberData.member_group);
-
-				if (0 < nCount) {
-					strToken = memberData.member_token;
-					if (strPassword.trim().equals(memberData.member_password.trim())) {
-						bAuthResult = true;
-						session.setAttribute("Email", strEmail);
-						session.setAttribute("Group Level", groupLevel);
-
-					} else {
-	%>
-	<script type="text/javascript">
-		setTimeout('jumpLoginPage()', 1);
-	</script>
-	<%
-	    }
 				} else {
-	%>
-	<script type="text/javascript">
-		setTimeout('jumpSignUpPage()', 1);
-	</script>
-	<%
+		
+		strStatus = jObjLoginInput.getString("status");
+		strMessage = jObjLoginInput.getString("message");
+
+		More.webTracker(request, "Login failed : " + strStatus, strMessage + " Email: " + strEmail);
+
+		Cookie cEmail = new Cookie("email", strEmail);
+		Cookie cStatus = new Cookie("status", strStatus);
+		Cookie cMessage = new Cookie("message", strMessage);
+		response.addCookie(cEmail);
+		response.addCookie(cStatus);
+		response.addCookie(cMessage);
+		%>
+		<script type="text/javascript">
+			setTimeout('jumpLoginPage()', 1);
+		</script>
+		<%
+		
 	    }
-
-			
-	%>
-
-	<div class="row">
-		<div class="col-lg-12 title">
-			<h2>Loading</h2>
-			<p>Please Wait...</p>
-			<img src="/assets/img/loading.gif" width="600px;">
-		</div>
-	</div>
-
-	<%
+		
 	    if (bAuthResult == true) {
 	%>
 	<form action="home.jsp" method="post" name="FormHome" id="FormHome">
@@ -171,6 +181,7 @@
 	</script>
 	<%
 	    }
+
 	%>
 </body>
 </html>
