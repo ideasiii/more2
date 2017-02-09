@@ -38,7 +38,6 @@
 
 <!-- JavaScript -->
 <script src="js/validation.js"></script>
-<script src="js/blowfish.js"></script>
 <script type="text/javascript">
 	function showBtnV(formName) {
 		var form = document.getElementById(formName);

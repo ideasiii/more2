@@ -73,8 +73,6 @@ function checkLoginData(formName){
 	
 	if (errMsg == '') {
 		
-		encrEmail = blowfish.encrypt(form.inputEmail.value, '$1$MoREKey', {outputType: 1, cipherMode: 0});
-		encrPassword = blowfish.encrypt(form.inputPassword.value, '$1$MoREKey', {outputType: 1, cipherMode: 0});
 		
 		form.submit();
 		return true;
