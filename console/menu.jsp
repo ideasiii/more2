@@ -1,5 +1,5 @@
 <%
-		    final String strEmail = (String) session.getAttribute("Email");
+		     String strEmail = (String) session.getAttribute("Email");
 		    final Integer groupLevel = (Integer) session.getAttribute("Group Level");
 
 		    boolean bLogined = false;
@@ -22,7 +22,7 @@
 				<!-- LOGO SECTION -->
 				<header>
 					<div class="header-angle navbar-brand">
-						<a href="/more2/console/home.jsp" class="navbar-brand"> <img class="logo"
+						<a href="/more/home/console/home.jsp" class="navbar-brand"> <img class="logo"
 							height="80" src="/assets/img/more_logo_white_board_sm.png" alt="" />
 						</a>
 					</div>
@@ -37,13 +37,13 @@
 							    {
 							%>
 							<li class="super-header-li"><a class="super-header-a"
-								href="/more2/console/logout.jsp">Logout</a></li>
+								href="/more/home/console/logout.jsp">Logout</a></li>
 							<%
 							    if (bManager == true)
 									{
 							%>
 							<li class="super-header-li"><a class="super-header-a"
-								href="/more_manager/manager/mainpage.jsp"><i
+								href="/more/more_manager/manager/mainpage.jsp"><i
 									class="icon-gear fa-inverse"></i></a></li>
 							<%
 							    }
@@ -52,9 +52,9 @@
 							    {
 							%>
 							<li class="super-header-li"><a class="super-header-a"
-								href="/more2/console/login.jsp">Login</a></li>
+								href="/more/home/console/login.jsp">Login</a></li>
 							<li class="super-header-li"><a class="super-header-a"
-								href="/more2/console/signup.jsp">Sign Up</a></li>
+								href="/more/home/console/signup.jsp">Sign Up</a></li>
 							<%
 							    }
 							%>
@@ -77,7 +77,7 @@
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> DASHBOARD </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li"><a href="/more2/Dashboard/trackerdata_query.jsp">Traker Data</a></li>
+											<li class="dropdown-menu-li"><a href="/more/Dashboard/trackerdata_query.jsp">Traker Data</a></li>
 											<li class="dropdown-menu-li"><a href="">ANALYSIS</a></li>
 											<li class="dropdown-menu-li"><a href="">ASFDGFHVGH</a></li>
 										</ul></li>
@@ -85,7 +85,7 @@
 									<li class="menu-header-li"><a href=""
 										class="menu-header-a"> RESOURCES </a>
 										<ul class="dropdown-menu-container">
-											<li class="dropdown-menu-li" id="3level-sdk"><a href="/more2/console/moreSDKandroid.jsp">MORE
+											<li class="dropdown-menu-li" id="3level-sdk"><a href="/more/home/console/moreSDKandroid.jsp">MORE
 													SDK</a>
 												</li>
 											<li class="dropdown-menu-li"><a href="">ASFGHJMK</a></li>
